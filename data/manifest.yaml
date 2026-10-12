@@ -344,3 +344,33 @@
   notes:
   - entry written after the fact by the operator via ingestion.manifest.append, since the killed process
     could not record itself; retrieved_at is the directory mtime to the minute
+- dataset: gaia_dr3_nearby
+  source: ESA Gaia Archive
+  service_url: https://gea.esac.esa.int/tap-server/tap
+  release: Gaia DR3
+  query_file: data/queries/gaia_dr3_nearby.adql
+  retrieved_at: '2026-10-12T08:30:53Z'
+  files:
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.3/schema_check_gaiadr3_gaia_source.vot
+    sha256: 2a94b9af89aaf8bef5f0ca533d15e0dd8129acc0d2fa5a3b3eaf643c74ac6536
+    bytes: 13011
+    rows: 152
+    role: schema_check
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.3/query.adql
+    sha256: 0bca8cae8be9b8b080f1bba8aaa9ac741af69885a5026cf29cb55f710c95bb9c
+    bytes: 376
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.3/job_url.txt
+    sha256: 7c880272c3db151bdc83e39524be2a9c1ce821c2a193e1c8d4489514a3444b6d
+    bytes: 84
+    rows: 1
+    role: request
+  license_or_credit: see data/CITATIONS.md
+  status: 'partial: TapError: TAP job ERROR: <?xml version="1.0" encoding="UTF-8"?>
+
+    <uws:errorSummary xmlns:uws="http://www.ivoa.net/xml/UWS/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:esatapplus="http://esa.int/xml/EsaTapPlus" xsi:schemaLocation="http://www.ivoa.net/xml/UWS/v1.0
+    http://www.ivoa.net/xml/UWS/v1.0 http://esa.int/xml/EsaTapPlus https://gea.esac.esa.int/tap-server/xml/esaTapPlusAttributes.xsd"
+    type="fatal'
