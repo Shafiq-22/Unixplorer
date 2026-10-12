@@ -4,11 +4,16 @@ version = "0.0.1"
 description = "Universe Atlas: Milky Way Edition — data foundation (M0)"
 requires-python = ">=3.12"
 dependencies = [
+    "alembic>=1.13",
     "astropy>=6.1",
+    "fastapi[standard]>=0.115",
     "numpy>=2.0",
+    "psycopg[binary]>=3.2",
     "pyarrow>=17",
     "pyyaml>=6.0",
     "requests>=2.32",
+    "sqlalchemy>=2.0",
+    "uvicorn>=0.30",
 ]
 
 [project.scripts]
@@ -16,6 +21,7 @@ atlas = "ingestion.cli:main"
 
 [dependency-groups]
 dev = [
+    "httpx>=0.27",
     "mypy>=1.11",
     "pytest>=8.3",
     "ruff>=0.6",
@@ -28,13 +34,14 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["ingestion"]
+packages = ["ingestion", "packages/astronomy-core/astronomy_core", "database/atlas_db", "services/api/atlas_api"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 markers = [
     "live: hits real archives over the network (run on demand only)",
     "snapshot: requires a downloaded dataset in data/raw (skipped when absent)",
+    "db: needs TEST_DATABASE_URL (a disposable Postgres); skipped when unset",
 ]
 
 [tool.ruff]
@@ -47,7 +54,7 @@ select = ["E", "F", "I", "B", "UP", "SIM"]
 [tool.mypy]
 python_version = "3.12"
 strict = true
-packages = ["ingestion"]
+files = ["ingestion", "packages/astronomy-core/astronomy_core", "database/atlas_db", "services/api/atlas_api"]
 
 [[tool.mypy.overrides]]
 module = ["astropy.*", "pyarrow.*"]
@@ -55,3 +62,7 @@ ignore_missing_imports = true
 
 [tool.ruff.lint.per-file-ignores]
 "tests/fixtures/synthetic.py" = ["E501"]  # verbatim-shaped Horizons text block
+"database/migrations/**" = ["E402", "E501"]  # Alembic env layout; generated DDL strings
+
+[tool.ruff.lint.isort]
+known-first-party = ["ingestion", "astronomy_core", "atlas_api", "atlas_db"]

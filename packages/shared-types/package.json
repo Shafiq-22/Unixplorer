@@ -1,0 +1,18 @@
+{
+  "name": "@atlas/shared-types",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "generate": "cd ../.. && uv run python services/api/export_openapi.py packages/shared-types/openapi.json && cd packages/shared-types && openapi-typescript openapi.json -o src/api.ts",
+    "lint": "echo 'shared-types: generated code, nothing to lint'",
+    "typecheck": "tsc --noEmit -p .",
+    "test": "echo 'shared-types: no tests'"
+  },
+  "devDependencies": {
+    "openapi-typescript": "7.13.0",
+    "typescript": "5.9.3"
+  }
+}
