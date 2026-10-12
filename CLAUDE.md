@@ -45,9 +45,11 @@ official archive  →  data/raw/ (as downloaded, immutable)  →  data/processed
 | **M0 data snapshot: NASA Exoplanet Archive** | working (tested): 5 504 `ps` solutions (1 797 planets), sy_dist < 120 pc, 2026-10-12; restriction to Gaia hosts pending |
 | **M0 manifest + checksum verification** | working (tested); `atlas data fetch/verify/build/status`, Git LFS, CI workflow |
 | **M0 data snapshot: galaxy_structure** | blocked: needs a human choice of disc/arm model paper |
-| Repo scaffold + CI | not started |
-| Schema + migrations | not started |
-| `astronomy-core` physics models | not started |
+| Repo scaffold + CI | working (tested): uv + pnpm workspaces; CI jobs python / data (Postgres) / web |
+| Schema + migrations | working (tested): Alembic 0001, the 13 section-6 tables + source_file (ADR 0002) |
+| `atlas db load` (M0 snapshot → Postgres) | working (tested): idempotent, manifest-checked; 374 051 objects, 4.1 M measurements |
+| API + web health page | working (tested): FastAPI `/health`; Next.js health page with Zod-validated, OpenAPI-generated types |
+| `astronomy-core` physics models | working (tested): every section-9 model except `schwarzschild_static` (later); section-10 suite green |
 | Gaia connector (nearby stars) | not started |
 | SIMBAD name resolution | not started |
 | JPL Horizons (Solar System) | not started |
@@ -64,35 +66,38 @@ Status values: `not started`, `in progress`, `working (tested)`, `partial`, `blo
 
 ## 3. Commands
 
-> These are planned commands. Replace them with the real ones as soon as the scaffold exists. If a command here doesn't work, fix this section.
+> Real commands as of M1. If a command here doesn't work, fix this section.
 
 ```bash
-# JS/TS (pnpm workspaces)
+# JS/TS (pnpm workspaces: apps/web, packages/shared-types)
 pnpm install
-pnpm dev                       # web app
+pnpm dev                       # web app (health page in M1); set ATLAS_API_URL (default http://127.0.0.1:8000)
 pnpm lint && pnpm typecheck
 pnpm test                      # vitest
-pnpm test:e2e                  # playwright
+pnpm build
+pnpm gen:types                 # regenerate packages/shared-types from the API's OpenAPI schema
+pnpm test:e2e                  # PLANNED (M2): playwright
 
 # Python (uv)
 uv sync
 uv run fastapi dev services/api/main.py
-uv run pytest -m "not live"    # deterministic: always run
+uv run pytest -m "not live"    # deterministic: always run (db tests need TEST_DATABASE_URL)
 uv run pytest -m live          # hits real archives: on demand only
 uv run pytest tests/scientific # physics regression suite (release-blocking)
-uv run ruff check . && uv run mypy services packages
+uv run ruff check . && uv run mypy
 
-# Database
+# Database (credentials in .env; copy .env.example)
 docker compose up -d db
 uv run alembic upgrade head
 uv run alembic revision --autogenerate -m "<msg>"   # always review the generated file
+uv run alembic check                                # models and migrations agree
 
-# Data foundation (real since M0; order and details in docs/operations/data.md)
+# Data foundation (order and details in docs/operations/data.md)
 uv run atlas data fetch <dataset>      # download from the official archive into data/raw/, update manifest
 uv run atlas data verify               # recompute sha256 + bytes + row counts against data/manifest.yaml
 uv run atlas data build                # data/raw/ -> data/processed/*.parquet (deterministic)
 uv run atlas data status               # what is downloaded, when, from which release
-uv run atlas db load                   # PLANNED (M1): data/processed/ -> Postgres (idempotent upsert)
+uv run atlas db load                   # data/processed/ -> Postgres (idempotent upsert; uses $DATABASE_URL)
 ```
 
 ---

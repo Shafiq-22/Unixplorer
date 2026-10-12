@@ -10,3 +10,7 @@ __pycache__/
 # Rebuilt byte-identically by `atlas data build`; hashes recorded in docs/operations/data.md.
 data/processed/*.parquet
 .lfs-assets-id
+node_modules/
+apps/web/.next/
+apps/web/next-env.d.ts
+*.tsbuildinfo

@@ -1,0 +1,157 @@
+{
+  "components": {
+    "schemas": {
+      "DatabaseInfo": {
+        "properties": {
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "error class only; never connection details",
+            "title": "Error"
+          },
+          "migration_revision": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Migration Revision"
+          },
+          "reachable": {
+            "title": "Reachable",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "reachable",
+          "migration_revision"
+        ],
+        "title": "DatabaseInfo",
+        "type": "object"
+      },
+      "FrameInfo": {
+        "properties": {
+          "astropy_version": {
+            "title": "Astropy Version",
+            "type": "string"
+          },
+          "galactocentric_defaults": {
+            "description": "astropy Galactocentric parameter set",
+            "title": "Galactocentric Defaults",
+            "type": "string"
+          }
+        },
+        "required": [
+          "galactocentric_defaults",
+          "astropy_version"
+        ],
+        "title": "FrameInfo",
+        "type": "object"
+      },
+      "Health": {
+        "properties": {
+          "api_version": {
+            "title": "Api Version",
+            "type": "string"
+          },
+          "database": {
+            "$ref": "#/components/schemas/DatabaseInfo"
+          },
+          "frame": {
+            "$ref": "#/components/schemas/FrameInfo"
+          },
+          "snapshot": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SnapshotInfo"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "latest complete `atlas db load`, if any"
+          },
+          "status": {
+            "enum": [
+              "ok",
+              "degraded"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "api_version",
+          "database",
+          "snapshot",
+          "frame"
+        ],
+        "title": "Health",
+        "type": "object"
+      },
+      "SnapshotInfo": {
+        "properties": {
+          "datasets": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "dataset -> manifest retrieved_at (UTC)",
+            "title": "Datasets",
+            "type": "object"
+          },
+          "finished_at": {
+            "title": "Finished At",
+            "type": "string"
+          },
+          "ingestion_job_id": {
+            "title": "Ingestion Job Id",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ingestion_job_id",
+          "finished_at",
+          "datasets"
+        ],
+        "title": "SnapshotInfo",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "description": "Milky Way edition. M1 exposes health only.",
+    "title": "Universe Atlas API",
+    "version": "0.1.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/health": {
+      "get": {
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Health"
+      }
+    }
+  }
+}

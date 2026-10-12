@@ -1,0 +1,80 @@
+name: ci
+# One run per change: pushes to master, plus pull requests. Running on every branch push as
+# well would start a duplicate job that misses the LFS cache and re-downloads every LFS object
+# (metered bandwidth).
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  python:
+    name: python (lint, types, physics)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync
+      - run: uv run ruff check . && uv run ruff format --check .
+      - run: uv run mypy
+      - name: Physics regression suite (release-blocking)
+        run: uv run pytest tests/scientific
+      - run: uv run pytest tests/unit tests/api -m "not live"
+
+  data:
+    name: data (verify, build, db load)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: atlas
+          POSTGRES_PASSWORD: ci-only-password
+          POSTGRES_DB: atlas_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U atlas" --health-interval 5s --health-retries 20
+    env:
+      TEST_DATABASE_URL: postgresql+psycopg://atlas:ci-only-password@localhost:5432/atlas_test
+      DATABASE_URL: postgresql+psycopg://atlas:ci-only-password@localhost:5432/atlas_test
+    steps:
+      - uses: actions/checkout@v4
+      # Git LFS bandwidth is metered: restore LFS objects from the Actions cache and only
+      # download what the cache lacks (key = the list of LFS object ids in this commit).
+      - name: List LFS objects
+        run: git lfs ls-files --long | cut -d' ' -f1 | sort > .lfs-assets-id
+      - uses: actions/cache@v4
+        with:
+          path: .git/lfs
+          key: lfs-${{ hashFiles('.lfs-assets-id') }}
+          restore-keys: lfs-
+      - run: git lfs pull
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync
+      - run: uv run atlas data verify
+      - run: uv run atlas data build
+      - run: uv run alembic upgrade head && uv run alembic check
+      - name: All deterministic tests, including db load against Postgres
+        run: uv run pytest -m "not live"
+
+  web:
+    name: web (types in sync, lint, typecheck, test, build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Shared types match the API's OpenAPI schema
+        run: pnpm gen:types && git diff --exit-code packages/shared-types
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
