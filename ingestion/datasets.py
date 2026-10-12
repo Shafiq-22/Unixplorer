@@ -32,6 +32,7 @@ class FetchContext:
     notes: list[str] = field(default_factory=list)
     partial_reason: str | None = None
     release_detail: str | None = None
+    resume_job_url: str | None = None
 
     def save(self, name: str, content: bytes, role: str = "data") -> Path:
         path = self.snapshot_dir / name
@@ -78,7 +79,14 @@ def _single_tap_query(ctx: FetchContext, base_url: str, *, use_async: bool) -> N
     _schema_checks(ctx, tap)
     adql = strip_comments(ctx.query_text())
     ctx.save("query.adql", adql.encode(), "request")
-    body = tap.run_async(adql) if use_async else tap.sync(adql)
+    if use_async:
+        body = tap.run_async(
+            adql,
+            on_submit=lambda url: ctx.save("job_url.txt", url.encode(), "request"),
+            resume_job_url=ctx.resume_job_url,
+        )
+    else:
+        body = tap.sync(adql)
     ctx.save("result.vot", body)
 
 
@@ -110,8 +118,13 @@ def _batched_simbad(ctx: FetchContext, ids: list[str]) -> set[str]:
         ctx.save(f"batch_{n:04d}.vot", body)
         table = parse_single_table(io.BytesIO(body)).to_table()
         if "query_id" in table.colnames:
-            matched.update(str(v) for v in table["query_id"])
+            matched.update(normalize_id(str(v)) for v in table["query_id"])
     return matched
+
+
+def normalize_id(identifier: str) -> str:
+    """SIMBAD returns ids in padded stored form ("M  45"); compare ignoring whitespace."""
+    return " ".join(identifier.split())
 
 
 def fetch_simbad_ids(ctx: FetchContext) -> None:
@@ -135,7 +148,7 @@ def fetch_landmarks(ctx: FetchContext) -> None:
     spec = yaml.safe_load(ctx.layout.landmarks.read_text(encoding="utf-8"))
     ids = [str(lm["simbad_id"]) for lm in spec["landmarks"]]
     matched = _batched_simbad(ctx, ids)
-    missing = [i for i in ids if i not in matched]
+    missing = [i for i in ids if normalize_id(i) not in matched]
     if missing:
         ctx.partial_reason = f"SIMBAD did not resolve: {missing}"
     ctx.notes.append("coordinates/types only; landmark distances need the §8.3 literature process")

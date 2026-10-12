@@ -9,10 +9,12 @@ from __future__ import annotations
 
 import io
 import time
-from collections.abc import Iterable
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 USER_AGENT = "universe-atlas-ingestion/0.0.1 (+https://github.com/Shafiq-22/Unixplorer)"
 
@@ -45,6 +47,7 @@ class TapClient:
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.session = session or requests.Session()
+        _mount_get_retries(self.session)
         self.session.headers.setdefault("User-Agent", USER_AGENT)
         self.timeout = timeout
         self.result_format = result_format
@@ -64,17 +67,34 @@ class TapClient:
         _raise_for_status(resp)
         return _checked_votable(resp.content)
 
-    def run_async(self, adql: str, *, poll_s: float = 5.0, max_wait_s: float = 7200.0) -> bytes:
-        """Submit a UWS job, wait for it, and return the result document."""
-        params = self._params(adql) | {"PHASE": "RUN"}
-        resp = self.session.post(
-            f"{self.base_url}/async", data=params, timeout=self.timeout, allow_redirects=False
-        )
-        if resp.status_code not in (200, 201, 303):
-            _raise_for_status(resp)
-        job_url = resp.headers.get("Location") or resp.url
-        if not job_url or job_url.rstrip("/").endswith("/async"):
-            raise TapError("TAP async submission did not return a job URL")
+    def run_async(
+        self,
+        adql: str,
+        *,
+        poll_s: float = 5.0,
+        max_wait_s: float = 7200.0,
+        on_submit: Callable[[str], object] | None = None,
+        resume_job_url: str | None = None,
+    ) -> bytes:
+        """Submit a UWS job (or resume an existing one), wait for it, return the result document.
+
+        `on_submit` receives the job URL as soon as it exists, so an interrupted fetch can be
+        resumed with `resume_job_url` instead of re-running a long query.
+        """
+        if resume_job_url:
+            job_url = resume_job_url.rstrip("/")
+        else:
+            params = self._params(adql) | {"PHASE": "RUN"}
+            resp = self.session.post(
+                f"{self.base_url}/async", data=params, timeout=self.timeout, allow_redirects=False
+            )
+            if resp.status_code not in (200, 201, 303):
+                _raise_for_status(resp)
+            job_url = resp.headers.get("Location") or resp.url
+            if not job_url or job_url.rstrip("/").endswith("/async"):
+                raise TapError("TAP async submission did not return a job URL")
+        if on_submit is not None:
+            on_submit(job_url)
         deadline = time.monotonic() + max_wait_s
         while True:
             phase_resp = self.session.get(f"{job_url}/phase", timeout=self.timeout)
@@ -147,3 +167,23 @@ def _votable_column(body: bytes, name: str) -> list[object]:
     if name not in table.colnames:
         return []
     return [None if v is None else (v.decode() if isinstance(v, bytes) else v) for v in table[name]]
+
+
+def _mount_get_retries(session: requests.Session) -> None:
+    """Retry idempotent GETs (job phase polls, result downloads) on transient network errors.
+
+    POSTs (query submission) are never retried: resubmitting would start a duplicate job.
+    """
+    retry = Retry(
+        total=6,
+        connect=6,
+        read=6,
+        status=6,
+        backoff_factor=2.0,
+        status_forcelist=(502, 503, 504),
+        allowed_methods=frozenset({"GET"}),
+        raise_on_status=False,
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)

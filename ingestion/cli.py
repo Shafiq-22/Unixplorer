@@ -20,6 +20,9 @@ def main(argv: list[str] | None = None) -> int:
     fetch = data.add_parser("fetch", help="download a dataset into data/raw and the manifest")
     fetch.add_argument("dataset", choices=sorted(DATASETS))
     fetch.add_argument("--batch-size", type=int, default=1000, help="ids per SIMBAD query")
+    fetch.add_argument(
+        "--resume-job", metavar="URL", help="wait on an existing TAP async job (see job_url.txt)"
+    )
     data.add_parser("verify", help="check manifest hashes, sizes and row counts")
     data.add_parser("build", help="build data/processed/*.parquet from data/raw")
     data.add_parser("status", help="what is downloaded, when, from which release")
@@ -29,7 +32,7 @@ def main(argv: list[str] | None = None) -> int:
 
     layout = Layout(Path(args.root).resolve() if args.root else find_repo_root())
     if args.cmd == "fetch":
-        return _fetch(layout, args.dataset, args.batch_size)
+        return _fetch(layout, args.dataset, args.batch_size, args.resume_job)
     if args.cmd == "verify":
         return _verify(layout)
     if args.cmd == "build":
@@ -37,11 +40,11 @@ def main(argv: list[str] | None = None) -> int:
     return _status(layout)
 
 
-def _fetch(layout: Layout, dataset: str, batch_size: int) -> int:
+def _fetch(layout: Layout, dataset: str, batch_size: int, resume_job: str | None) -> int:
     from ingestion.fetch import run_fetch
 
     try:
-        entry = run_fetch(layout, dataset, batch_size=batch_size)
+        entry = run_fetch(layout, dataset, batch_size=batch_size, resume_job_url=resume_job)
     except Exception as exc:  # noqa: BLE001 - report and exit non-zero; manifest already updated
         print(f"fetch {dataset} FAILED: {type(exc).__name__}: {exc}", file=sys.stderr)
         return 1

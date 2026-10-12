@@ -48,9 +48,13 @@ def test_raw_snapshot_is_never_overwritten(
     tmp_layout: Layout, monkeypatch: pytest.MonkeyPatch
 ) -> None:
     _patch(monkeypatch, lambda ctx: ctx.save("result.csv", b"a\n1\n") and None)
-    run_fetch(tmp_layout, "exoplanets_ps")
-    with pytest.raises(FileExistsError):
-        run_fetch(tmp_layout, "exoplanets_ps")
+    first = run_fetch(tmp_layout, "exoplanets_ps")
+    second = run_fetch(tmp_layout, "exoplanets_ps")
+    first_path = tmp_layout.root / first.files[0].path
+    second_path = tmp_layout.root / second.files[0].path
+    assert first_path != second_path
+    assert first_path.parent.name + ".2" == second_path.parent.name
+    assert first_path.read_bytes() == b"a\n1\n"
 
 
 def test_unfetchable_dataset_refuses(tmp_layout: Layout) -> None:

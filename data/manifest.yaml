@@ -65,3 +65,259 @@
   status: 'partial: ProxyError: HTTPSConnectionPool(host=''exoplanetarchive.ipac.caltech.edu'', port=443):
     Max retries exceeded with url: /TAP/sync (Caused by ProxyError(''Unable to connect to proxy'', OSError(''Tunnel
     connection failed: 403 Forbidden'')))'
+- dataset: gaia_dr3_nearby
+  source: ESA Gaia Archive
+  service_url: https://gea.esac.esa.int/tap-server/tap
+  release: Gaia DR3
+  query_file: data/queries/gaia_dr3_nearby.adql
+  retrieved_at: '2026-10-12T07:49:20Z'
+  files:
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12/schema_check_gaiadr3_gaia_source.vot
+    sha256: cdafacfceb8d1e202b4ee406d00306bb122f37f282e5c325ba66d7e667a37a49
+    bytes: 13011
+    rows: 152
+    role: schema_check
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12/query.adql
+    sha256: 0bca8cae8be9b8b080f1bba8aaa9ac741af69885a5026cf29cb55f710c95bb9c
+    bytes: 376
+    rows: 1
+    role: request
+  license_or_credit: see data/CITATIONS.md
+  status: 'partial: ProxyError: HTTPSConnectionPool(host=''gea.esac.esa.int'', port=443): Max retries
+    exceeded with url: /tap-server/tap/async/79c423a8-c611-11f1-826d-bc97e148b76b-O/phase (Caused by ProxyError(''Unable
+    to connect to proxy'', RemoteDisconnected(''Remote end closed connection without response'')))'
+- dataset: horizons_bodies
+  source: JPL Horizons
+  service_url: https://ssd.jpl.nasa.gov/api/horizons.api
+  release: JPL Horizons; JPL Horizons API signature version(s) ['1.2']
+  query_file: data/queries/horizons_bodies.json
+  retrieved_at: '2026-10-12T08:00:37Z'
+  files:
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/sun.json
+    sha256: 138babbe5b8d4a3297acf9116a5dfb1a85b7426ea829b3d57bfdf91ba8c66f14
+    bytes: 6520
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/mercury.json
+    sha256: 161a64e6449d190c64b93f707613516801016d6759ddbd2e64ec58a2968e057d
+    bytes: 6513
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/venus.json
+    sha256: d71e1b66a6f201d6a940f7b2ff123737eb4d323d3694ff94c47e02ebe8e7ff11
+    bytes: 6502
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/earth.json
+    sha256: eda32ba063c4dca2a93621f1e0897a6dbdee3700d85a95c12edc5bd70751ac04
+    bytes: 7074
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/moon.json
+    sha256: 4ef2ff79fe2e5dd471c03e3d1c58570501fd92050011c1416b345156a5bac805
+    bytes: 6637
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/mars.json
+    sha256: 0c2dc3d8e5e7cac68e8d61ace3cf09e798e8232c3567d5611345f75751f90464
+    bytes: 6612
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/jupiter.json
+    sha256: f355f4f23a3d41d906fcd7e4074106aa58c3904e2dac958ae6aabb7e96321320
+    bytes: 6567
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/io.json
+    sha256: ae83d30600aa9049cee622efcbdef66f3b09f4fee521ec285612ad422b328c3c
+    bytes: 5754
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/europa.json
+    sha256: 82ddc6ac125f8136c0434033abb100335755ac0347d53644c2f1875d829bde09
+    bytes: 5756
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/ganymede.json
+    sha256: 6f68dd7a4bdd407cde1f1fe96774cfded279b52a7452b625ccea3e3edd2c711f
+    bytes: 5756
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/callisto.json
+    sha256: 35f37f3a620303e458c83e572ecbd3c6ec64d56e31ff3e5c3bbf6c2695537b27
+    bytes: 5759
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/saturn.json
+    sha256: 308056b4cdfc87a1581a7ffcf1d3cc7efb349122834e31bb527177fa41cde0b4
+    bytes: 6539
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/titan.json
+    sha256: b5bb83195baeabefb0675c95dd006f13e2a77c11df9cf7a1db9ec2b1c359bf2a
+    bytes: 5829
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/uranus.json
+    sha256: 25009e8df4a092d94cb0253dc3a0170e259efe97c08c6a5022374d242d660f9d
+    bytes: 6531
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/neptune.json
+    sha256: f86e157e94439f44916587a6a867fc83ac1c083869319fefd41cee6deea4e9d6
+    bytes: 6529
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/triton.json
+    sha256: 2ff71b86129c494e22db27489834f2e59c8842b06f4aa6ebbc9a3510e885669b
+    bytes: 5826
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/pluto.json
+    sha256: d1436af7b856df0712b908ee1aeb74a86a0d78ec76e95912b22c07f7bc2a2df5
+    bytes: 6374
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/charon.json
+    sha256: c6a23b7682d08675828e572cfa9b3d242132331b76e60ce2d2d315ca6dae2d3f
+    bytes: 6069
+    rows: 1
+    role: data
+  - path: data/raw/horizons/horizons_bodies/2026-10-12/requests.json
+    sha256: aaeba036c9adf4c0aea6e8212526645a237b31e624f5b7893ee2ff7243e1fe4c
+    bytes: 5897
+    rows: 1
+    role: request
+  license_or_credit: see data/CITATIONS.md
+  status: complete
+  notes:
+  - 'Sun: Ephemeris / API_USER Mon Oct 12 01:00:38 2026 Pasadena, USA      / Horizons'
+  - 'Sun: Target body name: Sun (10)                        {source: DE441}'
+  - 'Sun: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Mercury: Ephemeris / API_USER Mon Oct 12 01:00:39 2026 Pasadena, USA      / Horizons'
+  - 'Mercury: Target body name: Mercury (199)                   {source: DE441}'
+  - 'Mercury: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Venus: Ephemeris / API_USER Mon Oct 12 01:00:39 2026 Pasadena, USA      / Horizons'
+  - 'Venus: Target body name: Venus (299)                     {source: DE441}'
+  - 'Venus: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Earth: Ephemeris / API_USER Mon Oct 12 01:00:40 2026 Pasadena, USA      / Horizons'
+  - 'Earth: Target body name: Earth (399)                     {source: DE441}'
+  - 'Earth: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Moon: Ephemeris / API_USER Mon Oct 12 01:00:41 2026 Pasadena, USA      / Horizons'
+  - 'Moon: Target body name: Moon (301)                      {source: DE441}'
+  - 'Moon: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Mars: Ephemeris / API_USER Mon Oct 12 01:00:42 2026 Pasadena, USA      / Horizons'
+  - 'Mars: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Jupiter: Ephemeris / API_USER Mon Oct 12 01:00:42 2026 Pasadena, USA      / Horizons'
+  - 'Jupiter: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Io: Ephemeris / API_USER Mon Oct 12 01:00:43 2026 Pasadena, USA      / Horizons'
+  - 'Io: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Europa: Ephemeris / API_USER Mon Oct 12 01:00:44 2026 Pasadena, USA      / Horizons'
+  - 'Europa: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Ganymede: Ephemeris / API_USER Mon Oct 12 01:00:45 2026 Pasadena, USA      / Horizons'
+  - 'Ganymede: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Callisto: Ephemeris / API_USER Mon Oct 12 01:00:45 2026 Pasadena, USA      / Horizons'
+  - 'Callisto: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Saturn: Ephemeris / API_USER Mon Oct 12 01:00:46 2026 Pasadena, USA      / Horizons'
+  - 'Saturn: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Titan: Ephemeris / API_USER Mon Oct 12 01:00:47 2026 Pasadena, USA      / Horizons'
+  - 'Titan: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Uranus: Ephemeris / API_USER Mon Oct 12 01:00:47 2026 Pasadena, USA      / Horizons'
+  - 'Uranus: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Neptune: Ephemeris / API_USER Mon Oct 12 01:00:48 2026 Pasadena, USA      / Horizons'
+  - 'Neptune: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Triton: Ephemeris / API_USER Mon Oct 12 01:00:49 2026 Pasadena, USA      / Horizons'
+  - 'Triton: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Pluto: Pre-computed solution PLU060/DE440. Fit to post New Horizons encounter and'
+  - 'Pluto: Ephemeris / API_USER Mon Oct 12 01:00:49 2026 Pasadena, USA      / Horizons'
+  - 'Pluto: Center body name: Solar System Barycenter (0)     {source: DE441}'
+  - 'Charon: Pre-computed solution PLU060/DE440. Fit to post New Horizons encounter and'
+  - 'Charon: Ephemeris / API_USER Mon Oct 12 01:00:50 2026 Pasadena, USA      / Horizons'
+  - 'Charon: Center body name: Solar System Barycenter (0)     {source: DE441}'
+- dataset: exoplanets_ps
+  source: NASA Exoplanet Archive
+  service_url: https://exoplanetarchive.ipac.caltech.edu/TAP
+  release: Planetary Systems (ps) table
+  query_file: data/queries/exoplanets_ps.adql
+  retrieved_at: '2026-10-12T08:01:01Z'
+  files:
+  - path: data/raw/exoplanet_archive/exoplanets_ps/2026-10-12/schema_check_ps.vot
+    sha256: 867d292feb37927d3fa906f5a041f2cd1c187e24792d875c041fa2c4e54f007b
+    bytes: 46446
+    rows: 355
+    role: schema_check
+  - path: data/raw/exoplanet_archive/exoplanets_ps/2026-10-12/query.adql
+    sha256: b73f9b945567869bf0d4b0eddfe1bf922bdb946028b1e7a12b7e746f22dfd771
+    bytes: 36
+    rows: 1
+    role: request
+  - path: data/raw/exoplanet_archive/exoplanets_ps/2026-10-12/result.vot
+    sha256: be3c9ad9e3b14720f7c5487081027643f27792b2417b5b44d239390ec262596d
+    bytes: 55824629
+    rows: 5504
+    role: data
+  license_or_credit: see data/CITATIONS.md
+  status: complete
+- dataset: landmarks
+  source: SIMBAD (CDS)
+  service_url: https://simbad.cds.unistra.fr/simbad/sim-tap
+  release: SIMBAD (live database; retrieval date is the version)
+  query_file: data/queries/landmarks.adql
+  retrieved_at: '2026-10-12T08:01:24Z'
+  files:
+  - path: data/raw/simbad/landmarks/2026-10-12/schema_check_basic.vot
+    sha256: 724b52d5140dcf97efa6b2f5215f054d129d4c78d294e9f482339829e71300dc
+    bytes: 3610
+    rows: 67
+    role: schema_check
+  - path: data/raw/simbad/landmarks/2026-10-12/schema_check_ident.vot
+    sha256: 48c89efe6b3750fbe724f68595d5e3ddf3c87bda118353a123776215b6dae221
+    bytes: 1054
+    rows: 2
+    role: schema_check
+  - path: data/raw/simbad/landmarks/2026-10-12/batch_0001.adql
+    sha256: ef89640e14cd1f897f271662cd64b67e379c953388aa3093324ebe09735e359c
+    bytes: 338
+    rows: 1
+    role: request
+  - path: data/raw/simbad/landmarks/2026-10-12/batch_0001.vot
+    sha256: 66d4d8440fc4b7dfa307c31c53306d74d68eb5ba46524b3790d09a94e3601a9f
+    bytes: 39024
+    rows: 263
+    role: data
+  license_or_credit: see data/CITATIONS.md
+  status: 'partial: SIMBAD did not resolve: [''M 45'', ''Cl Melotte 25'', ''M 44'', ''M 42'', ''M 1'',
+    ''M 57'', ''NGC 5139'', ''M 13'']'
+  notes:
+  - coordinates/types only; landmark distances need the §8.3 literature process
+- dataset: landmarks
+  source: SIMBAD (CDS)
+  service_url: https://simbad.cds.unistra.fr/simbad/sim-tap
+  release: SIMBAD (live database; retrieval date is the version)
+  query_file: data/queries/landmarks.adql
+  retrieved_at: '2026-10-12T08:01:53Z'
+  files:
+  - path: data/raw/simbad/landmarks/2026-10-12.2/schema_check_basic.vot
+    sha256: 7bd16ba547379f566c460c8ba133e66deed9ee867cac6f31d5a78f000468d510
+    bytes: 3610
+    rows: 67
+    role: schema_check
+  - path: data/raw/simbad/landmarks/2026-10-12.2/schema_check_ident.vot
+    sha256: f9a87ba5a1a04aaaf19e62bdc7f5afd106ae2ef7fbca56d1435bfb3e1a986d24
+    bytes: 1054
+    rows: 2
+    role: schema_check
+  - path: data/raw/simbad/landmarks/2026-10-12.2/batch_0001.adql
+    sha256: 03477415a106e486ad50c32ad7abf9159ec61990ee77e9115cb2319930592f5e
+    bytes: 348
+    rows: 1
+    role: request
+  - path: data/raw/simbad/landmarks/2026-10-12.2/batch_0001.vot
+    sha256: 597fd93e5f4842764560f6c92e3689cc08aaa7a15a48a2ec5a6160a760e6786c
+    bytes: 39034
+    rows: 263
+    role: data
+  license_or_credit: see data/CITATIONS.md
+  status: complete
+  notes:
+  - coordinates/types only; landmark distances need the §8.3 literature process

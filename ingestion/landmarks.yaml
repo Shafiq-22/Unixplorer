@@ -1,6 +1,7 @@
 # Landmark NAMES and IDENTIFIERS only. No coordinates, distances or other values here (CLAUDE.md §5, §8).
-# `simbad_id` is the identifier queried in SIMBAD's `ident` table; `atlas data fetch landmarks`
-# records any that do not resolve and marks the snapshot partial rather than guessing.
+# `simbad_id` is the identifier as stored in SIMBAD's `ident` table, which pads catalogue numbers
+# to a fixed width ("M  45", "M   1"); forms confirmed against SIMBAD TAP on 2026-10-12.
+# `atlas data fetch landmarks` records any that do not resolve and marks the snapshot partial.
 # `distance_sources` is filled only with ADS-resolvable bibcodes chosen by a human (§8.3).
 landmarks:
   - key: sgr_a_star
@@ -10,42 +11,42 @@ landmarks:
     distance_sources: []   # competing published measurements, stored as alternatives
   - key: pleiades
     label: Pleiades
-    simbad_id: M 45
+    simbad_id: "M  45"
     kind: open_cluster
     distance_sources: []
   - key: hyades
     label: Hyades
-    simbad_id: Cl Melotte 25
+    simbad_id: "Cl Melotte   25"
     kind: open_cluster
     distance_sources: []
   - key: praesepe
     label: Praesepe (Beehive)
-    simbad_id: M 44
+    simbad_id: "M  44"
     kind: open_cluster
     distance_sources: []
   - key: orion_nebula
     label: Orion Nebula
-    simbad_id: M 42
+    simbad_id: "M  42"
     kind: hii_region
     distance_sources: []
   - key: crab_nebula
     label: Crab Nebula
-    simbad_id: M 1
+    simbad_id: "M   1"
     kind: supernova_remnant
     distance_sources: []
   - key: ring_nebula
     label: Ring Nebula
-    simbad_id: M 57
+    simbad_id: "M  57"
     kind: planetary_nebula
     distance_sources: []
   - key: omega_centauri
     label: Omega Centauri
-    simbad_id: NGC 5139
+    simbad_id: "NGC  5139"
     kind: globular_cluster
     distance_sources: []
   - key: m13
     label: Hercules Globular Cluster
-    simbad_id: M 13
+    simbad_id: "M  13"
     kind: globular_cluster
     distance_sources: []
   - key: eta_carinae

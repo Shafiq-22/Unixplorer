@@ -12,18 +12,26 @@ from ingestion.datasets import DATASETS, FetchContext
 from ingestion.paths import Layout
 
 
-def run_fetch(layout: Layout, dataset_id: str, *, batch_size: int = 1000) -> manifest.Entry:
+def run_fetch(
+    layout: Layout,
+    dataset_id: str,
+    *,
+    batch_size: int = 1000,
+    resume_job_url: str | None = None,
+) -> manifest.Entry:
     ds = DATASETS[dataset_id]
     if ds.fetch is None:
         raise RuntimeError(f"{dataset_id} cannot be fetched yet: {ds.blocked_reason}")
     now = datetime.now(UTC).replace(microsecond=0)
-    snapshot = layout.raw / ds.source_dir / ds.id / now.strftime("%Y-%m-%d")
-    if snapshot.exists() and any(snapshot.iterdir()):
-        raise FileExistsError(
-            f"{layout.rel(snapshot)} already holds a snapshot; raw snapshots are never overwritten"
-        )
-    snapshot.mkdir(parents=True, exist_ok=True)
-    ctx = FetchContext(layout, ds, snapshot, requests.Session(), batch_size=batch_size)
+    snapshot = _new_snapshot_dir(layout.raw / ds.source_dir / ds.id, now.strftime("%Y-%m-%d"))
+    ctx = FetchContext(
+        layout,
+        ds,
+        snapshot,
+        requests.Session(),
+        batch_size=batch_size,
+        resume_job_url=resume_job_url,
+    )
     error: BaseException | None = None
     try:
         ds.fetch(ctx)
@@ -58,3 +66,17 @@ def _remove_empty_dirs(path: Path, *, stop: Path) -> None:
     while path != stop and path.is_dir() and not any(path.iterdir()):
         path.rmdir()
         path = path.parent
+
+
+def _new_snapshot_dir(parent: Path, date: str) -> Path:
+    """`<date>/`, or `<date>.2/`, `<date>.3/`… if earlier snapshots exist that day.
+
+    Existing snapshot directories are never reused or overwritten.
+    """
+    n = 1
+    while True:
+        candidate = parent / (date if n == 1 else f"{date}.{n}")
+        if not candidate.exists():
+            candidate.mkdir(parents=True)
+            return candidate
+        n += 1

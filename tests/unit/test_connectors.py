@@ -6,7 +6,7 @@ import pytest
 
 from ingestion.connectors import horizons
 from ingestion.connectors.tap import TapError, _checked_votable, adql_in_list
-from ingestion.datasets import strip_comments
+from ingestion.datasets import normalize_id, strip_comments
 from tests.fixtures.synthetic import HORIZONS_RESULT
 
 ERROR_VOTABLE = b"""<?xml version="1.0"?>
@@ -43,3 +43,8 @@ def test_horizons_target_check() -> None:
 def test_horizons_error_field() -> None:
     with pytest.raises(horizons.HorizonsError):
         horizons.parse(b'{"error": "no such object"}')
+
+
+def test_simbad_padded_ids_match_unpadded() -> None:
+    assert normalize_id("M  45") == normalize_id("M 45") == "M 45"
+    assert normalize_id("Cl Melotte   25") == "Cl Melotte 25"

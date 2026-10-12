@@ -106,9 +106,15 @@ def save(layout: Layout, entries: list[Entry]) -> None:
 
 
 def append(layout: Layout, entry: Entry) -> None:
-    entries = load(layout)
-    entries.append(entry)
-    save(layout, entries)
+    """Append under an exclusive lock so concurrent fetches cannot drop each other's entries."""
+    import fcntl
+
+    lock_path = layout.manifest.with_suffix(".yaml.lock")
+    with lock_path.open("w") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        entries = load(layout)
+        entries.append(entry)
+        save(layout, entries)
 
 
 def latest_complete(entries: list[Entry], dataset: str) -> Entry | None:
