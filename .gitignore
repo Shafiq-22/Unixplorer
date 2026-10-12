@@ -7,3 +7,6 @@ __pycache__/
 .env
 *.yaml.tmp
 *.yaml.lock
+# Rebuilt byte-identically by `atlas data build`; hashes recorded in docs/operations/data.md.
+data/processed/*.parquet
+.lfs-assets-id

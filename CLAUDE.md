@@ -37,12 +37,12 @@ official archive  →  data/raw/ (as downloaded, immutable)  →  data/processed
 
 | Area | Status |
 |---|---|
-| **M0 data snapshot: Gaia nearby stars** | blocked: archive host denied by environment egress policy (HTTP 403); fetch code ready |
-| **M0 data snapshot: Bailer-Jones distances** | blocked: archive host denied by environment egress policy (HTTP 403); fetch code ready |
-| **M0 data snapshot: SIMBAD identifiers/types** | blocked: archive host denied by environment egress policy (HTTP 403); fetch code ready; also needs Gaia snapshot first |
-| **M0 data snapshot: JPL Horizons bodies** | blocked: archive host denied by environment egress policy (HTTP 403); fetch code ready |
-| **M0 data snapshot: landmarks** | blocked: archive host denied by environment egress policy (HTTP 403); fetch code ready (SIMBAD part); distances need §8.3 paper choices |
-| **M0 data snapshot: NASA Exoplanet Archive** | blocked: archive host denied by environment egress policy (HTTP 403); fetch code ready |
+| **M0 data snapshot: Gaia nearby stars** | working (tested): 372 226 stars, Gaia DR3, 2026-10-12 |
+| **M0 data snapshot: Bailer-Jones distances** | working (tested): 372 226 rows, one per Gaia star, 2026-10-12 |
+| **M0 data snapshot: SIMBAD identifiers/types** | working (tested): 249 432 Gaia stars matched, 1 538 191 alias rows, 2026-10-12 |
+| **M0 data snapshot: JPL Horizons bodies** | working (tested): 18 bodies at J2016.0, DE441, 2026-10-12 |
+| **M0 data snapshot: landmarks** | partial: SIMBAD ids, types and coordinates for 10 landmarks done; distances need §8.3 paper choices |
+| **M0 data snapshot: NASA Exoplanet Archive** | working (tested): 5 504 `ps` solutions (1 797 planets), sy_dist < 120 pc, 2026-10-12; restriction to Gaia hosts pending |
 | **M0 manifest + checksum verification** | working (tested); `atlas data fetch/verify/build/status`, Git LFS, CI workflow |
 | **M0 data snapshot: galaxy_structure** | blocked: needs a human choice of disc/arm model paper |
 | Repo scaffold + CI | not started |

@@ -17,7 +17,11 @@ unmodified under `data/raw/`, with a manifest entry, before any app code exists.
   when this code was written, so every fetch checks them against the service's own
   `TAP_SCHEMA` and stores that response as evidence.
 - **Snapshots** live in `data/raw/<source>/<dataset>/<YYYY-MM-DD>/` and are never overwritten. A
-  second fetch on the same day is refused.
+  second fetch on the same day goes to `<YYYY-MM-DD>.2/`, `.3/` and so on.
+- **Gaia queries are chunked**: 48 sync queries over disjoint `source_id` ranges, with the first
+  and last chunks open-ended so the ranges cover every source. One async query over the full
+  table took about an hour and failed server-side; the chunked set takes about 11 minutes.
+  Long TAP jobs record `job_url.txt` and can be resumed with `--resume-job`.
 - **Manifest** is a YAML list with one entry per fetch attempt, including failed ones. Each file
   has a `role`: `data` (rows feed the build), `request` (the exact query or URL sent) or
   `schema_check`.
@@ -28,7 +32,9 @@ unmodified under `data/raw/`, with a manifest entry, before any app code exists.
   `source_record_id = "<raw path>#row=<n>"`.
 - **Horizons epoch** is J2016.0 (JD 2457389.0 TDB), the Gaia DR3 reference epoch, barycentric
   ICRF. That puts stars and planets at the same epoch.
-- **Git LFS** holds the Gaia, SIMBAD-id and exoplanet VOTables and the processed Parquet files.
+- **Git LFS** holds the Gaia, SIMBAD-id and exoplanet VOTables. The processed Parquet files are
+  not committed: `atlas data build` reproduces them byte for byte, and their hashes are in
+  `docs/operations/data.md`.
 
 ## Consequences
 - `atlas data verify` can run in CI with no network access.

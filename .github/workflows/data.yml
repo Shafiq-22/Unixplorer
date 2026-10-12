@@ -7,11 +7,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # Git LFS bandwidth is metered: restore LFS objects from the Actions cache and only
+      # download what the cache lacks (key = the list of LFS object ids in this commit).
+      - name: List LFS objects
+        run: git lfs ls-files --long | cut -d' ' -f1 | sort > .lfs-assets-id
+      - uses: actions/cache@v4
         with:
-          lfs: true
+          path: .git/lfs
+          key: lfs-${{ hashFiles('.lfs-assets-id') }}
+          restore-keys: lfs-
+      - run: git lfs pull
       - uses: astral-sh/setup-uv@v6
       - run: uv sync
       - run: uv run ruff check . && uv run ruff format --check .
       - run: uv run mypy
       - run: uv run atlas data verify
+      - run: uv run atlas data build
       - run: uv run pytest -m "not live"

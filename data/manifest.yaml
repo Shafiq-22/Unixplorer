@@ -944,3 +944,4279 @@
   files: []
   license_or_credit: see data/CITATIONS.md
   status: 'partial: KeyError: ''source_id'''
+- dataset: simbad_ids
+  source: SIMBAD (CDS)
+  service_url: https://simbad.cds.unistra.fr/simbad/sim-tap
+  release: SIMBAD (live database; retrieval date is the version)
+  query_file: data/queries/simbad_ids.adql
+  retrieved_at: '2026-10-12T09:50:08Z'
+  files:
+  - path: data/raw/simbad/simbad_ids/2026-10-12/schema_check_basic.vot
+    sha256: 3b3646f53d59b3dc752ceaf66e43ae19690793248a6b8a28bfdc3b28610e5fed
+    bytes: 3610
+    rows: 67
+    role: schema_check
+  - path: data/raw/simbad/simbad_ids/2026-10-12/schema_check_ident.vot
+    sha256: cad6683887c8f0cf0917db315d2fb7ff6d087a260d04dbe9d1d6ca16d3232718
+    bytes: 1054
+    rows: 2
+    role: schema_check
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0001.adql
+    sha256: 01a91d6fc70e6e65e95bb60c4cadba759b3661cce04c6f6544673b0bd7305f03
+    bytes: 30231
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0001.vot
+    sha256: b27e5b3f99db6b117084e9ff8370b070e005eb5679f260c9d056df2c2794eaa7
+    bytes: 826279
+    rows: 5531
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0002.adql
+    sha256: 61a82d5cbfde77a6cf883822de33aeef20dd9136864418a956a517eb20d6882d
+    bytes: 30587
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0002.vot
+    sha256: f2c29bcfe0ec83a56188ceb0ecdbea72e237fa9b71f52a5cea915045da07c80a
+    bytes: 856563
+    rows: 5685
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0003.adql
+    sha256: 7cbe3a4c83e6465244dc6922e77cb09cdb92200f0dc9b87757c39a56dc615433
+    bytes: 30405
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0003.vot
+    sha256: 40dd9fa6040ef6469d3dfe39da0b85f471c30c94085bf6d77df7d0616133fe9f
+    bytes: 918257
+    rows: 6142
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0004.adql
+    sha256: ae0a6bab37701c923acd63eaf25ee3d152faa4616bb089197b137641e779a36d
+    bytes: 30378
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0004.vot
+    sha256: 77bf132d745f7862eb19da4be7c56e7298264f2955079a1dfb5dad8a3828cea4
+    bytes: 940688
+    rows: 6318
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0005.adql
+    sha256: 37dce74731fcaff0504ce09a9d30ac73ffba7197f952a82cf66fff4340464133
+    bytes: 30438
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0005.vot
+    sha256: 0a20a06fa635597d05ac715c76d2422a4ce7bfb0eee5a5d0ab0242e09dca6657
+    bytes: 938607
+    rows: 6283
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0006.adql
+    sha256: 5af7153c9af3c1e93d36e56306e8f3dbbcab7d5eb5c755e2c40bd5937a5a27d8
+    bytes: 30505
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0006.vot
+    sha256: c767ca0f4988c56db5a6d5b2ebb210053d9e6b887cb536a8fdae458314efd186
+    bytes: 865675
+    rows: 5767
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0007.adql
+    sha256: 837284d26ea5c5dd88a08fb1acd1c538632a99ff82a1ebd03e3e1c85aa586d49
+    bytes: 30941
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0007.vot
+    sha256: b97aeb6c55201542a4c7b8ce75e8065f6569102f6b137ffc65270233295bc515
+    bytes: 813119
+    rows: 5335
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0008.adql
+    sha256: fb528ba20ba159ebbf511d44694ce9723b83756f5deca1f2f0439caa4a44be53
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0008.vot
+    sha256: 0410e1995b066809b20ea2a94790bafbdeb586912f6d3a9c31a5abd3e81ea12e
+    bytes: 770614
+    rows: 5032
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0009.adql
+    sha256: 89e3f87e43fbc73fa97709f8265de37e0c0b85810ffe39760914ccec29f0268a
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0009.vot
+    sha256: 2ab3205c47e43a13e53217e46c723b2a4cc4b50d34870aac4336462964c4a4a4
+    bytes: 842203
+    rows: 5570
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0010.adql
+    sha256: 1425746243c4e99c5809caa055db10d0ae2ac2e7e0fa00c050a147fadc2ccc6a
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0010.vot
+    sha256: 0a783c63f4a625f88f71d7e7a8824ac20214ce7057c1cd4f54fd6a65edebe758
+    bytes: 771966
+    rows: 5031
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0011.adql
+    sha256: e00f96922fb309dba5c3d82ea4c9326101b2f081334aea1179b8cfd32196770f
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0011.vot
+    sha256: 2389d61f213d437361b5cbf9a69e834266ea9815d51277769751b7f39f5f3de3
+    bytes: 755432
+    rows: 4927
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0012.adql
+    sha256: ad0cec65de4fce80b89a874aa0eb9c9d2fcf9b6612b0307679a98b266747befa
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0012.vot
+    sha256: bf6a7653c1f226d7d2cf09ca969362213ba7ee1882b4279fed8d83085397efa5
+    bytes: 737480
+    rows: 4806
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0013.adql
+    sha256: 965ec0263133dce52f26e05d3f5be8dec4fa8aeffe571c87930ce49b6731a88f
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0013.vot
+    sha256: 2d425ea05da3cc815e523dbcd4f9cbf5b0df912529cb9146ee9fa0d46017fae4
+    bytes: 786043
+    rows: 5131
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0014.adql
+    sha256: 33e1e77c09582ef4ae3a206f0501622388c77dde998d3c56f171da38e6d7e3ff
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0014.vot
+    sha256: 5d0137ab872ccf9443bff05409e45694af1739e9bb4ea5e0b3f97181b5eb6c4b
+    bytes: 747522
+    rows: 4863
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0015.adql
+    sha256: b20a312fca4edd01d793b91ea6ba0a55da29588fa7d606fa922185f9c350d507
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0015.vot
+    sha256: 9227948c73a5d4d4aef1839daa67ba87b3b7dee3bf65f1aceb6f3152ab50b39c
+    bytes: 719373
+    rows: 4647
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0016.adql
+    sha256: 58a8cd27d6b97e0d3343c8e935487b273085ebaf737d8199af8d1cf7eb02321f
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0016.vot
+    sha256: a6533f56d5f4cb461e63bf78ebebf9c9650f6209edda31d51e58ac216cae5aca
+    bytes: 799949
+    rows: 5226
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0017.adql
+    sha256: 75ae42ed867b78369e34824e0421af1b27d70f8defc1872a7be69bdb69ce0428
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0017.vot
+    sha256: a125f8232f069286c821f4b05b6b5f36001cd1e03641a3c042108c042d153af9
+    bytes: 803999
+    rows: 5242
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0018.adql
+    sha256: d5872003e7097a5656ef4b22972ca3fe9c4d5fd69a937258e5d41352f94029eb
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0018.vot
+    sha256: b4e554a3ffbb6c16f8984d702b146b8360131f1fc2a6ca48651429090b5307b0
+    bytes: 828841
+    rows: 5417
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0019.adql
+    sha256: 1e0a400b0dad51249ffb5993f5236ae9047cd28eb235c298065711aa6f8de82b
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0019.vot
+    sha256: 092a11da6308095b435f17e34c437df57fea0543ed1c8810530655a04893c57b
+    bytes: 760035
+    rows: 4932
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0020.adql
+    sha256: 0db67e97022bbc8d65b3667fecfd0b90fe9dbf66f92a02e6930660c3f50db035
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0020.vot
+    sha256: 5f5e743698ed7dbdb18ebadbbf3afacc6afe2a12a40a7f07df0115444dc321fc
+    bytes: 824027
+    rows: 5413
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0021.adql
+    sha256: f6ba0f9715876f7883927d520234de926e48e5233fc044325bb19d301ff68a22
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0021.vot
+    sha256: 7fb0ff2de393b9b60db0c7603b32ef7940649872bf5c10f1dfc5e545bf25b56b
+    bytes: 764650
+    rows: 5017
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0022.adql
+    sha256: 9db449e5ad61c623f38a343fc2881257e532e0c1b66c822582b7aaa11f71313c
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0022.vot
+    sha256: a54043f5b25d6f407b1be7fe19f1e7808b5656f3ef6c5e9f9d50e0de71b054f5
+    bytes: 643892
+    rows: 4144
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0023.adql
+    sha256: a6c5b9b7b10860ed2711119c45ea3a52f334e7f86bf1d8dfc8693c2c5a568ca9
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0023.vot
+    sha256: 527352a9a579f7b1d7554ee7e0887f2382219e8b3d0499ce7a16fa24b49b8e4c
+    bytes: 735782
+    rows: 4804
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0024.adql
+    sha256: d9ebdf2c749c45a3df2722884ce6c7a7a10de29c2ab5868cf9d8f3c98649c665
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0024.vot
+    sha256: 429573959b020ea7a07cdd6cd8ecd058cb43051a551eb35f936f997d4849a861
+    bytes: 747884
+    rows: 4898
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0025.adql
+    sha256: 7f38ec1e7382d7cf347e85183af7b234e83a0b30566ecf47edf6b04a0262cc3f
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0025.vot
+    sha256: d6e3692870555cadb362b275551925840918431093e74c4d786c81e16aa94e43
+    bytes: 796004
+    rows: 5242
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0026.adql
+    sha256: 47e04726f62fd33839be2750e7a6db43c35cdb6549de6af4a3aed9eebde350f8
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0026.vot
+    sha256: aec573f103d679c9d6f261ae71b4e673dbc4cf5c76966424d7191e4dd32ebad3
+    bytes: 706296
+    rows: 4581
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0027.adql
+    sha256: 1d533850f3f2cbb5333ce6b690d816ea3c13e5ede9e6273235b791c479162d8d
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0027.vot
+    sha256: acdd32c212fbdd8a1c5564f3910e9af1376878a8d3909f4396d0edd7d1b13505
+    bytes: 900508
+    rows: 5921
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0028.adql
+    sha256: decad81dc9aaafd6ec9527836c20d72a327ca98a05fce00d71cd61b12b2f7564
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0028.vot
+    sha256: 6c932ddc26f3afa7bc4d6c69fad565ea43055f2ede73dc0db3777b4127a403bc
+    bytes: 845124
+    rows: 5500
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0029.adql
+    sha256: ac8a8dfc9dec7720472d8d574486150645e7b992ae8302dea8113b7a2088d436
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0029.vot
+    sha256: 4d883fb8eddfe5af21a894cd15afbf69a2afc8963531db195d9cb2f862646d96
+    bytes: 940674
+    rows: 6193
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0030.adql
+    sha256: 4a3b8c07a17a2d7028a987ee2fff688914153aba2eabd77fe24b6d289caa8cfc
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0030.vot
+    sha256: bb9ac59ac557482d707c134ee116cba28f8a0b2e42308b75cb4c33f60b23a445
+    bytes: 951712
+    rows: 6235
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0031.adql
+    sha256: 8dcc0a5de2dfd82b801cd13c52f477a25165e9b7f32ec37d4b1eb281d9d37ea4
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0031.vot
+    sha256: 9e850efe93305c8a5ed4c6c3fd509a01010f08ee6b902a67b7809d75aedf12b8
+    bytes: 971565
+    rows: 6397
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0032.adql
+    sha256: 228776f5b5c25374f45a284bc1b7e5d0da9e3286740175834b76e4edb33d6c94
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0032.vot
+    sha256: 830e995635bd38bb20fef0add18e678911d6b4719f18fbdf751713acb8b5b7a3
+    bytes: 895767
+    rows: 5850
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0033.adql
+    sha256: b7015fac6bff6fe2d31fca0c107f22e9d848b4dffdf4803cb85568aa88d72434
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0033.vot
+    sha256: dc99f38523ff774d143b3669d463cec94ce3513a398e264c2d56bfafb38e1093
+    bytes: 1007161
+    rows: 6672
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0034.adql
+    sha256: eecd12b5b7dae186b65b7b079841943a8ea07a726f47e13608c92171f646367c
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0034.vot
+    sha256: 6d6eb61651a5f194524aa6674519cfc3179ac379effafc9045294a02af43dca3
+    bytes: 975811
+    rows: 6426
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0035.adql
+    sha256: 68b09b1af45b1579feb06b635089ad58cd1082a2bc1bf63c724d60da86086bd7
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0035.vot
+    sha256: 1bd4d3b0611f67f1b7eec4fb42b2def57a156cf7884ffe08ef04f1abf0067366
+    bytes: 944696
+    rows: 6224
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0036.adql
+    sha256: dbbab2995a8906b63b7f99084a4bb5432ffa133ee1f5749de18b4fc0ee46dfcf
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0036.vot
+    sha256: c23eb63949f560667d54d11444252f6ff9a4821d9c2f5f556ecb6200e55e0b02
+    bytes: 971261
+    rows: 6405
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0037.adql
+    sha256: cfbeb51971d17ad31d588c098848e0b2023d456848b14e532c7c9256f0bee9fe
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0037.vot
+    sha256: 2b42662d8558111fd5670e795b665d6122021ee14c1adfd10abbeb9263dbea66
+    bytes: 971874
+    rows: 6401
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0038.adql
+    sha256: 57ffcfb32505cc7a146f461cdb7089432031b3b2130fdba00b847045b2f0fb3b
+    bytes: 31189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0038.vot
+    sha256: 29b4518f56fb504ae40ec53ee360d07c0c8693835c3590d7cd37568c5d0ae425
+    bytes: 951098
+    rows: 6261
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0039.adql
+    sha256: c12620bda2fb921b87eba7ac001f60b604e12339203516f37d3c1824f5b411c5
+    bytes: 31207
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0039.vot
+    sha256: 4e00b4f4a4a3a9ef75e315d7c6e28bd370a1b8b96ab89159eb1abf9352e0221f
+    bytes: 825772
+    rows: 5363
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0040.adql
+    sha256: bab3e4b5bbf30dc2ef070304f78859a4dbe12f4223af469b2992a18c4eccef3e
+    bytes: 31294
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0040.vot
+    sha256: d311af569e8a452c4726523073030d553900f35833c2f806af0e6786bb32e495
+    bytes: 746973
+    rows: 4850
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0041.adql
+    sha256: 9a627bbe5a48e5ac332578f709cde38eae0c2592a5e86791ab86e1fd575621fe
+    bytes: 31331
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0041.vot
+    sha256: d265d6a74436ac51ecd51da9c1b190602d5ef7f2d0a2fb15c200fc6d25f479f7
+    bytes: 780648
+    rows: 5061
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0042.adql
+    sha256: e1706d9ba2cbd3e1054232aff5e8fd8170913199b1b92f2721fa0ac2d2d7056d
+    bytes: 31235
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0042.vot
+    sha256: b4e0c59c26acf9eca91f66e9f0c26eb8492d8ed70efe450ea9fc63f173ffad65
+    bytes: 811752
+    rows: 5275
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0043.adql
+    sha256: 3717cecda06a7cb0a5b136695d681abfd2ccc0be5c435894d81ec43537a5cb1c
+    bytes: 31207
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0043.vot
+    sha256: 9c7a603827b4aed2109db466ece59028e4b51796c17e39201cc0a5bbae7b706e
+    bytes: 809014
+    rows: 5305
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0044.adql
+    sha256: dd127bccf2959ad24085f4bd7dcc1f46b62a65ab2180e81f357249e3e89c2aeb
+    bytes: 31283
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0044.vot
+    sha256: 31ed812dd822e78528dedb8003d3b4048f5142df0f635dac1d7dc9f876e307a5
+    bytes: 789355
+    rows: 5150
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0045.adql
+    sha256: fd3a69994ac5e47b0e3da6bf77ae130d982e04377afd4411fb4de4ebc6d27a07
+    bytes: 32060
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0045.vot
+    sha256: 8483d8c02ced3d4e1e8200360e14d660f8b589778cc19fe9ba4d8de620e97431
+    bytes: 899827
+    rows: 5854
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0046.adql
+    sha256: 7a2e6381074c5b7e333f9c9f09f7ac68e02e62986544f54dc23a7535fe7fe637
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0046.vot
+    sha256: 996ed0a9bf87b20e35792f28ac327d5c1ed3b17b2ece4c37ba6aa76c490c300b
+    bytes: 815696
+    rows: 5256
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0047.adql
+    sha256: 9f7fd6aa845e09c29a1949645e4bde24be3eb86282a3059a2f4df22cd5ef7410
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0047.vot
+    sha256: efe0f413f8b263ebc5024b0594586194df84c79f217616612c4fda15b0119b34
+    bytes: 815976
+    rows: 5304
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0048.adql
+    sha256: 1f3d5b51161afae4233500935590283737b5a6fbc1dab738e0278049f1ffb5c3
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0048.vot
+    sha256: a63945b05435a4d0e6ce25ff33a7691528e47fae64dd7e7e952f714ab9a8aa48
+    bytes: 824560
+    rows: 5335
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0049.adql
+    sha256: 696b0b591d4001ff8396b283a5b5d1ef3554586de50a0393256c95119e5e2e9b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0049.vot
+    sha256: b8c9afe0a7f84d431f3ab4349cef651653412dc2df2cd8072927f67bfca67373
+    bytes: 776131
+    rows: 5025
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0050.adql
+    sha256: 0632d9b2a8193645e1f0ec6f0b7d0a1497a7e3f76782c840cab04bc1ae10812f
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0050.vot
+    sha256: a1e457b942862fcad0bc03e97883b8829d3b52c11b46833321edf305f184bf15
+    bytes: 787425
+    rows: 5086
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0051.adql
+    sha256: aa0060512b2e1c939b6580b3500935aa320a2183d5e42c0cc95db666dea56631
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0051.vot
+    sha256: 03c47aa1321847663c6736fd5401e0d0e8408f9a442b661fe8082ca2f74941af
+    bytes: 921512
+    rows: 6019
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0052.adql
+    sha256: e88c4369559dedcf8829a1e0a8161c0d0699af85c708bee679da1d852f273c4f
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0052.vot
+    sha256: 6dcdb108be1a9727f774ff9173bfd8cedc88ff9497e3f792b2e9f8530c9d2992
+    bytes: 925570
+    rows: 6051
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0053.adql
+    sha256: 8dfa0e784107b150c8aafa853d307b0cedc7f78c609c94ca747c6c3f1917be2b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0053.vot
+    sha256: 1426bddddc5ddc40ee6cd230b7c0949108f6127bd7a20fd1e0454d1d707a517c
+    bytes: 885429
+    rows: 5720
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0054.adql
+    sha256: a7a6e9d7db99c902eb80af89beefd02a0089d0f230d69a0018c21e87dd977d58
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0054.vot
+    sha256: b5d8d7337c136c364109a5b240ec891d03ebd495e062aa15e312cdbb93aaafdb
+    bytes: 933118
+    rows: 6061
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0055.adql
+    sha256: 0a27058fb6b2616bbc55f1bc5a88b3ec42c09e0639e6e8ddc6027a34d9f0bbcd
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0055.vot
+    sha256: 9e8f0b05ee9853cddbe937624f3e8f291d7b3fdd63f4efa01cf73689b7b17031
+    bytes: 894305
+    rows: 5787
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0056.adql
+    sha256: 38f30ea2cfbba8dda78b346815df22d410d3b7d0c2d423dd294a3dddfbe4a6a3
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0056.vot
+    sha256: 8d4f06b4654f871cfc4601db3e065eb1113556a1d1a86710fb7fca2365cb9234
+    bytes: 974170
+    rows: 6387
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0057.adql
+    sha256: 012cfecdeca0dc5b0c3a548e7f1a378c54bda3b0a923d8c27e62c6e4752a4fcf
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0057.vot
+    sha256: 35a004cf9e7796b6dd28a99267422e1ed22e08b6412f9e8f2551b26e64d0a9cc
+    bytes: 884571
+    rows: 5719
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0058.adql
+    sha256: 9a71c5c47f55fd643b8a37ed6576126a37a2f155ff656d035f14f3c0bc73f5dc
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0058.vot
+    sha256: 1344956904e345eb96d76b170599d5290a18d5780f5a43e98437cac3eed68a62
+    bytes: 928223
+    rows: 6011
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0059.adql
+    sha256: 777015927db844b6979e6b2d07e982ead5ae28c47c81191dd63b84d5a9c6f67b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0059.vot
+    sha256: f215168fb91c78590eee830913a5a50c80798c5e103bd78f64f8afe0bfc78774
+    bytes: 873306
+    rows: 5601
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0060.adql
+    sha256: 0f7d0b11a4bbb25b5f8d17c8f86bc5ed4a790bf74920b7567f5df60c28fd25c3
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0060.vot
+    sha256: c15b456affe93a0c38654cc6fe1f10a45d620d895d6c1515a709e5e35b2f58f6
+    bytes: 953817
+    rows: 6188
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0061.adql
+    sha256: a93663cdab2a293f7c992953693dc4b60cf4dfb1dade34b216f952daef918f5d
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0061.vot
+    sha256: d176730578368d07057a8162a2f4c0a40f72808b592f96af98d1bbe2c8e1a7a6
+    bytes: 865795
+    rows: 5558
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0062.adql
+    sha256: a0b23465b5fe5bdb731228f1dfbed83b8ec940c2591233444d03719d56a84e53
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0062.vot
+    sha256: 5db76a03645e4d8029d3e5a6b36afecc97b36277feb21fda7201bc10402cc8b9
+    bytes: 901922
+    rows: 5816
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0063.adql
+    sha256: 65831dca0433b383eb7769da958edc8d26d175bfc75c2e64eaccd160498240a9
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0063.vot
+    sha256: b67e6f34abcdac474039a8cb844823df5aa839db67ae19b590b6b9cb41b148d0
+    bytes: 932334
+    rows: 6018
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0064.adql
+    sha256: 0b8a9979d62b84e8b7f464b71625292325d93ce8c86bf0e372eee10c9a97af3c
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0064.vot
+    sha256: a6e373f8d44b8cc991a12ae054a6a99f592e8422c944ee35aa85b6a4336733cd
+    bytes: 973577
+    rows: 6291
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0065.adql
+    sha256: 359aed315611167f050076a3ae9e574824582cee45c42d84d473eab61026270b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0065.vot
+    sha256: 3299f907eb15c80981a3fe757f66f02aa11701d21b52e48f2372d9189014f86a
+    bytes: 1016826
+    rows: 6648
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0066.adql
+    sha256: 897d5479d657d84705a8eaa5dd1451b19dcfa4b87bec72313ed6bc8bab8a6c72
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0066.vot
+    sha256: 30d1273ccfe451a13c7102e0c8e4a39376d6926daab947cf9f911ce9cf0d549b
+    bytes: 1022030
+    rows: 6659
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0067.adql
+    sha256: 01672d95ff6c08942c56082ff84add9329f76cc315414fc712d8feab2c3b18b4
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0067.vot
+    sha256: 306206f0efb8cd77b80d007a5309aa64adcf0df7e651e054d249b39450570f1d
+    bytes: 1070443
+    rows: 7025
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0068.adql
+    sha256: 906c9e96a82c34f39f73982c58a0458017fe323eeae24f4eb03aae574d8d0d40
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0068.vot
+    sha256: 95c4cf4ca75cce1396bcdf1541ff6ae0b8a827b24e448776d90c0bb4c515128d
+    bytes: 1004273
+    rows: 6556
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0069.adql
+    sha256: 0e1a193c479d725601174999643223b08d440c150d0f8b62addfd16e385dfc22
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0069.vot
+    sha256: 7aa2b65e9a5065b5c344b22549d3c8e3cca56ae85133cac43fadb0a95c1b7437
+    bytes: 1002481
+    rows: 6508
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0070.adql
+    sha256: 32f4b64756156b1738bcc85bcdbefb8c5b980a593d46deecec1be448a4c82db6
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0070.vot
+    sha256: a350b08fa94ef27b7e9d171f85d7837a354878a3cd71e90b98e2b6e6cd72fc0a
+    bytes: 940606
+    rows: 6074
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0071.adql
+    sha256: ccc395db4106231b691b0f997d1547253477bb4ff35c171fe5699fa61f90ae96
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0071.vot
+    sha256: e5cc2947ca173976fe2dcc363ef9591706f2e5f726171bb6234a8e5f65c4a52c
+    bytes: 862500
+    rows: 5561
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0072.adql
+    sha256: 77e72bf3ece8aeb31a97faa51156425235df75b978a6c559564bd126dacfb291
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0072.vot
+    sha256: a7b0659801c37d07942feba4d6478c00cb06c4545c98bf5ec2b222e2c1cc53b7
+    bytes: 831771
+    rows: 5371
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0073.adql
+    sha256: 65a3f9cbba39e0b4c9e0a03d814891a85028abb5a69c6aa8c78191e0367ed04b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0073.vot
+    sha256: f07a4f0dc728c9a5b50dde64c3b74296e8db7d86608d6d0403f74c22c64a8948
+    bytes: 857796
+    rows: 5530
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0074.adql
+    sha256: a3299d818150ca0375eca2b7aae5a45541a2d95f88050ca48eb933023fbd35f2
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0074.vot
+    sha256: 110f06ef882c9ae2e50f37ee9cbe4cfcf20c9dd38be8f46f72c8c0f8d5da0771
+    bytes: 920277
+    rows: 5963
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0075.adql
+    sha256: e0e0da72c042310c87f3c1dfb3e30d3e547cc570435f8336e351b53244f916ac
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0075.vot
+    sha256: 5e12d3974a1b0ee557724a43656f0d30b26082808c6a04edd7b5aa837222bb4f
+    bytes: 875289
+    rows: 5655
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0076.adql
+    sha256: 464bf72b6a77508b90acd9a17f3ec6bac2c52f5b6e8ef05f8a806923f516a45d
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0076.vot
+    sha256: 9a1ae4aed5fe2f5dd7894998320ea03d69320e557caef8cfbdc358d710f4a364
+    bytes: 759268
+    rows: 4894
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0077.adql
+    sha256: 5f3500816047fe6f7129acdcbfb4207fc35d8132fc96c290049f4365a4cd6800
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0077.vot
+    sha256: c5df0f5217d4dafcd04da6bdbe220284b009059e46bf21f7f8fd630ca005c7ee
+    bytes: 733463
+    rows: 4724
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0078.adql
+    sha256: 72666481efba04fe326c908d7964c932fe1b835644cb25d5e9de6a4427bc079a
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0078.vot
+    sha256: 54d5d029ff5227c0db1e252996d3855731e8c7e3cf183ec450691e9d4713c543
+    bytes: 503537
+    rows: 3143
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0079.adql
+    sha256: e7b1655b780b05ec29cfed19a8693f0f541cd8a911a5c8eb2ca9323a6ae4e1b8
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0079.vot
+    sha256: a7585f4fc94d3cb750a96e4dd6733ebee7e88d3de3e6d3213ee3d6a2d53a1e48
+    bytes: 623917
+    rows: 3981
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0080.adql
+    sha256: 0bf97b8d0f6ddd107f35ab33738db0376b4bcfed60878eadbd2a30fe1cb9683d
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0080.vot
+    sha256: aad1c7181ed704d54b0bbadbf70e073c017cf292396f05107032e2da32706f5b
+    bytes: 412696
+    rows: 2565
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0081.adql
+    sha256: e0677c72331dcb72d332543c9d2030b54ce142a11afc24b44b6fcbef7915511d
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0081.vot
+    sha256: a565634291cbcebf42491e605ca82050f3ada437245b2c1c6d54f4fd381ff3ef
+    bytes: 257911
+    rows: 1499
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0082.adql
+    sha256: 5186a90298b0fc257fd52aac4811473ee0ceb5c6bd28666ca454e44113d9d439
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0082.vot
+    sha256: 94b2a4dc4eef31fd3e1fd5e918ae29f218a4ed40318a23a25c7d1531f802e085
+    bytes: 449531
+    rows: 2795
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0083.adql
+    sha256: 7127733becbca1084cc3047e130f026344bfee1828aef95abd9c704497325ba5
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0083.vot
+    sha256: e8bf920dba7bbe66569ce25e9fd17f4b30945b2b5e0ac12b3c95305eeb82d709
+    bytes: 500141
+    rows: 3136
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0084.adql
+    sha256: 319431a5ce583600cf28117e804392695c3b57a1c11ecb0d095b6f0742c0f177
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0084.vot
+    sha256: d664009fafc76efdbaae389c4198db47dead49bb06736539f116b9384d0249bf
+    bytes: 453552
+    rows: 2828
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0085.adql
+    sha256: f11661740b632ae91d1f78842a4e4cedd2156010fef5512deae7d63b38b3ec05
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0085.vot
+    sha256: 91b40bc715b6e7f968a7d8db03a2bddf46ada3678fe3b3ae04ca9afb029878c4
+    bytes: 713187
+    rows: 4543
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0086.adql
+    sha256: 9fad560a65dea718fb0c2731eb7ec7bb5baebc00575672733ead7adbdbd4d560
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0086.vot
+    sha256: 3f45d334065fa6cda8d0cee362a54f6a6280ea2a3a8dd6f5a07d6ea64933c613
+    bytes: 700378
+    rows: 4416
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0087.adql
+    sha256: 5f7b0f58c57594830ec08856e97cea609e6b45d090298418f4b52504a2a1da27
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0087.vot
+    sha256: a93c61b05b6d977d4c027839d2bb28afcf5f2108811e2bab032dbd0bd7967b39
+    bytes: 712232
+    rows: 4547
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0088.adql
+    sha256: b7b1344c0a2b65c91eb0ccee62572a7f63e59a17ec34c33ed8f3a0bffc3f3eed
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0088.vot
+    sha256: 405ec3382396c333122dbac7de043312c7f2d40a9762e85f9732426af65326eb
+    bytes: 769651
+    rows: 4986
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0089.adql
+    sha256: ddae068f961e5acaa81d0dd24a182a044eab9e7aa928e9e96a461364f63f494f
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0089.vot
+    sha256: 7e759218814ce0d19117db7cb42abcae5c34d63cba09e26ecffed1f5e239d244
+    bytes: 699565
+    rows: 4459
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0090.adql
+    sha256: 1bfa17a7a94887e151429d27cc1c6e5133bafb8ae177fd7497809167684f1e36
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0090.vot
+    sha256: c9c694bb9f504f32c702a0e49d67be8be6a61d97c20e06df13e558dad74469a3
+    bytes: 679281
+    rows: 4294
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0091.adql
+    sha256: 25ba2f109bc0816826b0ced04a4894e9d8513ce60eec2fab97393a72ba6d1d2b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0091.vot
+    sha256: 164c0b7bd2a36f74d3186c1ade1a4578cd35d0bc10d55680fd1dd6df1db7c1e4
+    bytes: 720906
+    rows: 4585
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0092.adql
+    sha256: 1b611f7ac9b986bc19fe6fad6af4aa39189cbb8c0c1f1d91235d5fad629cb949
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0092.vot
+    sha256: f93caed9fdea39b97303d35c4730b1a57e1e0cda9a0b4157dd3c95e1f4263101
+    bytes: 791036
+    rows: 5026
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0093.adql
+    sha256: 25a91a772b847e7fd16a900c1f62f04b37ddf27cc7cf8ef74a1057d280343137
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0093.vot
+    sha256: 6d85e95ec6f13e4fb107557fafc43c4a31626495d03abbb8e40dbb439f91d425
+    bytes: 709457
+    rows: 4487
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0094.adql
+    sha256: caf2d1250754494344b957ef89c8650aa420627554f716bccba32c56ee5bbb65
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0094.vot
+    sha256: 17bcc35177cb052d7fd203c289c293f7798f552d98791264cc3b46221aac018a
+    bytes: 341070
+    rows: 2075
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0095.adql
+    sha256: 72f285e4a944b90372e1cf8f00dd6dce503fb1e73b2fca3e7af56d041771dc4a
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0095.vot
+    sha256: e8c511501544c995c2b1fe0d04777d7168a40b505964c07078c63bbf004b815c
+    bytes: 277045
+    rows: 1661
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0096.adql
+    sha256: f30892e1c5c8adb2de877505892cfb27cacc0b9f53f6f58457f2a062a91ed920
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0096.vot
+    sha256: 93522799c2ab148433aceba31190bba5be06beea21337cf7c4bd7b26c6229b6f
+    bytes: 649617
+    rows: 4144
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0097.adql
+    sha256: 2e3e51a992620d5f650670c844dd8a4c4ff93cb6174f7f21cbdb1bc5f649558e
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0097.vot
+    sha256: a8b1abce4a0e9ee78ee9959c0f787037b949750c3ab4ac73ab11c2b85fadb4ee
+    bytes: 767092
+    rows: 4911
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0098.adql
+    sha256: d10fc712498fc2bb727b009448aba51dbf205eae58d37c6b6b2e03d17fde2826
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0098.vot
+    sha256: ab2989c854cd5075dac7c2e9942da038e025333e87012f1819ae38075677af0b
+    bytes: 682539
+    rows: 4345
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0099.adql
+    sha256: c02690c3619a47e16e9fd1e2951c6d218c95b3f3bd41325f12c180e9e54f6e7d
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0099.vot
+    sha256: 68bd23c8b2079b3aee5e067d4039032af1f2bdcef9bb1256ab25577358eba7f1
+    bytes: 478878
+    rows: 3018
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0100.adql
+    sha256: 7b513489d8126a3b4075fccce58abe05e0616564e6a96f27a75ab82327366fb1
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0100.vot
+    sha256: 1ce9f926e9e67814991c6be211e62acfef4d0de359f057f7ca6630523b24cb68
+    bytes: 714166
+    rows: 4541
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0101.adql
+    sha256: 2d42f16ab0d36512070177c80d5f6bd88f6bf546f0d4b3c9c19ca16928447d04
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0101.vot
+    sha256: 0e5406becda47edd5ada22eced6ba9e80350955fb424cf56b3a1e60398828755
+    bytes: 742059
+    rows: 4768
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0102.adql
+    sha256: 8e1288d0434eebc7c2c3aae9f297469be2198dcbbd84ccf7cffa0861a65c340e
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0102.vot
+    sha256: 5561a1a4201e74c3836b9713c4e32502a69fb1c0bde64009bff998131b423a89
+    bytes: 759377
+    rows: 4856
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0103.adql
+    sha256: 4e7a5d96f1a4888f01cd470592bd59ccd5408c07f8cdb6d7b2f14e666d6628cb
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0103.vot
+    sha256: 1e28acc70356c040f70c8e2a6de412f56146c9ccc397d7de10d909c580256717
+    bytes: 804154
+    rows: 5158
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0104.adql
+    sha256: fe7174db56f41b14c5489516d2a7431183be1dfe5c5e3a107f9f9dd18e1a8c73
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0104.vot
+    sha256: 7ddbd8bc33ad1d718391280a838c45c677d9c0861efe9da72e4851ff23b3b0c9
+    bytes: 820912
+    rows: 5267
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0105.adql
+    sha256: 6eda3521aaf53abc49d63a0f05f1b26fb9bfd2342ec7ccdcf2532a6e8548b6e2
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0105.vot
+    sha256: ac811e1836cd8d49c606e9a646092724e339c810bc6d71323298e8e71cecfa91
+    bytes: 772816
+    rows: 4961
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0106.adql
+    sha256: 6e8578519ebf88a46b9fd42b6318f53ff625d675b046d4ad0a27913147837e28
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0106.vot
+    sha256: 73843091cd15d8b6693383f899a67c0c73c46130cef7cd3d254ed6eac435e357
+    bytes: 860586
+    rows: 5598
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0107.adql
+    sha256: 4d44beb50b655d8b71ae23cd85f8041354281673f06c1e852fd38965bf3b160f
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0107.vot
+    sha256: 8cc2799ea7013e988d074a2faff2c2f5f8de4f0aecf5539414e0a908ba8857a0
+    bytes: 957932
+    rows: 6361
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0108.adql
+    sha256: 5e18811571ed39a107619dc86fd321074b164e239a1089a3cb1c9c771247e336
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0108.vot
+    sha256: 248aeee6f03f89580b8442d5b19e7556ea0ac355615cf2c97a90a27bc97aa4a0
+    bytes: 875142
+    rows: 5743
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0109.adql
+    sha256: 0d9325a03d1ee09da26abbf05e9d07fabc7b89e494dbed4dc70597c3c0c4f917
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0109.vot
+    sha256: d6d11e6507f1ce200aed1de3ecf43cf00a5a035496d14f190c4857d59ba2ac41
+    bytes: 893310
+    rows: 5876
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0110.adql
+    sha256: 240fa301e925e69413a3522cd97c01bd3ce2e364b1bd2578796a5ce934c2fab0
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0110.vot
+    sha256: 9ffa1b2fea5c9929e31bc8c986eaddd5cd2312de28bf79aae7579033ca9f4ff4
+    bytes: 886920
+    rows: 5815
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0111.adql
+    sha256: 75f29a568d192f95515e093c49258d064c2389ee8b44472608bc265e17bb2932
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0111.vot
+    sha256: 0a9216b97eedada0e33c54f44dc8d30cc8a5997ca336ea40daee97fa653498b3
+    bytes: 934869
+    rows: 6181
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0112.adql
+    sha256: db820b58c200298ed7cb7e60313c1459e56e92a31fb6dc2fc78b206a1f2e8c95
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0112.vot
+    sha256: 3335089b006a186a12c7911988309c46ee4520e13c16c8d64d79b890f22f23e8
+    bytes: 927366
+    rows: 6112
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0113.adql
+    sha256: 1e79ce7bcc416ebdc5fa814298b769845968535f82d5aadc777add3bd12bb8b1
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0113.vot
+    sha256: b8056458a9abf163a295d3600d43b2ed084f789347cbd1e9e70e5aaf0baf07fb
+    bytes: 948556
+    rows: 6264
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0114.adql
+    sha256: 10192255d44f06a47cb58426659b2addabc9ca0c0897559ab3aa987689a9352f
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0114.vot
+    sha256: 7d1cce57e82d5e987efe03506595eeb0b12146982df17f8e3e3fc0a080eb3388
+    bytes: 936291
+    rows: 6123
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0115.adql
+    sha256: 256b44cd74612427bbdf0ff9794dec57a72b637545cbf0cc2463b20acb846f64
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0115.vot
+    sha256: 2db590b728eeabefb9c2b10ee686dff79c20d2b8dc7c0b848016f8fc352c38c3
+    bytes: 901565
+    rows: 5859
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0116.adql
+    sha256: 57e060f0962e69807dd779fabe0783694e3cfc103dec244930a65c4c3459f966
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0116.vot
+    sha256: 68ca05a43c9a25bdfc1338597a98bfd2d5b8850f6881ec9875799ae04705ca3e
+    bytes: 1013657
+    rows: 6682
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0117.adql
+    sha256: 3926b7e8f825ac7b99129864d88fd2a2e664f8da8009cd224f230a5a073c626b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0117.vot
+    sha256: 733b629e0c32fc588e05607d48fbb42ebc81138a51ac5a04c339599b26d217a0
+    bytes: 942170
+    rows: 6193
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0118.adql
+    sha256: eab83d036882ab57b6b1be3d879c90e8841341920aa9194aa42301135456c9bb
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0118.vot
+    sha256: d634de329e4298e5e84d2e721b0f8d52623cb969cabdfdd0d635cc65a3a3e67b
+    bytes: 972196
+    rows: 6380
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0119.adql
+    sha256: 7ebba67011680b9bc30d6f59ae9ae7c4e94edd61616caee6e5ce32db6844d56c
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0119.vot
+    sha256: 4799eecb1271b33b9570cdf4788e7272cf6f29ba40be9c5920e34a54fef9abfe
+    bytes: 937778
+    rows: 6103
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0120.adql
+    sha256: edadab74db409ed5dfa4dfbd399581281079b51561f8247b7fc15f83139f4c46
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0120.vot
+    sha256: f7b6f9778b88689a9c1c5a30ce60e4771aa5adb5758c9e71206feb471f02f468
+    bytes: 914987
+    rows: 5948
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0121.adql
+    sha256: f19ef3fdf76d27fe85a0d936872f34173c84ed0b618ccb0cbcd879c603969af8
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0121.vot
+    sha256: ae0b0c2c4e0d056523866af2f9efc5a9c6cce7aeef83ec32fc3ff72a1d5db8c7
+    bytes: 810378
+    rows: 5268
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0122.adql
+    sha256: 1c503f820f36f67f026a9ead302ab890bb802a7df66b1c034d292c17baf34900
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0122.vot
+    sha256: 2000afee35a8c7599296a029ea76e4feee807fa0485837956047505a5bb815eb
+    bytes: 792312
+    rows: 5118
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0123.adql
+    sha256: 0f64e1d1093f082f9abe67298176d7e6a6842ee05313f7091d7a3c76d4b039f9
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0123.vot
+    sha256: 55586ee0a6c7048816464aca0959032a122a038616a411cb169465bef3fab7a8
+    bytes: 919891
+    rows: 6035
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0124.adql
+    sha256: 0393e383a5277392d3e3ce2e1d36b56567028b3bf17d7c24b43e0567756203ab
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0124.vot
+    sha256: 3934c2f330b52ce42168ccf9b550ab2d51653f3d3e315afc950c56d6307b0a4c
+    bytes: 861188
+    rows: 5632
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0125.adql
+    sha256: f99f6c452538a12b711a31cd5a5376f3bfdcb098f3c321dcb0c86ab67cca5eba
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0125.vot
+    sha256: 09e83238f8efffb0dec7bf31c7830bac0110e034eec304e029cc8c14ed097f29
+    bytes: 869589
+    rows: 5675
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0126.adql
+    sha256: a06463069d03f6625d072080143dc7ffacfc6efd9b526166beea62d787ce020a
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0126.vot
+    sha256: 58d524d0b96fc62293fc52fe14fc0bb7ba9fac3979c030f7578c2459df92fb4f
+    bytes: 869435
+    rows: 5661
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0127.adql
+    sha256: 0f2ac112e2a172a9dba70c6405ab16a0cb737027b223cbf94cca49b2d2079d90
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0127.vot
+    sha256: 01b1e34dbc589edcbde0fcb9417bc203c272e06af0e75edcdc23a1e7fde2738e
+    bytes: 868265
+    rows: 5654
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0128.adql
+    sha256: 22c5d05083aa98114f5f52487a2d3e73cac17935c920a830c83ded2c2cba47f1
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0128.vot
+    sha256: 2309601f77937aa1e075a84f0b5db1641a572d25f440402fb126f491612be2ee
+    bytes: 900496
+    rows: 5910
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0129.adql
+    sha256: d022e38e2d87f31931169e5096e836f5477d3dcfd9c9555f4b4f578e4d9ae530
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0129.vot
+    sha256: 184dc746681d52019bfae80886a5e6f2506f2f3e905b73abf8d6cf29d19570d4
+    bytes: 833327
+    rows: 5435
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0130.adql
+    sha256: 4761a107d4276acaaa4c5c6f4f0f5bf15b0e5c6603231469c5e1bd64fcb7e9db
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0130.vot
+    sha256: 7ff99ce0e323e939c8a37b692028fb3ee6cf36c88571fc18c5c24f255ccb6be0
+    bytes: 867663
+    rows: 5674
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0131.adql
+    sha256: 688ce87e8616b3bb0adcbf714311ca430dd49a60c0b54b01a8b2640fe573615b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0131.vot
+    sha256: aed2c9b6faf1a8cc35beb8876f4496c66a4e38a7f88ac8a08d60aa3916a1a6bb
+    bytes: 713768
+    rows: 4569
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0132.adql
+    sha256: 396e1e530d1d4ef6c518bb325a5d9b7d64923a7a390074cbacad831da33f481c
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0132.vot
+    sha256: b237ba999a775dccf178ab1d33869b5fc39e6ae9bf58caf4d3378fb2cf545064
+    bytes: 633160
+    rows: 3999
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0133.adql
+    sha256: 6f6de680d27c9e12b9737ece943f0d9e1064e7f79c525d2f0181757ef96e3111
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0133.vot
+    sha256: 05ce6545593cd96c34c02bca2b5aae4e17f39520e1e0bbce29f929668adc4e7c
+    bytes: 619120
+    rows: 3916
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0134.adql
+    sha256: c290c1329c06a74df897a5e45930169453c2418ecf984d9958e50f94d5f69c5c
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0134.vot
+    sha256: a277be8d93e5a5f861564c25e0059282a4ecd0ca162bf58dd1614f889fd84233
+    bytes: 631665
+    rows: 4021
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0135.adql
+    sha256: ff4ba06304ad04181006ed744debe7c18819ad4ad2ef59dc746176dd677ea9b7
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0135.vot
+    sha256: ec4e55b4d473a7c88861c1507507c2f21090c39de56773a46d720591c2357ee1
+    bytes: 627017
+    rows: 3985
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0136.adql
+    sha256: 44d773491a49c544eee38c5d54eef7915c2ea3cf5cf29943c982e408196e2b33
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0136.vot
+    sha256: 19b6b86b9f221af43edac31830fd628a65d74ed1decf74b4aa2443903b370654
+    bytes: 657815
+    rows: 4191
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0137.adql
+    sha256: 7b458ebc8a826a16ffe49623d28772e4c12c26cda013c8e1733489433dafa020
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0137.vot
+    sha256: ff40379358ee233dab46cebb6c4e138b74982e19dc4bdb02b6c0ca61bbc5f2c4
+    bytes: 605262
+    rows: 3825
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0138.adql
+    sha256: 432d37e95c1177793948c7da1142cd9806383bfc148c0222f3cdfc592ceda534
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0138.vot
+    sha256: 81137ced25df7ff7699964030a5b6979c5f18dac11af92aa5c3ad722a593db82
+    bytes: 550683
+    rows: 3455
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0139.adql
+    sha256: 1a64fca1a7f169a3e246cf8c0bbf1c0c96029fab62f5b24ae29c16c0f149ddf0
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0139.vot
+    sha256: 926ef841a2ba2f63cdb957bdcd71368138db63247ba19c6cae712437c1473a06
+    bytes: 651551
+    rows: 4111
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0140.adql
+    sha256: fdcc7ed58c957b49ac1746bb73451f0a3b4e391dbf02a3f50c7c5a057afc3bd5
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0140.vot
+    sha256: f476e548ea3fc5ba0e015bf64aa2dd444e5b2d947e2003ee7b4159e65c2433b0
+    bytes: 647902
+    rows: 4125
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0141.adql
+    sha256: 8807ed933fdae47c6e9d369feecbccb2b9d674dcb244d5e9f1f89a44818ba4e0
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0141.vot
+    sha256: 2f3045e8e22fcaedac3a26c9d9e1ae6a47d3be9eed4b74d7208bcdde58b5495f
+    bytes: 696153
+    rows: 4449
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0142.adql
+    sha256: 2c1e1a1174f89ac489cd6eadd213bd47dc5c8390d14d4695c5038ae4ba1c3123
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0142.vot
+    sha256: c567dba97428da3a2b81be74c1ffbb4121b260f97c7c9be80221debc6dc85da9
+    bytes: 614330
+    rows: 3864
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0143.adql
+    sha256: 91c3a7c906218305984ed1961e39db2d8e14804401caa9f27dd5fd3388292e36
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0143.vot
+    sha256: 0f6841c33150c28c41c4d959fe2eff5dd54d7ff136f99cb535de01c8fba292de
+    bytes: 636166
+    rows: 4022
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0144.adql
+    sha256: e747452ef1ae3f44dce855611c4f4109bd077c8d13562a45899896035aa8ea93
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0144.vot
+    sha256: 5fd74ca386f0d85025b6416dda4d33686edd2719c59a84dc7362f0b2e99bb9cf
+    bytes: 721174
+    rows: 4603
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0145.adql
+    sha256: 40e2222faee2454d1e0754d205b51d27df1e4ff0c7baddffad99e09b9dcf709f
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0145.vot
+    sha256: 76b0958199655bfe54de020df717a984d62c6b24476d1d7f800d16f389b03de6
+    bytes: 734970
+    rows: 4696
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0146.adql
+    sha256: 1d0bc1b70364740a73daf7e1c23649b4dbc3f16d1984361cdb56bd5a596716e5
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0146.vot
+    sha256: 42b0f8f556a7a0599c230223fed432448e85c6b6f9b2eb3d11771884ce1be3a2
+    bytes: 770842
+    rows: 4969
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0147.adql
+    sha256: 25111e42fc04ffd0487a64491ddbf88c2628db59eac36787afb513f9ae841401
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0147.vot
+    sha256: e89e6d21cd176ff89d53b52fc4a4bb0bb95f5afe71b1bce8696abbf1701544fc
+    bytes: 990517
+    rows: 6506
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0148.adql
+    sha256: a347b47be447cbcd4183b55b3e74897af89b41126a0ff3385a4c3c0cd07d02f2
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0148.vot
+    sha256: 62f7b255267bb7a73f8026a85f0f613796aaf40a0a45e01b910c65e4f436c8d3
+    bytes: 1012142
+    rows: 6648
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0149.adql
+    sha256: 15d534860aea2cbd9405beae803a0eb29b2ab52ac2cb51ccb5fbae8dd382d5cf
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0149.vot
+    sha256: b383d7a3e3fea9d99f63cb156c2edbe8fdfb1796d3e023b5f2af21dd59ad84b0
+    bytes: 919931
+    rows: 5975
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0150.adql
+    sha256: 35a8ffbfd68edfa2e949ea6f7aa60f0f033bf05e8105dea292b58697b67a0a67
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0150.vot
+    sha256: 981b10aeb31e414c6524bfe0e9b4c3944e3180b2f47aaf83fa3a71bc254b3bd5
+    bytes: 911477
+    rows: 5953
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0151.adql
+    sha256: 0afcc51b1c1db93e1de59d23f87c5ba387edd717b63fabd6c6b3025f4dbb2e7f
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0151.vot
+    sha256: cdaa1e1f826f7e2fbff4927d9fc497c6ba9422a834a0d5582b5471685c4dd7d1
+    bytes: 718366
+    rows: 4613
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0152.adql
+    sha256: c802cd246436fb0888583a475479d0a9279db58fb64f36dff8954b77d8344949
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0152.vot
+    sha256: e5266651417291e61b650fd0ecd821347a8b14a579966c1b15ec0420ac6c6677
+    bytes: 675934
+    rows: 4298
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0153.adql
+    sha256: 84976b3b6df5f3550bd7e912588215cd48d23de0caf65be5f9e3474c82909245
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0153.vot
+    sha256: ea5e62a012b16df1e473cc5da2879e6886dff91998ec8461eb55a3ca69a01849
+    bytes: 832437
+    rows: 5395
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0154.adql
+    sha256: c03ecc5913ab5f6905f33e6351caada3c683836dc47a44a6110ba68f88db031d
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0154.vot
+    sha256: 643f639ff798671d524b785b0e26743b8b8c7f7876d7a1eda4bc1224ed729935
+    bytes: 773637
+    rows: 4999
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0155.adql
+    sha256: 6349cfa7ee8f03805d78cf8e32c2266c418003df6612ca8c76f54771bf818389
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0155.vot
+    sha256: 6b9af657a0f96c74d1a499e98774e7b5d0cd15da515be8c9c580771f8a4923a8
+    bytes: 680244
+    rows: 4318
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0156.adql
+    sha256: f15740a250d19b1f46c7f89704e5f67ad7d5863f34eb044866cf55e09b3f354b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0156.vot
+    sha256: b49240f20a249db8ec6203339e3e9a5a28c0c1cdd3d73785ebd816f1ee684ca3
+    bytes: 698115
+    rows: 4454
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0157.adql
+    sha256: 042c37291e3dd25c3dda0f7b2d1b947078d9deb4261e3cbdb2c30c924cb18417
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0157.vot
+    sha256: 7abdbafe5e86a80f80aedb75d47dd4fd8db687177940cd469f3e709b83341c33
+    bytes: 804122
+    rows: 5196
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0158.adql
+    sha256: 5bd122385058dcc5e9d706b9cd37a5f14b27a9553791360f3d2c3f8c95bd58a0
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0158.vot
+    sha256: 0fc8376e84ab02cfb9fe120255c150410088512e3f30f9e796d65bad1fe03a9d
+    bytes: 767909
+    rows: 4975
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0159.adql
+    sha256: 935fe88ebddd7979efe94cfb708cf1ab62ac34152a08463076a4a815188fdeb8
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0159.vot
+    sha256: f91c293c614c1abc9c342cbdff4bb0cb25b88c8508fbe73dcb3e2a60b1782798
+    bytes: 724355
+    rows: 4644
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0160.adql
+    sha256: b7d9621a1e90fe6f3c977b82e7dea7678a3e012da6e110110ff5e112eba18405
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0160.vot
+    sha256: 1e911282064d32f03ac22f13dcdfb2f455dd8384480a09a989039c881b4cebc2
+    bytes: 863901
+    rows: 5648
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0161.adql
+    sha256: caad5a11ea322aaf17546fd4c277e969b837f41b731e440706b13fd81616d27a
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0161.vot
+    sha256: ce21b2e38dcc848d00084719dcbec2b45266474b8a0728a30640a9bcb0784006
+    bytes: 764809
+    rows: 4937
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0162.adql
+    sha256: 92fdc9eb7148f81cd150cb3855c4c58cfa0032747c26eb3cdcff1e8e6c0630e8
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0162.vot
+    sha256: 4c3ac37aa85b8d14279874aa44ec2eed0fb5366801220380dddb619580d6602b
+    bytes: 771175
+    rows: 4983
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0163.adql
+    sha256: a432652cc569e40bbadd7adf3333e509c66fe5abf338887bf0c4ae705bc6fd8c
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0163.vot
+    sha256: a1da5a00a0539e8e60425497fe0196ea6fa5d0c538371d07a700180fc94a509a
+    bytes: 755973
+    rows: 4861
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0164.adql
+    sha256: 8a287a5c625449efd4bf02f1671a5fb849b3686a3a2f5b34855fbe1998f6156a
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0164.vot
+    sha256: 551a474cec5b7d06e1b6516ca75469af2206d54df81f2127780f233db3f91271
+    bytes: 915048
+    rows: 5992
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0165.adql
+    sha256: 5308b22bfd8b7ffa06574dfa6b2723041175a31696cdb452de6a8f94dc421d85
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0165.vot
+    sha256: 47ab536f9891caa696dbbe49eaf03463e34ee8fcc3560addc8493dbc91f83e97
+    bytes: 907537
+    rows: 5940
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0166.adql
+    sha256: 27d2f4b49f9cf282ad80dbd3a84770098c01e8de8443723748d10284f448a1d8
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0166.vot
+    sha256: d96792467aedb377deb8ea96a2ed450271be0eb8381766ca5c2763c47bb03712
+    bytes: 962088
+    rows: 6322
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0167.adql
+    sha256: 452f58d1bec2a57ba3c7eaca7fd88d2f42c02ad539389ff151af20629ac36dca
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0167.vot
+    sha256: 2d58a97f38b04d8a97d7bf19add48453773fb2aaf88c86f5b9828c57347e1212
+    bytes: 909735
+    rows: 5913
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0168.adql
+    sha256: 9e22f589f6cdaded87b924ac2f253bcab077e12e8fdbbdf633c44f64cb6000ad
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0168.vot
+    sha256: f3a3d6b337658b82b4fc5391dd315855f14fc49bcb9b54582387b5aba6673e1e
+    bytes: 916503
+    rows: 5974
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0169.adql
+    sha256: 84eb9339354192e8bdfbb56983ef761650c6f27bc5031233d1bba1f2b9ab396e
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0169.vot
+    sha256: 22507adcd21eeb0bdc40585ca02bfe967b883d15c9fc13bf054f5c81e1431420
+    bytes: 823451
+    rows: 5351
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0170.adql
+    sha256: 48e94e4a66dc8e13d398f5863c3147e8c6f7bdbf2ebcb66d76ef4453d21efc91
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0170.vot
+    sha256: db156303272194fd189a63928d002d545d89a37c89206e6c32ad07f7c09e246e
+    bytes: 849532
+    rows: 5496
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0171.adql
+    sha256: fe7fee443387d774bb26f14cb4a822ed682226cc762d6cf4a464982163a4986d
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0171.vot
+    sha256: 1feb7c8fd18d2e1c35f7bce3f65efe68174e2c88c517301f0679c43e7e87e879
+    bytes: 868488
+    rows: 5640
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0172.adql
+    sha256: 29ec72909853da4652b3f874891ff308211e35c5c9d03adb43c4576070332539
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0172.vot
+    sha256: 391f4220ccebd0e5d455624246985bcac720f87b2e7ed35b9bde259a13b9064a
+    bytes: 937579
+    rows: 6108
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0173.adql
+    sha256: 94d18ba84cf3f7cdeba6cffe09ad5b4acfe0c5c3f8687d674b1cf1215e141a29
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0173.vot
+    sha256: f1db216ce051f1ba4c73a84c5cde68813782813a314c3ffff88d7f31ad29d173
+    bytes: 919590
+    rows: 6010
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0174.adql
+    sha256: 065f861107882340db79c792560e54834e24e0f10369489cd0f79a19a522c8fa
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0174.vot
+    sha256: 447c473cb61b0a2b568f66614574c3262ab6b6550aaeda3a39f10e3229cb04c9
+    bytes: 907480
+    rows: 5917
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0175.adql
+    sha256: b82c79b97ff873f24a7e0a6c43d41567722ac1a5b337ecdebd543023f4bb691a
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0175.vot
+    sha256: 5e54563d7cead7188dc201edb9507f76840bf292b5af4d42a8d99e7f54e02a9c
+    bytes: 1016379
+    rows: 6668
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0176.adql
+    sha256: c7bf8c45f19269056f026b4dd703a88fb12938c41d150e4d408e1d855b9847a6
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0176.vot
+    sha256: 025b287168b08fced01b8e4bfd69ca8eeed27ae682f0f25bb65aa7780c284109
+    bytes: 1018386
+    rows: 6671
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0177.adql
+    sha256: e6e300cbd7d98b5030742c3d7f1c09549f657ac5b9f82094e61e28eb1c9951c6
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0177.vot
+    sha256: e94c61f7ace95ab439faf88672f5d6b1fdd7f47c8207a9393416af14ca7937cb
+    bytes: 1078361
+    rows: 7103
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0178.adql
+    sha256: 2cb902f2aa0282a9d979f41c4b3062a1ad0a6ddced6b0a0eb25616251838eac5
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0178.vot
+    sha256: 52df96f0044d40ea2de7aeea839288b6f60b23b040773080435b9e1788d33521
+    bytes: 1090106
+    rows: 7199
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0179.adql
+    sha256: 2e27a5ebf4e567f480315f998403a17435324b2aa5a7b4e18f6d3260726678ff
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0179.vot
+    sha256: 78b1cd65f807a25e8a2a0275b95f0f5d8310504e845bdb52cdff9627fb181802
+    bytes: 1005630
+    rows: 6595
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0180.adql
+    sha256: 2a6fa8d9e62e0187fcc8b11790f7f38754613875dce88d1d54bf886608d6c797
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0180.vot
+    sha256: 530de86c953654da51f90ef08a7b7d8617e2f27777144fabbdc1ebdbe8783993
+    bytes: 1065016
+    rows: 7045
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0181.adql
+    sha256: 10241cbbd33e7430c52f40fc20a6a6f3d43c0991b82816d3f4c0386f10ed9385
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0181.vot
+    sha256: 0526a5c42cdf234f25143c053bb74333a858d01ce03e131aa10aa571063a472b
+    bytes: 129373
+    rows: 661
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0182.adql
+    sha256: b02b0eae9171dca2cc3687c73b5a892c3d5f8f4a27c3dffbf266a90b0ef2bc10
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0182.vot
+    sha256: a62afc50e043712f2e7516900bc0e2e1492aead87e80a6995e3f2149c9d1a88a
+    bytes: 43012
+    rows: 58
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0183.adql
+    sha256: 10ab704780ce669f1f3b5f3caa66a0af4e29ab7ee08fb8bae0dc606382c02016
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0183.vot
+    sha256: 1099a4a9e41ef4cd17d6a9d2e038fd074dc70a3c68077df41dd4ea6a4798a31d
+    bytes: 44008
+    rows: 68
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0184.adql
+    sha256: c92875d9db2248e921848125c7917726a5f918bd48cd8b423095ec5859429d7e
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0184.vot
+    sha256: b573f02cb0fd457eafe56a1db086d7de19416d79f562a9e0bb3508a8f658e460
+    bytes: 41903
+    rows: 53
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0185.adql
+    sha256: e969dcb5992a9dcd6d444117cd7fc7565dc8d50fa1c7ad89b72319bacbccc9dd
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0185.vot
+    sha256: 2e2f08bb68b260e32499bc6c89d7008b7f00b789430f17c06e8eeaf32dd40ee2
+    bytes: 45036
+    rows: 77
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0186.adql
+    sha256: 1e0255f8cfcaef41ae19d6b8805c6a569993bd7398330acc1a3cfd55d8fa2458
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0186.vot
+    sha256: 1bcbf572a7072a7b29559055d87be089b2afc31b98b5e614e6f099eae94b5c2b
+    bytes: 69488
+    rows: 242
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0187.adql
+    sha256: 354d5ceb16b51f7d8b599061c7a325a436012f975d1ed6c76b3a61f00364f75e
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0187.vot
+    sha256: 50cf80357187fc078b56cbee646610e8f5de637af187f14a9e9062f9cdf73b79
+    bytes: 58816
+    rows: 163
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0188.adql
+    sha256: 59e475626f39eda0ed96ef3949bb9c101a7b69f876ce1efce9094c7f3fbf9ff0
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0188.vot
+    sha256: cd3fcfdb25071d75e56415d3c974bf5a4c1f0ebf9bb7baaa441a35dad52d1ec5
+    bytes: 78015
+    rows: 291
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0189.adql
+    sha256: aac7b354fe832861d046b61c9602edce9243a39c7e08089226e0fe54b3f98f94
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0189.vot
+    sha256: 540166ae7de1803bad61513be44bed3463c69215c7d16f575e52a1b87e58035a
+    bytes: 97616
+    rows: 439
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0190.adql
+    sha256: 5b191f3340257b83e5da876dd4602ca8ea5cc0778fa8192014667419d7d7cbf4
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0190.vot
+    sha256: b6c023e63821960eb6e924e74bd40e75ba0bc22fe736fc0572e03ec347c4be6a
+    bytes: 80485
+    rows: 314
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0191.adql
+    sha256: 3169705873e71a3cba3738747dde5c76a569389630971dda0297e5001a0e9c00
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0191.vot
+    sha256: e8b30b40ee7fd5bf4bbdb036711098f191fc2572c0cdfc7a1c151955d8b82ae4
+    bytes: 85084
+    rows: 353
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0192.adql
+    sha256: 12a033b9d51d5b1a9c9c32d45f4b192e4922fbc8fad54d6227a6e1c392ff8930
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0192.vot
+    sha256: 692591f8fd8a0d8d13a9d6668ab98e2442fa142a65e063e674cbe98f578e5d0a
+    bytes: 77255
+    rows: 290
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0193.adql
+    sha256: d06ac4562d8173bfa5e73691906973a9f7518d5730f14491db8b2b13f568a96d
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0193.vot
+    sha256: f9782344f00b3bf5ff42e176ff50943533fc49ba878be3d37eecf429d9840525
+    bytes: 120135
+    rows: 570
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0194.adql
+    sha256: 6d881ceb09c5f7c6a6750663b2cddf0dcbe9270f291e56579b5b07335db05340
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0194.vot
+    sha256: 272389cfb81d2f01c2dbffce4dde3867a4b2e12a47c51f6153367f55e7a1c5a4
+    bytes: 175718
+    rows: 961
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0195.adql
+    sha256: da1caf6b60e122c5a9d91a69fd6d78afe674ab58b6f1fa4e1349c17d86ab4e25
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0195.vot
+    sha256: ce4a497d3511cc3f977d16d07b6954ff91b41df01170ec1068fa9b02f605b32d
+    bytes: 148589
+    rows: 761
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0196.adql
+    sha256: 6ac76768efb0b9f40321183476c057dce4926ea17b257913cdbe6042ae9c3605
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0196.vot
+    sha256: 61a760a33c153a520636032340b49a47cca8a7904cb2b2c7fd9b36c52d302932
+    bytes: 111405
+    rows: 515
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0197.adql
+    sha256: b9194201f61578a2eec277f2e1ccac28fffeff6f4537142a8e87e3c416720062
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0197.vot
+    sha256: 0a80624d5944fa671cb4fafc7d25ff992a986a22dd4a12a99bf1537e91176ae9
+    bytes: 98380
+    rows: 432
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0198.adql
+    sha256: 6e2ebd72cc93a95ed41dfa7dfa726609ed154eec5478ed3c4b5fa25d0d9718c7
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0198.vot
+    sha256: 378fa992444b1d2827d1b083c7df56551aca817710f3f0564ccc514db171fda0
+    bytes: 127931
+    rows: 617
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0199.adql
+    sha256: a3f2609f3aea306e5bc6f6517913112537d1f25fc5c13ce47ae512da9d677b60
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0199.vot
+    sha256: 536e731d46b942b9d390c5368b1af6fa038def70bac2f90947608aa1227f2ff0
+    bytes: 140809
+    rows: 707
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0200.adql
+    sha256: 53aebca2cd1cf4ab876f55e01ef31bcfb71e4de4e6de7ef2bab32fc5251bc6c8
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0200.vot
+    sha256: 02b740dd014a9453d12e06be9a0b504ad5709f9456eff876dc864a1495a9392a
+    bytes: 215047
+    rows: 1221
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0201.adql
+    sha256: b045c97be006e67a23db8ce2fd1eb8613804258db0911644094ebcb1e4a97d72
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0201.vot
+    sha256: 18cc9b7d9aa48c86122e97057c062b5fdab04aee08c7ce63f40fa41fb438cb7f
+    bytes: 187524
+    rows: 1044
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0202.adql
+    sha256: 402300924a0be12211a0bed6475084690703c9e4d82f849cf8b19ed911286745
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0202.vot
+    sha256: 8898739e62efd73399e7d23ea92b3635347e08f9ad68b0f1bb5e10932d2793d9
+    bytes: 110161
+    rows: 517
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0203.adql
+    sha256: ff88b1ddcebd8019f0ee9884c6563b8031e688344988ddb9079e95df635f4fc7
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0203.vot
+    sha256: 581d689081eec8ec4c821e65bfc0401448fba4876e995bb39edfdb202ee93cf0
+    bytes: 88569
+    rows: 368
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0204.adql
+    sha256: a6a1511b5cb882789acaf89b4ca8743b76e89d9cfea2754e31e00da67c320bf4
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0204.vot
+    sha256: 018983349621d44ac7ddcbc409fa969df17f1c3c09b171e565a90a4da3c6ff61
+    bytes: 83597
+    rows: 334
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0205.adql
+    sha256: 42704315f4f966f2f3a7dfd785b10e92ddac612d31a6d6ac1ab088f0694c24aa
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0205.vot
+    sha256: 36deffd94bce67190bec0bdbd929fafb01c072ba770fd18eb4730a16df137a64
+    bytes: 82419
+    rows: 324
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0206.adql
+    sha256: 20524f94c1ceacca9e21b05fee91b7cbfbd4c60a5d6f6f5a0d573b9ba8454dc0
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0206.vot
+    sha256: beded8f963959031fd5d93d5f9f140e35ac55f0833e16869bcae1972486916f4
+    bytes: 71450
+    rows: 248
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0207.adql
+    sha256: 78229417d86fada49885374349e9faf57636d3f891e6678694921429346da51d
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0207.vot
+    sha256: 25cc4756789bcd6850c33481372ace7d2cca8407a3f68202987ae06f3868ded1
+    bytes: 122938
+    rows: 606
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0208.adql
+    sha256: f12af0fb0ae4ba81ec7d69d16670382a0ed6529d8a414f17b4a72294683539c4
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0208.vot
+    sha256: 3c695ddbc1e8482f480db6a518ee6bd7f85358bbad9278b6c965515b9e127a5b
+    bytes: 142373
+    rows: 735
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0209.adql
+    sha256: 0756aadbdbfdc7aac2b65697425e56e8f725dc7f09296c4b3eea85e8a30d8200
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0209.vot
+    sha256: 6da013fbc3a2b52bfe0e4541ac4e0a737bd73804065ad840537d52cf972d8a32
+    bytes: 124774
+    rows: 611
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0210.adql
+    sha256: 6b46096dd89da8cae9c71feda1ece58913d7f21cd8877435ee462c8c93d9e317
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0210.vot
+    sha256: cadfb6ac18e1c2f72ca93b8feab4b43e3373bdbeefa95f39e1a37b07f23bdf58
+    bytes: 103003
+    rows: 449
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0211.adql
+    sha256: aa7ec3c245a303827a31bebb8e6413f939c8b4d89a4c48a4f457cd44d07e9d6c
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0211.vot
+    sha256: f2bae04faf801504211ac5f8b2e7d32c8805527a0ba9ea702385624aa036bf73
+    bytes: 159939
+    rows: 837
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0212.adql
+    sha256: 4590d8c943f9e8327098e65467a26c5c2d7db4d1bfdec741c7d2b29b81aa00bd
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0212.vot
+    sha256: 4be2d67605b124d67142c0c168ec31aa90fc27c80dfd64f855c7f3f1ff72cda1
+    bytes: 196526
+    rows: 1084
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0213.adql
+    sha256: 7a6121ce1d84606129b8770fff60aa9ef67588880a15bdaf5e006e7ce4d3ff03
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0213.vot
+    sha256: 807fbaefbe4b8d507301dc3e80bc79ee6b7871efc891ddf4c888cf3c7612d7a8
+    bytes: 171058
+    rows: 916
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0214.adql
+    sha256: 76a7037b1da67bc3b57ff7475593089e46f390b0097bd8d9e5d8aa2e0f5340db
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0214.vot
+    sha256: 353510fe6d2de547e2515b0792330cce52d7ea76a154c8bb01bc9e2646db7c5c
+    bytes: 188771
+    rows: 1050
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0215.adql
+    sha256: 6ea89082f9ccd52d752a4bda9a0312dbdf09489e66265a8dba9f9763bab16cb8
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0215.vot
+    sha256: 01f8cbf44b90f23242cd97441318471088d9f22e2ca1b27b762b188a0e40f020
+    bytes: 47554
+    rows: 89
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0216.adql
+    sha256: 7e20e70266120470a4ac75dde260e6a28006f9ef7204c484fa59ea75880ae8ef
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0216.vot
+    sha256: b1c52f06cf0e8f277e35ea06f44cd6b5a983033699bbccabcc174c882877d90e
+    bytes: 70922
+    rows: 249
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0217.adql
+    sha256: b32d114d46c2cde347273870f6eecf28bf98053a60011899edd84e89b8ad3116
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0217.vot
+    sha256: d02fbab48a8b8e129c653165cc0cbc26895e5793dc68b1f46508dd42c97d0cd6
+    bytes: 98336
+    rows: 423
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0218.adql
+    sha256: 8177129ad55f2a3cebd966239718dcbc31f1efbbff71e8d4381861771c906865
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0218.vot
+    sha256: 58c11531caa57a548fe57ee7d377069d1aac66f2fdf19ac249b323d6d89c405d
+    bytes: 89110
+    rows: 378
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0219.adql
+    sha256: d400f42706ef0885c83be0332114cd83a61f3bea2a99822eaf1559b9ad550c1a
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0219.vot
+    sha256: 0b4c278546ff8a19a70b28b731ab33e8891b13e722964e94dc8ee9416f1c449a
+    bytes: 142267
+    rows: 727
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0220.adql
+    sha256: 4205c67a8285763e5b45e6d280a3843aa167e84da6039960cd2c57f6ed936437
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0220.vot
+    sha256: b7f179663f520185a1bb332aeb4e8f7c0efc45254091eb9e8c4c34a5d56a9e6f
+    bytes: 214576
+    rows: 1214
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0221.adql
+    sha256: dde74f6da6438932868c4f4c1b009ac2c39ae956292dd224478fe46452103ffe
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0221.vot
+    sha256: b02007e354bdb06c01cb09503dc28d681fe897cc66864f133530243f1dbe66b9
+    bytes: 124506
+    rows: 608
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0222.adql
+    sha256: 839adeed7aedc3b167450068db1191a33bb4bd5085eb7453bac992d6246e2648
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0222.vot
+    sha256: a95d1f00826ad017684d473b2eff88f68ec45e9be5a15401bf0b1583f770b442
+    bytes: 157819
+    rows: 824
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0223.adql
+    sha256: 27f4a45815e2e8ed14456a383e3a982e365b1e8669dcaba1b3e350700b3db34b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0223.vot
+    sha256: b2b6392349223047bc02ab4bc131f79b826a3d17cacb866a5b23f35d95f19069
+    bytes: 92128
+    rows: 389
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0224.adql
+    sha256: 84ac590bf7e8e63342fd614b001f141f8a193e1f8e841825739c9fa681e09993
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0224.vot
+    sha256: 56413d96465c16521e76b6e1e3dccaa17decde71e4857b926275f457704fa7b2
+    bytes: 109698
+    rows: 513
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0225.adql
+    sha256: 8ecfe2946e738c7e443a4785d574e61941431da6855d3d9b945d6920c1973173
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0225.vot
+    sha256: 0801119f8389bcbac8af4a7eb48ccc0b4d2a912b6408fbd2617eeae84e77e635
+    bytes: 156506
+    rows: 811
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0226.adql
+    sha256: 0e9d2bd3ee3ad4b20c33619c505eff41e2c3d9a84f24b9dc5a0ad22f7c15d869
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0226.vot
+    sha256: 776297ce4a68c0614661176b9f0bea99059dda3b993dfa9e313a49e7c6980938
+    bytes: 290297
+    rows: 1727
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0227.adql
+    sha256: a0e47b51c0279e7e0ac64e8864a016cdd2d39df35426bf4a06153c0115eca36f
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0227.vot
+    sha256: 8068528450a9eecedeaeede773b6a23504cbfebea7164fcc87524e582b6de785
+    bytes: 421442
+    rows: 2595
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0228.adql
+    sha256: 2049b89f0129768f08564aeff0b06231b23ec40d21ea7bd9456ae81edd44c4ea
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0228.vot
+    sha256: 37ddb19895b1d88ad2bf08bdbfe8d43cd6da1dc11c506750c45a2baa3e7b8d47
+    bytes: 481531
+    rows: 2986
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0229.adql
+    sha256: 2b7a44c9f7a38c72e401c9532fa52ebf59130347e97489d04db891b14a9d1eab
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0229.vot
+    sha256: 1216c199d42e127ad787d99e9eaac045d2ed36209268b7cd95d87fb93e3c44fe
+    bytes: 397689
+    rows: 2428
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0230.adql
+    sha256: 9ea4704c17c787b7b80d5ef093f69085c53166fad796f2ce48948c96fa4d8245
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0230.vot
+    sha256: 63311724d77b8926ee0cd8e638b84a88ac3360488adbf6bc86869dfb3df97605
+    bytes: 367086
+    rows: 2252
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0231.adql
+    sha256: e90d4302104508671863ea1c0f6c365db85327579a74b9bd110e2c3f6e115d3e
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0231.vot
+    sha256: 9ed81023603be2fa6508aeb4a5b0771ac59770da5c17d1663f75ebb592184b9a
+    bytes: 274502
+    rows: 1623
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0232.adql
+    sha256: 38bdebd6f783e08b3b932e3709f63f00cbd96fd7edc3df96aefdd3ca36fec05f
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0232.vot
+    sha256: 8bf0aca0ed671e6ed205b3843ff831d8177b3865450a69695d4a2fa0a92dfa6d
+    bytes: 353408
+    rows: 2179
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0233.adql
+    sha256: 10dd8be0caf65d01861a0a8325d8078eaabb2ac5c6cb606c6a7dceeca32d773f
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0233.vot
+    sha256: 77c1d2b3f5cffa15a2c0a28ea97a7666f155c3011c7a822fd3de35e7dfcd06ec
+    bytes: 321176
+    rows: 1943
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0234.adql
+    sha256: 8d56c3c36ba0515a8b7907d4c9f4a695792f6379cfe931efce54e068d1d3763b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0234.vot
+    sha256: 99b6a76f48a1e702212c1536f57c4cff9128a8b46f3d122d200919df488b22e5
+    bytes: 527246
+    rows: 3330
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0235.adql
+    sha256: 35829be709363ed22a53a09a8a23a0b749cb2d5761537e64cc889833f98603c8
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0235.vot
+    sha256: b4dd9dbd976e2b6a854bf6530c79203877b24d004ad75c70c9c32533e6450650
+    bytes: 417079
+    rows: 2589
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0236.adql
+    sha256: 6285886d41b4f302d4ca180573f4d8e370dbd5f1a43f8bec93c0bc579380de9c
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0236.vot
+    sha256: db8ee2f59ead69c6ede3690cc70de3dfe354a489c32a592f7b6d0e5fc67cc82b
+    bytes: 395292
+    rows: 2462
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0237.adql
+    sha256: fda11f15320b840d5eb45994b49306225a5eea10c12515598388d70c37f56ed5
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0237.vot
+    sha256: 9bca910f13aac6f65d06cc1c5d6df9c59b7c8f4df79869e0880b89f60d026ffd
+    bytes: 695645
+    rows: 4476
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0238.adql
+    sha256: 330c9acc60d74afb743e067092cdd25e455b1c82111796a893903cc0ab25f413
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0238.vot
+    sha256: a324b4d0026ea44d7caa640b6f60607f74e0a3cc3288b75d581f84011492081e
+    bytes: 672383
+    rows: 4293
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0239.adql
+    sha256: 3b2de86e5dd307a87401ad047ecc0a80f685ba8426377feb79c39428488a6385
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0239.vot
+    sha256: b40a2f98c4ce70ab11b03c50d0a4667c1c5ef207a416e52457659153bb4cba1d
+    bytes: 771597
+    rows: 5044
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0240.adql
+    sha256: e14948a76b44266c5f17e27743ef44f2a4011873ca69dd9ae1bfe5909ce50fea
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0240.vot
+    sha256: 238b64355ff1add8cf4177479be2e249323a7275ebef8a975d8872d184e443e3
+    bytes: 665058
+    rows: 4256
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0241.adql
+    sha256: 5b9961ac672d9723be76eb8d20416990e832316aee08e980c260b0d69a857b52
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0241.vot
+    sha256: fdb92b47ab61f4ff1395191fe4da3bc0d234d76253ce3af159919b3ff9e33cd5
+    bytes: 788709
+    rows: 5121
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0242.adql
+    sha256: 8fb868b8ed8f21f96b290360080af0b9403aa7b2ce09671b2984b8150a0770d9
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0242.vot
+    sha256: 6a26a5c454f81c41b8490d3610d51df5d45a19e413aff1fe815c80c758f6afee
+    bytes: 749672
+    rows: 4842
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0243.adql
+    sha256: 5a6760d7953c82a4a521c32110fa7ad164da4a259322c0c7bef256419167e5b7
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0243.vot
+    sha256: c37ec0bea6fd09854b30f03f1d10ce3c1fcaec4a457ebeafe138e1763cedb7e0
+    bytes: 681771
+    rows: 4373
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0244.adql
+    sha256: e6cde0187a8dd334511927dcef7ea6d56e8f6698b10e0d786af5062d79a22518
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0244.vot
+    sha256: 99957792aed24e26bc027a28fb065555bdb030a7fd8ae7ce566283bf63268388
+    bytes: 585567
+    rows: 3724
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0245.adql
+    sha256: 64ce0de24a2e10229b47625cd59cc9fbaea5af099d1b52011a979150a489f5bd
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0245.vot
+    sha256: c69c661011f51439e19f0772d45f91eca7a4ece31287764f4e29b731bc2337ad
+    bytes: 702612
+    rows: 4538
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0246.adql
+    sha256: d4815d2ba092a6b45bbf1298d9a199088a343a49279ce6054773c25a8c4fa17b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0246.vot
+    sha256: 3f96b913745cc3d0bd6c0f085d97dca29eafc4e0a7546482b047a80a9967c712
+    bytes: 744029
+    rows: 4768
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0247.adql
+    sha256: f2240d949763ae0f1b35617fff110d8bb0dc8c7cd01d74970413829ac30ca210
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0247.vot
+    sha256: 2f9a00d0464f7265fec2b23dcefc9b2c185231a03f6aae503a64de95dbeaa43c
+    bytes: 637941
+    rows: 4051
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0248.adql
+    sha256: dfb0e4fc6e51a62af26f9ae637691e0bf4cea25129ec255c288bdda4e883cbdb
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0248.vot
+    sha256: bbd5d4d4dc898987f1761c4f62d5dae418a7f5f93fe3b75e9a0d7df8163c742b
+    bytes: 585324
+    rows: 3715
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0249.adql
+    sha256: 25f4c0b6bf02f043ae56736185348bf2f9eab80839cad678310a5658d708301f
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0249.vot
+    sha256: ca1657b08836a3a08a8787e71d44745ff949e9f552344b80d3d36dcc926e8a1b
+    bytes: 668767
+    rows: 4313
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0250.adql
+    sha256: 69beb1ae0039682abff9a8b23324e6d1f082c623e01264b89dbea75a58fad198
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0250.vot
+    sha256: 0590abc1fc957d567ea1d873ab45832f67edb875998ad26a516219aa7a3fa8c7
+    bytes: 637559
+    rows: 4117
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0251.adql
+    sha256: 243ee1af9dc638a2f03fa21569e815397f178671bcba21ae0bc2ac7f05828257
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0251.vot
+    sha256: 53ad70b5cc322e03f3c43fe27edd06e9303f033205c6958e5814f173dc5af440
+    bytes: 762107
+    rows: 4792
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0252.adql
+    sha256: a8d4dddd17a8c32f1476dcb74b99ea6e625714a5a651048ab2ecd232fe9b5757
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0252.vot
+    sha256: 28a9ff14d45917774c21e6a9da5504c4d6762efb98d63b039b150c3c3bb8dac3
+    bytes: 917372
+    rows: 5895
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0253.adql
+    sha256: 3d1c812eb31754b9ea86f5413e245c3642da9fc9b20bebc162b4d18bb5b97f7e
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0253.vot
+    sha256: 91bb1be5395c6f4ccde1260f0a7fce3c7b94f20fe7545e0a8b6f7d5afed9f8bc
+    bytes: 861907
+    rows: 5549
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0254.adql
+    sha256: 28d4ef3798a0d20e55bf1e29fbd0fd0ead2779b1dce76f141675397efd3126b7
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0254.vot
+    sha256: 13df758387112df315fbfb1d3b11fa76b768589b396ac180b9cf4c9a9cafff7f
+    bytes: 832019
+    rows: 5317
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0255.adql
+    sha256: 4e083d6f1e28b829a9a6f0ee307482d8795edd5d255b9303326e993257e7cc92
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0255.vot
+    sha256: 12d6b83153f53576a6e0d985566cef10b20de8001bdd0a485fa880e5be677efa
+    bytes: 840506
+    rows: 5397
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0256.adql
+    sha256: 4103b5e68994b4cb7ac991d4ac2f9e25ef73bee85e82ce4e44e4e30fa744046b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0256.vot
+    sha256: f8030c5997d61a87b7574da8d2e19056376c75adf7bde1465878a20b98f79552
+    bytes: 854574
+    rows: 5480
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0257.adql
+    sha256: fb39a7bdd79315b5bfdb99d4ae0c48d5375b2e8aab75e9ba63ec8e7005eae2c0
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0257.vot
+    sha256: 635150f8abf11ba82b0b43ded007344c87e1460385c1b90cb9b5884f2c119f0c
+    bytes: 776663
+    rows: 4974
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0258.adql
+    sha256: 24b4680ef42aa88aef52918506cf7f5080a7464d936805497dc3475d4fba2353
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0258.vot
+    sha256: 40752f82ab3094a2cc49010e170f92278b417345199d3d1ab641048b7f8ed032
+    bytes: 708007
+    rows: 4495
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0259.adql
+    sha256: 764163eddd04aad36d58c3d7f17f0fa40bce51f28617369221e114ba6063978c
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0259.vot
+    sha256: c1b1a1bf830780d7c166c089b65e688b470193d5e17f25bb0186775ae655d3c5
+    bytes: 833924
+    rows: 5369
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0260.adql
+    sha256: 1ff0086cdb564bd46e26f13bc868d579221d83a8a0259ccb868ffe8affa2bf3b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0260.vot
+    sha256: 23988533a4b8de5a87c915365ac9a3be0fe5f6d16482908324d67cea30107af3
+    bytes: 810159
+    rows: 5241
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0261.adql
+    sha256: 3ad880731601edfe7c00105b473859ece564ba5c9647667bf0193169e13c33f2
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0261.vot
+    sha256: 20d2031abfc25d76449b20d5264f12684a021a60df8b4053f1143bb3eb37a364
+    bytes: 774384
+    rows: 4969
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0262.adql
+    sha256: 0cc7004ed40717db3b0dce63a4f9bf3df02fdbe42496e71ba7d57e13b16864f5
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0262.vot
+    sha256: 5bdabd23e11ebcdbde291c1fe2e39f85f034cb638cd58f8673a970d64daaa1f8
+    bytes: 770326
+    rows: 4944
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0263.adql
+    sha256: 343d3c21302f60d5131ac161177d96f9efbcf6c210c0913504da230132f8a935
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0263.vot
+    sha256: 7bade404324ae2a09418483e424bb617531799b753a4756ef9eea9917034b66f
+    bytes: 809891
+    rows: 5230
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0264.adql
+    sha256: 0f378b0cb453dcc06522249e0626d8fd6c6c73e5f3765c55a92ce7ef47314136
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0264.vot
+    sha256: 34ef233c9790fd11464b3b4e1796eba18aeca84cbb9f52b68832aa513ace874c
+    bytes: 811686
+    rows: 5265
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0265.adql
+    sha256: 13605f33c1e6cce1886c65ca4bd6fc49402bb3cc97140697b087766f923f5d08
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0265.vot
+    sha256: 4b74b57ac7d0c911809b4d1e4f787eb632067d6adcef7247cf4c81e615685e9e
+    bytes: 908634
+    rows: 5997
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0266.adql
+    sha256: 7a637dbd1d238b22b241074b09d4c2b1439cf19a8dca83ff455c27a208e83709
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0266.vot
+    sha256: 0f35a35b3e8c6b1f3c5448234f443f35249d629ab002a4265d14fc4aa2f8a3d8
+    bytes: 816350
+    rows: 5317
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0267.adql
+    sha256: d75ce74d2c5dc45b3c9742e3be8209bd9116847ccf91fd6e7dfd6de24f64126e
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0267.vot
+    sha256: 42094a69b1c7555d5e00d2114339a9fb06537d9ce84fedcec82967a375d8fa1c
+    bytes: 865201
+    rows: 5679
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0268.adql
+    sha256: db8bd563d246c9ec1560ae970e56ab62dc9849423e05230cd366a033e26bebd3
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0268.vot
+    sha256: 8e4a9a94356f15b515efeaec3dc2bf2059a0b28fbb6981698c06ef4f0bb196f4
+    bytes: 826193
+    rows: 5383
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0269.adql
+    sha256: 162b493f9214985c29f479c1fd6da88a15d3b4c741114e33b3c1ee9f7dcc98a1
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0269.vot
+    sha256: f92269c5de7197f8cdbba72d85efd3d0ba5b9a507569ec50f15a918a767394b5
+    bytes: 861980
+    rows: 5668
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0270.adql
+    sha256: d174e0d7bbf8b9e79d51e102e3b50301d713ab3dce7ce539ac241edd7ddc4e85
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0270.vot
+    sha256: f51ae7b5fa515189ca7dbcee6eb000f9726e7961eec01ea9fccac4bc9975c510
+    bytes: 858775
+    rows: 5627
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0271.adql
+    sha256: 2d51163cd539c5c4dbb0afe12a37effa641a562a0053a247b563c9d8f9f9d41f
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0271.vot
+    sha256: 3c91a369da59f55fe216633ff8eeb7af14a8b6963b97e628d1023a5434cfdc66
+    bytes: 741177
+    rows: 4756
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0272.adql
+    sha256: 90739da85b2036eb6c20f514baf1db39cc540dd515c687dcf0edf65085db3649
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0272.vot
+    sha256: 8fac564a050e67457ab355cdf13e5006565fb8d3c1169d2bf6f758e9f1d7600c
+    bytes: 765150
+    rows: 4946
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0273.adql
+    sha256: 3ea4ce6de817d5c9535e67f03f88f358a3bc84295e304e9fbca5947fd77b7995
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0273.vot
+    sha256: e8847eade15e1ee62e0da48deae051d5c7107389b3f982fdc4cc3e765405bdce
+    bytes: 765394
+    rows: 4942
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0274.adql
+    sha256: 43396876ac07936d945dcfb19baaaad4347aceb54c5d8f54db9c6c73aa89f4d1
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0274.vot
+    sha256: e24eb1f1cdda81ef38c0f409c41a59321313bb59708a2c52f2a9266f7fde27af
+    bytes: 799515
+    rows: 5199
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0275.adql
+    sha256: b213d9da5870c5c9abb107c9ac6368e9d15b1006021059c46c4ac21d80eb3b52
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0275.vot
+    sha256: ab16ffe5f8606d65de3ce27a6008202485ab82082917a1109579de08fb1396c9
+    bytes: 674101
+    rows: 4277
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0276.adql
+    sha256: e0f4cd9a4dde7e93b31eb57fe510fea188634913be0bfe99087a1d721fa12104
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0276.vot
+    sha256: ca6460e8410c03f2ae07243bd59b7d3f059a4d62534f410177fa80c2de9144c0
+    bytes: 657376
+    rows: 4149
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0277.adql
+    sha256: 6a4660c3fa0ff53ccb0439e15cd65efc197a02a3c9b237977a321e240dd2dab1
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0277.vot
+    sha256: 83b10692421f42d5ffd493d959fa670fd86770ec94b988f5cbbba5f90704847a
+    bytes: 639245
+    rows: 4045
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0278.adql
+    sha256: 5c12e32d520af98f016f4ed5d34108eb688615e8d13e0447acd4a98907327b0d
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0278.vot
+    sha256: 3b493c9a7895d8de2db1ea6e27273a281527baefadf3b6de2ce72139c43f7247
+    bytes: 751362
+    rows: 4773
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0279.adql
+    sha256: f28a986b204f8b599795f028fcfe83333df3d319cdd45a19cbbacc89de406284
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0279.vot
+    sha256: cd3d10e481ba7ed5a808554a8f28bea987e2cac0733d67e7c36d3bf859f587f6
+    bytes: 780779
+    rows: 4922
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0280.adql
+    sha256: 192a42f67f30453cf22750a7d5f07a61934cc0070626f9d5fc328c4016d2251b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0280.vot
+    sha256: c0f4212fe6812eb0ed53c3c7a42718555a3fa68ccdd58dbfb55ad17cf2f00cb7
+    bytes: 666102
+    rows: 4165
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0281.adql
+    sha256: bbe216cf31441a5b86504bc7da178198693fd6dd9f909201adff2bccd0fb71cc
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0281.vot
+    sha256: 78d426b8980e4b35dc960d0e2ce4316c88efee249b4ba744daf5c355b22b19b5
+    bytes: 763684
+    rows: 4855
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0282.adql
+    sha256: e5528b5eee15f957efb489cc90580c4a1691d364e34dc6b8ab43564cc751a49b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0282.vot
+    sha256: 4319aac1b2161201845242e7fce61b00df88183ab6c661913d6ad5c3c795670e
+    bytes: 706727
+    rows: 4474
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0283.adql
+    sha256: 598b66fdf3728b32b19848701cbc23fbd9d7fa844f7dc8f3710159f3f84ff284
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0283.vot
+    sha256: 35ea29fad41c73bccce3163bcac327073f19f7731365a15269673fe904c1ab63
+    bytes: 681552
+    rows: 4336
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0284.adql
+    sha256: ccc42b4855655170b4b45a0a30b00b019ccd22c888e0be9b5bfd7cfb0ed18459
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0284.vot
+    sha256: 2b235c4567da3d1be2e5637b03096501a98ff8b138c45f2331db2f13d7932ca6
+    bytes: 722088
+    rows: 4633
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0285.adql
+    sha256: 66e1f4f69d299f37d0239f81a2d63d3e3a0e101993705075432ba6f510fb3f05
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0285.vot
+    sha256: 327073435448578b1f1484e7a6cd5cab352ced3587a75b95e42031ee69502fd5
+    bytes: 633468
+    rows: 3993
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0286.adql
+    sha256: e41d9959459ded9f874ce201dafd477e621942b3c918185432c1e2c44d47af83
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0286.vot
+    sha256: 801a46ff811de981a265246c4f52eb1cd18142b2baac13908c8414c2bdf42285
+    bytes: 554294
+    rows: 3442
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0287.adql
+    sha256: 4b6b07cb31dfeca088420aef0e2c8d6e61e19be6f752e53ced95ccff3398b16d
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0287.vot
+    sha256: 812a0c7a09d75bbdb4d59350a57f90b02626f3f328fa9198a23b0d224eb06b28
+    bytes: 625941
+    rows: 3966
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0288.adql
+    sha256: c18115ff9eb9614ab538ff62c4c463a9bfb134bf152238b1d9a827e1f197df95
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0288.vot
+    sha256: 5f6809279e5502a8660f5a400fbd587e8d981a0a38046155570eb917edf54568
+    bytes: 630864
+    rows: 3984
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0289.adql
+    sha256: 573dd178f809994903da73e83143ec8140b37e18c511a1cddd8642fddf689e31
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0289.vot
+    sha256: 0d9823ea4154cd7a48f3f5b77076a4f6371ebcf078f1b3463fa9f8225aefadca
+    bytes: 625388
+    rows: 3935
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0290.adql
+    sha256: b6e02e6513a53ccc011004552ab2bb7d6933fd183b6921aef581cb5de34cb037
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0290.vot
+    sha256: 85620b9e01754ea3757c6d8431840f024c83ff4a5e69ef56985d02237d5fd630
+    bytes: 554851
+    rows: 3460
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0291.adql
+    sha256: e9d39813c38a92c0b6c3d6d2c10d8d5158235b0f3ab16bc7ed27680be8b9ab7e
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0291.vot
+    sha256: 50b1866cba6be75a7179c16882b70ef8d0b30ecfa074d7f874fe78594c891d15
+    bytes: 524480
+    rows: 3264
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0292.adql
+    sha256: af6d495a510452fd4449ec14e3f83355e0a6b454b4e0f9efb94209df21036725
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0292.vot
+    sha256: 9161e218aad01cde8743dfc3c63244ac148a8033f8e940c04cfa741a75ece554
+    bytes: 773669
+    rows: 4964
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0293.adql
+    sha256: 4113432edbf5f7ffb344ea524b3d87af2cebd3e78216b180da817c0dbd814f82
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0293.vot
+    sha256: e251bf7f6fbff73a755009233a413c5a4e2e91d6dfda63d6ca773ea51fab4bd0
+    bytes: 674772
+    rows: 4272
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0294.adql
+    sha256: 17bcdb18df5d911d198f4a79fc6f17c854f1c7a34da50deaa03e060b178524c8
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0294.vot
+    sha256: 8fb07fbe0eaa9b0c2c17aca6160286a8e09ab5450ab570e56cf57acb00d3156f
+    bytes: 584462
+    rows: 3635
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0295.adql
+    sha256: 2e47274727e0ca15f216bee9d90d93aa31979f1cfc47aa5e4c7b8c2af30b9b0d
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0295.vot
+    sha256: 9b93a46ab33313d342cb739cc1cbe863fc736053314ba83ef3af1e1a7286e149
+    bytes: 607070
+    rows: 3834
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0296.adql
+    sha256: 61c24e46bc71f3b971995c4ebc718039b8697691ded28e5cff1a238c08cdaff4
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0296.vot
+    sha256: cf8bf19b680d6493159f97d20a08ea60b2a7eb88f86ffecb11fea1c07b6132a5
+    bytes: 425667
+    rows: 2593
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0297.adql
+    sha256: 3fdef1cc8303d41dff2422269ae7aa1df1fd854b93013cce0123bd1c7be8c0f0
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0297.vot
+    sha256: e69abd5a1f811c28afb282ef4e156e7d5caca92a3f5a6a6e60bc55c4064e0ca8
+    bytes: 598636
+    rows: 3783
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0298.adql
+    sha256: 3bacd3f369d2e9ebfd5a52216edd03447d2b3a3da257c097cea1a3b46387c3b2
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0298.vot
+    sha256: 2d7b1f0d10d572b8b2efce5e5cb166b5c945ddcfe08b6db0e41a0a8829fd5133
+    bytes: 600570
+    rows: 3813
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0299.adql
+    sha256: 0677a51d708504e5a48c9482b5be42bc401ef925826a8d9586f371cc25e07426
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0299.vot
+    sha256: c2a3a56e4beb467c554d7e1ca7e2e2ce8df77af825cf1b0fc70095e43c4d5a0b
+    bytes: 536427
+    rows: 3341
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0300.adql
+    sha256: 7f0aee37c40dabc5e803f79ffe5dc13aaad3297f6cfecfc0e773cba11418334c
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0300.vot
+    sha256: e43bc6337b108a4967f87d76a6819262220cc0f7b304ec9044fbb64496ff9107
+    bytes: 630645
+    rows: 4001
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0301.adql
+    sha256: 4e10b3179fe7fcd7876610a5d2ce29d0123a4f91f325cb200e5fd870b3b3bbfc
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0301.vot
+    sha256: 442671859581af979552cd50364f082974cb10ccd6fb9e7ee6b0b3fba58225f8
+    bytes: 607099
+    rows: 3844
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0302.adql
+    sha256: 1c0abddf3a2d7d83a3717c33857da17cf62366abb8388eaf516d14fcaa6e9aba
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0302.vot
+    sha256: 901b2c09ad0b76e9b9f6ebf8be819781776a348d2703bbbcc4842d28b096bfb2
+    bytes: 448820
+    rows: 2783
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0303.adql
+    sha256: dfb66053f70a78698765956e90d36962c986d4226c51227a8a1597b05790af4d
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0303.vot
+    sha256: a5205316312ff22727f08c5108b0ca99bede6fece837d33a25e9b5f3fc0fbe36
+    bytes: 444647
+    rows: 2780
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0304.adql
+    sha256: 25681d26f629f11a28388dc102e04f0e3cc25cfcea29b13cc200a1ac3bb793c3
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0304.vot
+    sha256: 2daabee7ec895935dabfa1ad4f5be8373adf03f3a23d330b8edd9795c38c1f91
+    bytes: 336609
+    rows: 1998
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0305.adql
+    sha256: 3d00f12331c3689386b12598d6ee1d1e970aa94548efbc113c53cc4a86ba23ed
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0305.vot
+    sha256: ba65a0d3e16efa2e9e929aa349a5fe1ca5a14e728390eafb426c7bddac3b3991
+    bytes: 366270
+    rows: 2227
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0306.adql
+    sha256: 82662dd635e6d9c36eea1b572771b06114bd29523c2eb6b7f6b35cd0f9465460
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0306.vot
+    sha256: 6039f795dbc0d33b41212418513ed29ca58cc130e2f1f9e5094744b190f74e35
+    bytes: 414008
+    rows: 2509
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0307.adql
+    sha256: efa9dd252465e93535472c1480b0977173fe4827896bc751846b36bf151e5dab
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0307.vot
+    sha256: 8fa9aefb77368a907f40c00320110f4c9cb4ed65cfed1ead4b946fcbfdc3d1b3
+    bytes: 609329
+    rows: 3812
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0308.adql
+    sha256: 5e25436dc8b08dfb524d1456de4b9b1ed785e3d3becd3eb8edf71b5980d2106b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0308.vot
+    sha256: 05d695acaae4c49f1397a8b2409801aa954e9d91689ca971f08203fdccdb66c2
+    bytes: 505028
+    rows: 3111
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0309.adql
+    sha256: f65e98713f980697e1078501afc6644a71bdeabfebb26342922279ab238c8423
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0309.vot
+    sha256: cb068d8c853c65ab6b8c723de6b926510677217438edd7a09be05f09aa7e46da
+    bytes: 494693
+    rows: 3038
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0310.adql
+    sha256: ac90dfbaa11c8f3f52990a06ae1d0e0e07597129f4c38047b98720cf61661179
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0310.vot
+    sha256: ca63c7a266ccef4e053e8e0a83af01b26aeccf422e7bce46d4fd365467013bd3
+    bytes: 558024
+    rows: 3494
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0311.adql
+    sha256: abb6472783cb64a3019bf1ac43165b85f6d98be0a847f8388dfbf015ba882b8c
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0311.vot
+    sha256: 9e3c4903305658a84c4dd1ea3c5f8cba522fd15293583c232433002932083d8f
+    bytes: 411018
+    rows: 2509
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0312.adql
+    sha256: 37bdcdc9976fda0dc107fa9484224de6ee07dc1278ae0962f1c401427f5797c9
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0312.vot
+    sha256: 8d0c83596be60470fdaa8566a154ef69f8416cfd8feb6bd94e5d37ec60a2c800
+    bytes: 238008
+    rows: 1372
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0313.adql
+    sha256: 9d5405dd2d24f228317c9f7e6f1d13bb695fb028b9705b71e72f9baf98d544ae
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0313.vot
+    sha256: 3d155c71fe3fefe9a32855ab53de9477645196d5ed382217397afbf7b63baf04
+    bytes: 345620
+    rows: 2093
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0314.adql
+    sha256: 32b09a225fc0bc299547bed6c21e8ece3b8cc3cba39775ff2c8e5408cf523728
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0314.vot
+    sha256: 7d98fa4524eef7fd41491e1c59f82287a7922ca7c2833d52065318bc4886f34a
+    bytes: 236765
+    rows: 1355
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0315.adql
+    sha256: 76fdb1de6b727446ebb25606191c04072c1c4af1bd777471bd804d31dc683dfc
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0315.vot
+    sha256: 16c78b8b7ba09337f46cca1448b38b814bf4c99021fda407916f8ab064b32b17
+    bytes: 188141
+    rows: 1070
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0316.adql
+    sha256: 901ba0d21800e529d6b461a720d2dc6105c9296419fdfd910962462eb9493060
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0316.vot
+    sha256: 897f01547056e7a9bb461e4c37703a2789534dfbaa241c5b4106952617eda29c
+    bytes: 80192
+    rows: 304
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0317.adql
+    sha256: 3382f2859d3aab98d9c3e6db576a1bd720a7dfac3003c88e1de97858e332b295
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0317.vot
+    sha256: 3f91cf554f82e190e15709eeccbcd9f030fa14ec4a19c6387fed8337576cd0ab
+    bytes: 79758
+    rows: 300
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0318.adql
+    sha256: 1284dcb7437a14e6b889d8b9bdb76d1216fa2a6ab9c50176e81dd52687257dad
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0318.vot
+    sha256: d3e51075d4be5126f42119d78367b52ab21b9fdca89ba867b1798bd7e507e2e6
+    bytes: 89784
+    rows: 375
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0319.adql
+    sha256: 726466e2c91f449112727417e42c09ebc565bae78803fc0d203e2bf31f3170c8
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0319.vot
+    sha256: ed162b5df0387dc2ff24821c180e5eabfefd593892654b0aadf3934ff481431c
+    bytes: 79327
+    rows: 308
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0320.adql
+    sha256: 27216a3c85132383aa67c39196a54cf187dbb744f9e4fc5e18fefd9b8b6467c2
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0320.vot
+    sha256: 1d27d59f5ac1da3bbc8829bbe95d8d76740c66772d17fca569fe38c9626517f5
+    bytes: 142113
+    rows: 737
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0321.adql
+    sha256: ae9da514a79ba3ed36782cd9d2e1a9726697e6be6b773e98d55200f20523bd68
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0321.vot
+    sha256: c830a07118687cf5691cdc745b28a6d4f546b37a4d774a00f74100a5e0ff90ef
+    bytes: 116706
+    rows: 551
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0322.adql
+    sha256: df8387b9adf7941fe1c8e988ffc676a7f877636ea236eda213281b03e5459199
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0322.vot
+    sha256: 14bb3b7a3e09b404b8bdfcdf3002ecce01dbdf6cda71d9a69e7e45477e990260
+    bytes: 129881
+    rows: 642
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0323.adql
+    sha256: 6bfb318e48a74ece9e57420c089192dc392bb863ac87999a71f06f94afd21c83
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0323.vot
+    sha256: 5db828e71e3916bb88f8d2a8c368897cdf532b66e5bd0ae635c07af008c9c75e
+    bytes: 204135
+    rows: 1149
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0324.adql
+    sha256: 614dcd69e19503d9e3986d3424c7e9a6f5045759fae260da9ae9e2d65e070cf0
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0324.vot
+    sha256: 4f8a2e90260ca3aed6cbae7ccdddeab6138b3ba5e2e186633c7ed5f5246d2b49
+    bytes: 193504
+    rows: 1087
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0325.adql
+    sha256: b6d2e3fa6c9f7053bfb9cb2fec567f831130571ccb52c7a77fbd1b579fed94ca
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0325.vot
+    sha256: 4e5b3cc5f97cec8464cbdd370e60dd9afd3b1d70ec8f91063d4b23bd68350073
+    bytes: 133342
+    rows: 674
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0326.adql
+    sha256: 6f97ad1e885eaf914f7a4a028e6ae0634932188803a9c7e15ea5079b288a0955
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0326.vot
+    sha256: 92122b8de3a3c2625a2d0a0b53224a4a69ec9b84e43546492f46e0667aa22295
+    bytes: 163734
+    rows: 862
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0327.adql
+    sha256: 48418a3cbd23f0c3a6859baf554e8e86417a381d9f5952b2864be4d10b3b5de8
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0327.vot
+    sha256: 898853cefd492fa11997b3e63fb938196609a5e94c7c555051b3c18200ca31e7
+    bytes: 363548
+    rows: 2228
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0328.adql
+    sha256: 680f1a09ecbb7cbac1a606e453370c56b38c5cb0b7aab2614ac2f8748a9862fe
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0328.vot
+    sha256: 40b157a4cdb23226169b96cf2988a205866c7d50dcff8e7a70d5493699100727
+    bytes: 328594
+    rows: 2002
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0329.adql
+    sha256: a1acac2c0da259163c13072be977c0bea949239bc8cd1792f781bf02a098219a
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0329.vot
+    sha256: 4cb9d618d89971ef3175434c1d31722dbfa7f9fc9c2269163f96881ba49c4caf
+    bytes: 444851
+    rows: 2777
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0330.adql
+    sha256: fac9fb82b40b810c7abe7528fc739ba791d59870388ca2d937c41e98a2d1f143
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0330.vot
+    sha256: 8d7af4bdbc0036a972614e75ab7d367a6a86e76b9b15f285452da25eb59b881a
+    bytes: 373074
+    rows: 2265
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0331.adql
+    sha256: 839c6828a3282ddf561b2c5d014406d5d2f50d73fb2d036730a574d9611cfa09
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0331.vot
+    sha256: 3ef968e92fde5df669d499b4c6f9b5cba0726a14fcffa60309fc4581772c5ffc
+    bytes: 355671
+    rows: 2155
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0332.adql
+    sha256: 3cff3b288b4e924fdb68e4dcc1f89efdc15ba323e57be4876920d7d27ae7688b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0332.vot
+    sha256: a140e9408a14240281d1b0aef439347e7de705b89830174d92271f5a73a90bef
+    bytes: 416100
+    rows: 2553
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0333.adql
+    sha256: c31ada355437706fe867306259e1861ff9f51be8361f0908ad876c896139f10f
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0333.vot
+    sha256: 38adb3f837eb3bfb959efce1b8490d5c15c4af472370a86cb469331c2aec9d8b
+    bytes: 694369
+    rows: 4415
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0334.adql
+    sha256: df3cad107f2234e6f9e76528996293c8f294a558edb1d9e7c3e8e6facf441dd5
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0334.vot
+    sha256: 6cdd17db4b3a517942ec5ecfef631cc7284503bfc7ed9028af6454de4df8dd0c
+    bytes: 731180
+    rows: 4666
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0335.adql
+    sha256: 953ffbf18e71bff289d32bd2cd9265d595a6332203a8cec7d18ada9a872f6783
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0335.vot
+    sha256: cbbd046a391b19cccf33f959f0b7de5a87d745a7aef21f6f76c6ef8921fbf180
+    bytes: 754255
+    rows: 4871
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0336.adql
+    sha256: 69bbe865f1929e5c193f2c841f3e9a7c249822023c92f7b3f349a5b04dec7951
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0336.vot
+    sha256: c75ada1e2f9532c529f791b94919bb175e40204771b550b61f917cf4e0e54830
+    bytes: 588590
+    rows: 3706
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0337.adql
+    sha256: 3cdd64241cbf2480b8bdc5616f7418aa5129704aa01c4e89332f96a50ecb04c0
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0337.vot
+    sha256: a41fd05c34eec4a1a03de6029409186fb06fc04081a1f719bccc2412374d0664
+    bytes: 637129
+    rows: 4061
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0338.adql
+    sha256: c09360defeff785f8436b1b48e2d21632dcde0cf38aed6e79b3b7f6bfe7dddec
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0338.vot
+    sha256: 684b231c3040c1ddce8ea6e14814901a4896b5143e3308193b8e71769671c380
+    bytes: 645603
+    rows: 4098
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0339.adql
+    sha256: f81c14e53218c5520bd366440fd119b78e6f6de6e1d64073a2df6986c781ada7
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0339.vot
+    sha256: 8fe7e29b2d5583f964b5293f8ee7d053768e3a8c00277b5fa5b2d0ab9fe433ee
+    bytes: 596203
+    rows: 3736
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0340.adql
+    sha256: 21956918ccb5d4f902e6aa63017bbdae73e28dcc71f3b283c0d981932e04068b
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0340.vot
+    sha256: ccf23a3829b10888a7cef6cdd7a7c8c5a58f4ca39b704a97b8dff520cb2d24ea
+    bytes: 623978
+    rows: 3945
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0341.adql
+    sha256: 1fda0fc096a960b578ec44bac8d33819b49508fc47fb84de9e3cd2e0206228da
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0341.vot
+    sha256: c7d86861ddd2a006dd4910b4a7e768df21273863f9a6dc47053f6217a01d9753
+    bytes: 685984
+    rows: 4374
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0342.adql
+    sha256: dab52942a1efea0068b0feec2e048102307db861078989a46399a8eecd8de721
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0342.vot
+    sha256: 5f3c4f3c8f9ad1518f2fed3a9e18867ae8e4fef18c6531ecc8231aea1b8347e9
+    bytes: 742721
+    rows: 4802
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0343.adql
+    sha256: 32eb49cfd7d8f8aa9653371684e27188a5af82eea394ad557e306d1ae2d2a5d4
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0343.vot
+    sha256: ce57746834d47719da9cba05b2036daeeab3c6e2c77ce90477cd78cadb30900f
+    bytes: 772613
+    rows: 4992
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0344.adql
+    sha256: c6f3e4128c6d6b1316d776f418de49562b51d7b1ddb813c5c1ad19ca074a955a
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0344.vot
+    sha256: b48821f72515ec3bf3a650f86c67a1bee5e7eec83e6e8e85d88d13b98db3a2fd
+    bytes: 751179
+    rows: 4842
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0345.adql
+    sha256: 4bbbfb5924bda130ca74bb43139dbf2c16becaa6601792fc5d4f4237c9161020
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0345.vot
+    sha256: e948d556ecdbed694bbdd4eda5f6b169717f7a85e8901183d02851add0256103
+    bytes: 726581
+    rows: 4673
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0346.adql
+    sha256: 8f33b8260897ac7b6f9e6fee45afe9f17c03ec6afe9070795bd67a5c29f2ca53
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0346.vot
+    sha256: 7541be7a1f5ed807dc8ec723d92de1bcdfa571bb8fb399ed93b7f43d9607b514
+    bytes: 776399
+    rows: 5018
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0347.adql
+    sha256: 2a7cc382bf04955933e6b8844fb4f0e71b417dfc5433b974513266357d7e2885
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0347.vot
+    sha256: 98ca51289514057af7de38a3193406838def0fef4ec3a5cbba1cbc67a915a0cf
+    bytes: 814526
+    rows: 5262
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0348.adql
+    sha256: 7ae7a2277892988eda7a2dfa614ded6ca0c9243259a157b517c85d66f51c06ec
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0348.vot
+    sha256: 9b4a917235855f261c324b9d640f609f05d942200dc229d693407aa91ab8dfa6
+    bytes: 789501
+    rows: 5094
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0349.adql
+    sha256: 9b1897ea9473a962dd3b5f1de0ee5f91cb20ab59522f59d4f347a4abe06a6639
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0349.vot
+    sha256: b821e6c52994cc223398f8bd1604e5203858dc382177c3becc881d853bb997cc
+    bytes: 748201
+    rows: 4805
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0350.adql
+    sha256: 85ed4da356fc798e0c7dc399bc9f2eae759f0b6c9c264bd87e0f0dce4f1fd838
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0350.vot
+    sha256: 6cc86ddb87c50360ca57b3a12748379ee6d618c3b48a8329af7b9332da6dd303
+    bytes: 752548
+    rows: 4824
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0351.adql
+    sha256: da557d10de004cc3ab93552ef989e72a2a94f54f3da699305ddf7279e6cbb27f
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0351.vot
+    sha256: 1fe2ec48a4f6f5524bb0c04d532ca1739a31f62aefd03d5cd775e0ba470543ed
+    bytes: 755165
+    rows: 4852
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0352.adql
+    sha256: 2da3d7bdf6aa18e7c41f685fa836c78f44dc01b0582ebf19ede7ba5c7dc09d4d
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0352.vot
+    sha256: d463f45b92ff48c7571e0c2c88d9e3ae5976a4bcb1e90fafd5f71045b0188b82
+    bytes: 694154
+    rows: 4414
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0353.adql
+    sha256: 7c0483e74ca61d5b2954cf8e392556d9033601d18a8b4969777b5ea05ea7eb64
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0353.vot
+    sha256: cf915161a42d14e3f3a71ebe9a31f28b5b9802bfb1be605396af1d0f7a7849c2
+    bytes: 790439
+    rows: 5134
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0354.adql
+    sha256: b669ea91d0eca70e48b812366d53b510323e40ea9f46f097f7b5bcdcbd8d1d84
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0354.vot
+    sha256: c1b0685b8cd45de4393a23b6f52523ec1aba4dcb90fe16612c4cb0d46cee2d06
+    bytes: 794132
+    rows: 5147
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0355.adql
+    sha256: ac4fa6ac4fcdeffa27f15cd37e1779f03976f9bc74b426fd9e49810fe49fe595
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0355.vot
+    sha256: f4ff545a0a9ecc088dd7cb93ca6844ce5544430b2567a80f077d1918a145e56d
+    bytes: 789745
+    rows: 5136
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0356.adql
+    sha256: 5fe04cc7dfc51afa7e40d79c3066f6812a028091dea54805cc3cf98981afc5c1
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0356.vot
+    sha256: 0dddd6ede73a80538c0421afcdaa145ef3f504a1dcc60592a4b03bc85c36888d
+    bytes: 815281
+    rows: 5313
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0357.adql
+    sha256: a8ba6c3f39a300651a2d8f9443f9a00468e597e83b48aeadbf6e654ab9e6e022
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0357.vot
+    sha256: a2f2d1702c083ab129066782972a13d72e20e014534b7a8ee1c35c6cceedbd13
+    bytes: 778317
+    rows: 5055
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0358.adql
+    sha256: 0326602e83b7ff19a0b84f9b178272358a157f46c0e8a2d3d860cc54bf6d013e
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0358.vot
+    sha256: d0c84f028bf412342fa30c781f2fa0b90f76322695e4b283d20b629880a7fa2b
+    bytes: 758480
+    rows: 4914
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0359.adql
+    sha256: 884bc33539d09f98bbecc5a539459ec2c658d8bdfacda1bf96755ed00bcf03cf
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0359.vot
+    sha256: 4bf05d03ad9d7d7b330f1081ee32692130bb926f044e33cffa8be077f543cc39
+    bytes: 714735
+    rows: 4619
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0360.adql
+    sha256: 6206a97a474f51e25e3ad2ff8cb486c8e9596cb3ed679582238fc5ee603e0987
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0360.vot
+    sha256: 74037336320781dbbad50a59ec0ad04b0de61abcb947c159f23a6b7d1aaa1700
+    bytes: 543500
+    rows: 3399
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0361.adql
+    sha256: e81eab6539d984e47906facbe5775f34281b73c2833a1fe5572c6123cc9587be
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0361.vot
+    sha256: 621fb6343558823b223b9c7b3ef58965fb7def4ae43948b5e508f8b842914cc9
+    bytes: 632705
+    rows: 4023
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0362.adql
+    sha256: 4c062d3e4d8c29128fdd461b173c4cd6df997d738a1d9e0761cf660cd6a46f84
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0362.vot
+    sha256: a173420c0655f223adf126e20830093c06b5202656dd95574d06061640e0dc18
+    bytes: 598620
+    rows: 3797
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0363.adql
+    sha256: 54bb53eb632441d700f4cc154441e94ac63d8e9b97ff53e6324ca2762b3681e1
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0363.vot
+    sha256: 2e8cee069b8bfb9a04b164dcb123d1a8616b30982ffc01d8c83d8e98d84a436c
+    bytes: 648146
+    rows: 4120
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0364.adql
+    sha256: d7dde98af96472500cabca87ed09784f68093810830e1a5e78e2f2b60de14cf7
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0364.vot
+    sha256: e153dff5029558635e04cdce0c0bc309cff3333e60f58a615dae31700a1af93e
+    bytes: 701438
+    rows: 4500
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0365.adql
+    sha256: d59795ba1bda3f1ca6edbcc8efb088c45a8f86efa8253fe49e5417939e6ff0b5
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0365.vot
+    sha256: 0969da06975de95b3525d177e025043f4cf592116b7fd61fb3da23b29bef3647
+    bytes: 656905
+    rows: 4188
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0366.adql
+    sha256: e87625e05ae1dd47f072ba4092790057ca1afbf3604447a484c25bf72583a679
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0366.vot
+    sha256: 9adc73534904c9a895864e1a2bc7a9ba2c2b4afb525dc48b564ed9094cee73be
+    bytes: 657006
+    rows: 4168
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0367.adql
+    sha256: 2a07bc17e9f22eb4f2a8aacffff87d1de6f8f8c347435a9765d605a86a603fec
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0367.vot
+    sha256: e9f77fce32dc01e100a23137219a2e656720a79cb0c5d0b59e4aff2e1fff1fc2
+    bytes: 749757
+    rows: 4843
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0368.adql
+    sha256: 910466befe56e0839707305665bfe85bd39176ec765c95cf084993e281ed1c51
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0368.vot
+    sha256: 70e364ced5085815176a370e21db5f57ab73695944c47d1c81bd6e2e8b208317
+    bytes: 714020
+    rows: 4596
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0369.adql
+    sha256: fe1469627918246dcabf4d335b1dfa767146f47e7fa055bd2154b81f795afe57
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0369.vot
+    sha256: 40b00c9d22fc5b3037ea58148b7073fa401ade77b6afcda99d5e4be36196b7b3
+    bytes: 708096
+    rows: 4562
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0370.adql
+    sha256: f100135f2d0b6d63dd261d1a2c0646abf7fef0d7d777053335eb8cf1a70ce1fd
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0370.vot
+    sha256: 46f126a04a13fdb4144bf7465565455f206f60ee7cf45a31ddbd311f0a94f329
+    bytes: 701219
+    rows: 4529
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0371.adql
+    sha256: e39c54946b636592ab6b195bc818f48479481164d54d6f2b3678e43755782923
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0371.vot
+    sha256: 209829973b01a6382a2b3e4086939d01247fe400d69bd2d0821e616f75c04fd8
+    bytes: 664993
+    rows: 4232
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0372.adql
+    sha256: 867ef5b1ade2481cfdbc632aa745463f1d8abd38ce201c24d2ccc7357e6e8acb
+    bytes: 32189
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0372.vot
+    sha256: 42cb2fea2378c027b1c55d39d662b15ca5ef2635b9e3e4c92037adb2e8fc2fc6
+    bytes: 652400
+    rows: 4139
+    role: data
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0373.adql
+    sha256: 978e7417876d04023954a0e4bc78b6924cc8d5e6c00db0ca691f6796fb5a8375
+    bytes: 7421
+    rows: 1
+    role: request
+  - path: data/raw/simbad/simbad_ids/2026-10-12/batch_0373.vot
+    sha256: d97ab1470fe8ef810bd8e11f98478383efe0136b03eb51319630a698189098c4
+    bytes: 152088
+    rows: 967
+    role: data
+  license_or_credit: see data/CITATIONS.md
+  status: complete
+  notes:
+  - 'input: 372226 source_ids from data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_01.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_02.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_03.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_04.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_05.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_06.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_07.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_08.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_09.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_10.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_11.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_12.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_13.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_14.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_15.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_16.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_17.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_18.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_19.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_20.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_21.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_22.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_23.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_24.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_25.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_26.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_27.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_28.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_29.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_30.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_31.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_32.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_33.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_34.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_35.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_36.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_37.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_38.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_39.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_40.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_41.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_42.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_43.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_44.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_45.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_46.vot,
+    data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_47.vot, data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_48.vot'
+  - SIMBAD matched 249432 of 372226 Gaia DR3 identifiers
+- dataset: gaia_dr3_distances
+  source: ESA Gaia Archive (external table, Bailer-Jones et al. 2021)
+  service_url: https://gea.esac.esa.int/tap-server/tap
+  release: Bailer-Jones et al. (2021) distances, joined to Gaia DR3 on source_id
+  query_file: data/queries/gaia_dr3_distances.adql
+  retrieved_at: '2026-10-12T09:49:12Z'
+  files:
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/schema_check_external_gaiaedr3_distance.vot
+    sha256: 74760a44b39db83f67f5471cf552736eccf9bba1a9339f9ef942602d07bdb5ef
+    bytes: 2937
+    rows: 8
+    role: schema_check
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/schema_check_gaiadr3_gaia_source.vot
+    sha256: 3210e354bd33063ec32e106e2069ec9f29882f13131e262a1366d06b17ec411d
+    bytes: 13011
+    rows: 152
+    role: schema_check
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_01.adql
+    sha256: bee08d7cb2ce9817627b222206f00cd4d7a04fb58ce85399dc80ec40010a8e4e
+    bytes: 311
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_01.vot
+    sha256: fcbc75ce8d64b0d2238d61530c55b2ad0a0eb21734e7015c6954f1b7041a3755
+    bytes: 367585
+    rows: 6388
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_02.adql
+    sha256: 7eb779d4444ab47ecbdf897382da7cdb3e406df8b08e84e4856ed5a1b679445e
+    bytes: 349
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_02.vot
+    sha256: 7e963e41242b9ab67f10c24a4be0a6b6cbc1ad2ffa734fc1ddc6e4c3c9c000eb
+    bytes: 382470
+    rows: 6649
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_03.adql
+    sha256: 1c6c61966e4aa69241dc8285b9c91dddcc5598b05338256c4574199529f39d93
+    bytes: 349
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_03.vot
+    sha256: 1fa324e85d0b7444c82d1a6eb81a5cfc5a18f4ec12d7f3ea0227340db90dea27
+    bytes: 375247
+    rows: 6522
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_04.adql
+    sha256: 861866d570b6a105f5f69746abe7fe03eed3d27efb2bd21b93d0360bf7aed962
+    bytes: 349
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_04.vot
+    sha256: eda420675de158f6ba5c771401fa4bb5f3043e63fd85018e8cba777aa6524176
+    bytes: 375133
+    rows: 6520
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_05.adql
+    sha256: 755c270330ba15e04ba421a5dfbcc55cfb6ff3d78b0895e701d9857cc8da1b8a
+    bytes: 349
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_05.vot
+    sha256: 17e0af69ca91f1e1ee5bc1ffb8920e77bba4af3494021ff6517349c70dff3f06
+    bytes: 340781
+    rows: 5916
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_06.adql
+    sha256: e29479e746da811c9fc68fef4d148749df747576151fcd90643de369fe7eda7a
+    bytes: 349
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_06.vot
+    sha256: d94b91360e65aedde3054cea808213c5281344232613d56d42ac8369f933dc26
+    bytes: 341008
+    rows: 5920
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_07.adql
+    sha256: 639c66b41cafda4d3bfca1d9d1e9453e8e7ba5ac4b1e1fa948bceefa1dfcbaef
+    bytes: 350
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_07.vot
+    sha256: d0887a8bfa89e21b08e4eb278d6e2bbc470e4173efb19e5dccde3a609f480709
+    bytes: 357731
+    rows: 6214
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_08.adql
+    sha256: 81db04a5b5d3abf21e37ece6484f33315294fbe00f09fada7377afbfc23e56a4
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_08.vot
+    sha256: e5b717a0bf3cc503a5938ea09da89d9572cd7459eb5ef34a48dd1ee4ea478b44
+    bytes: 348689
+    rows: 6055
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_09.adql
+    sha256: 329035448bc54c11d22c05073cd77fda6766da8751b87d1514e73381004b33a8
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_09.vot
+    sha256: f3fab7433f815283ee94f11014eb49f020562169942e3d988f61fc0e773fe7e3
+    bytes: 349940
+    rows: 6077
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_10.adql
+    sha256: 7fbbb41b0ff1e2d48cad1ada199e5a67ff45bea9b1f0d8d7c3e7f975f453c236
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_10.vot
+    sha256: 169cbf3d09046259797c4d6928aca2d1be991c5e092f623c79c9da5d73edcb79
+    bytes: 362168
+    rows: 6292
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_11.adql
+    sha256: cbbe21600489b47a714d0bb8a20d5120657be4a6bd793093b54a92e60a0c0320
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_11.vot
+    sha256: de4dcd9b3fea80071d4caea147f2310da9c3e75940a48928633b38062b7c06e9
+    bytes: 349087
+    rows: 6062
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_12.adql
+    sha256: e8ab7bbea6aeddd3fa7c3f5f7073e726a7bcc56447eaabb43978aac9d677aeee
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_12.vot
+    sha256: 5d5cc78043a68cb8b68610a85fe0c6970e31103004dc12564132b6aed2929c3e
+    bytes: 358812
+    rows: 6233
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_13.adql
+    sha256: 42811f6f577feb9c65d2990bf5e3853e0aa5af471c1cbf2e24f561348a5f3a5a
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_13.vot
+    sha256: f6d3305d665ffebdd8499a50891d04950136e703b4e1ceb345a98fab94b0828b
+    bytes: 517494
+    rows: 9023
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_14.adql
+    sha256: 3a4d327c8b84adb64f8098811c88ee20465c3c626ccfba25579dc08c19022687
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_14.vot
+    sha256: 50bc6a4ab9664e72aead19362844e639b618f1a5e122ed1f17b3d392369a6a5c
+    bytes: 388956
+    rows: 6763
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_15.adql
+    sha256: 142ce2fb0fb9444a607348ec7a45b6fe338863235cce8498b61a0b7d5622b147
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_15.vot
+    sha256: 013f4fabfd0fbdf37ea9aea47f59104d41068d4d1cd5aa5ee700254c2f43d2bb
+    bytes: 493379
+    rows: 8599
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_16.adql
+    sha256: cb1646bd05922f7d527011f603c0fd218d56f6cba18b1e76f57e0863ad0ed45e
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_16.vot
+    sha256: ea1eafc51eec3364546bd68cc0c4136c199d556b30188d20a0f251c4bad756be
+    bytes: 376444
+    rows: 6543
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_17.adql
+    sha256: 840b7d18ca848d46815e95526b7f19dbec1094670a4eb051d51d7c5d7bac8d73
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_17.vot
+    sha256: adb26fbb4122989ec151738c77523c556884185e56a2780fb5a6aa33627e7238
+    bytes: 341807
+    rows: 5934
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_18.adql
+    sha256: 2046cd4076f1c933cf6252ea5d6856d45c4bca87e68be08485c27b0c839f5b0a
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_18.vot
+    sha256: 220aa5a784424140804a9121f6cd965631af9fe04f7984e4a32adaa1f85619e6
+    bytes: 337257
+    rows: 5854
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_19.adql
+    sha256: 2ef38e76818698f684557d2817c47ce11040e19aa40e0c33c3ec516f1e6cfb6d
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_19.vot
+    sha256: 8cea60ecd50143cb7d2468d7930cbc55e4d8d09dc75edf21c30c718aed849292
+    bytes: 361144
+    rows: 6274
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_20.adql
+    sha256: a0c15e6cd464547d139db0fe33c8f3d35799495ccf1ff7ca0e8c554a7ad5dd5f
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_20.vot
+    sha256: fa10c3b5d1c99a6837570c1a3c4533bebb2f36198d93090143549a976e665549
+    bytes: 350395
+    rows: 6085
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_21.adql
+    sha256: 63c8fbc688ae63af2f8cac99eac9323beeccc9315909a26b4f9fa7b658d634ae
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_21.vot
+    sha256: 9b2678502f0e221c4f468cedd92b8383e71596a542d096386cb0521f5d22bf52
+    bytes: 383837
+    rows: 6673
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_22.adql
+    sha256: a06027652a1aa6e5a126ff6cd6588a3fb9054dda86beb12c6239498759ae5e1e
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_22.vot
+    sha256: 8c89264702cc01aad2cce735baced4f6378980c96987c7f865b4b6f3ca319c61
+    bytes: 365808
+    rows: 6356
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_23.adql
+    sha256: 8fb366a0982f25e73b8733a0777965f4393b6145c0bcb8f46d4c9884e6d1c015
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_23.vot
+    sha256: 3ec61de2270026c0fd2d6bee1f56ed7f7156a9a91e39e67d9fa4632bc8700189
+    bytes: 375590
+    rows: 6528
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_24.adql
+    sha256: 26a19b0f3c290d4147564bdf0106ffba82ee8a0f2c82412a7b0c41a84f802374
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_24.vot
+    sha256: c2e4e9c8e3ffb5c2bb974f002b31ee9eb830508bf24474b54467b2899ce8170a
+    bytes: 378320
+    rows: 6576
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_25.adql
+    sha256: 73078e62047fc64c5dfb6547897d2ce3539b408f4270dbed04a8aa54c4e8c786
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_25.vot
+    sha256: 5353b4b0f1ce0dd9f359ac719c817086a9f9db5d13a5c7a7492988eaefb8c083
+    bytes: 363590
+    rows: 6317
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_26.adql
+    sha256: 380c5e2ff50c06ea7a0da7f2bd19a25f27f1c8c24b1c9e8671b227477558754d
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_26.vot
+    sha256: a80b9e41eca907844c42a2206b8e6cb3c60d89a128eb0ad5cbdf5d558aa74a55
+    bytes: 346357
+    rows: 6014
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_27.adql
+    sha256: 5bf2b38b5da06928c054621f5e81f1219e51b53302195934aa64ccb18d09b752
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_27.vot
+    sha256: fb086d3cf934ddb1142dcc586070a3796101ccd4815784cba181dd21e38c4cef
+    bytes: 337882
+    rows: 5865
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_28.adql
+    sha256: 9c32bc40723b076c0641d8289bec1c6f832d54cef94c9c10efcb3025240b9560
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_28.vot
+    sha256: 3bd8f38924d426f5c72f8f33b5a021e07c27d045575b1a932eb64fecb0a8b9eb
+    bytes: 334811
+    rows: 5811
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_29.adql
+    sha256: 9979b687052caf9522c84674487611a6641bdb1aa74749158ac1c21e2a49b047
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_29.vot
+    sha256: 9b851ad5fc3a4892cc78b8d19512c684c5c67596d7119a56e2fc68781962dbb3
+    bytes: 2575572
+    rows: 45209
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_30.adql
+    sha256: 66e8f1d18fabe12450c874acd1b046be8a4f3591066ee1d8edcd01a3c814a705
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_30.vot
+    sha256: 359a0cfbce8d131f247164c7f3921f9b97d6bb596ec0ea8c02445d73d76af0d2
+    bytes: 622030
+    rows: 10861
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_31.adql
+    sha256: f4993100b2cdbb43ed704555169aa6ab2523950c8f1d39a2200596b25b4dd7b2
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_31.vot
+    sha256: 2bc8f10167028aa241c28cb104c089202e06c2eec1106aa4a54480fa389f65be
+    bytes: 374225
+    rows: 6504
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_32.adql
+    sha256: 9a236e07ffd0d4c2a89dfa536943a70ce0ed12b4a0617f31b13cac044f16b3a1
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_32.vot
+    sha256: f658fe0eb351c01e4054b97b2f81e7a9312e684cd1fbc967201f3893dfed2c30
+    bytes: 419441
+    rows: 7299
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_33.adql
+    sha256: 5333fc22df9946473c28a846f4a68944b61c36f668d9c72f695a0d4b26e8b47c
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_33.vot
+    sha256: a3b71d7859fe8a2330a3fd9dfef5fb1607685e1e5652673eb532e7ab3b513b75
+    bytes: 357902
+    rows: 6217
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_34.adql
+    sha256: 0b354f516b7dcfc5eaed6a92d109f663a1a4e53df4b2aec07aebb6ca5ab96ac2
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_34.vot
+    sha256: ec288f2ec130d8b78f97bde654b07114cdc7ae84a338520b665e05ece92d974f
+    bytes: 361144
+    rows: 6274
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_35.adql
+    sha256: 8e70a681db826a1213c263fa8c6eb23a299b86c37de7acd29d4bd8abb64f13c9
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_35.vot
+    sha256: d1bd399ea2dbfdf03c9ef2271a0a4c3175b54c86d6730f9c4f9f2b50dac8046e
+    bytes: 350224
+    rows: 6082
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_36.adql
+    sha256: 1d91fe21be0f2ae08c2897fb84b50ee245d3dd1b0622da48b8db098903873ef0
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_36.vot
+    sha256: a293d026e46ff0334772a02ece963312f1349eb281b829c5f907075881c1832e
+    bytes: 334925
+    rows: 5813
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_37.adql
+    sha256: c320d6df0c4b2a49d06690bf141a320d819bc68cfa5731543d07756d0d7f4ca2
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_37.vot
+    sha256: b3e2f1f4303743afe1eddfe408d8e131ebca2ce4191178d7da844018baf91349
+    bytes: 378662
+    rows: 6582
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_38.adql
+    sha256: f19152dc5e38042f4b160da49ae2751aa53b18be587b84a37413bfd3bd010629
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_38.vot
+    sha256: 6bc8d31b4064c43f57b37cd639539d72205983a12768a7e7c039657bcc8ffe7a
+    bytes: 384235
+    rows: 6680
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_39.adql
+    sha256: f0fec688ecf219cab38627fa082a0ad31d07313b66cf06f17116953803af7f18
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_39.vot
+    sha256: d18cc39775d75c4cfd7350af4a885ac9d94a5cc79322d4327641564b47cc6731
+    bytes: 389013
+    rows: 6764
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_40.adql
+    sha256: 937429b7ab97ff86932564bc0956985cb04997a3c9ce5161fe75a63ae4e19c40
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_40.vot
+    sha256: 31855e36e59299903c66791ca315a4beba7351f2e7e794f94def632515e865fb
+    bytes: 408919
+    rows: 7114
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_41.adql
+    sha256: 7ecf9ddc3294fa7a946165899b27865ca3e4bf17aa218023c1cbd65a3acc6542
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_41.vot
+    sha256: a775aa048842f6155a8c004cdcf045a4b30ee3fe7e47f842c344910063e1511e
+    bytes: 527731
+    rows: 9203
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_42.adql
+    sha256: 0a5e2db5b98634d1dc49814dcd7fb9c178f6ff1129fc068d04dc8b3c53ced522
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_42.vot
+    sha256: f1efa591509a7b2dd1a19bed06e12bbae8b63d77d1e70d25e2a6ceab1982c981
+    bytes: 1210288
+    rows: 21204
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_43.adql
+    sha256: 10536d8e48bc69d13892e69e0b5546525bebcdb06b9d32db7ee2c46ec52fc39b
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_43.vot
+    sha256: ea62b1934b20f2710460a3a0c198a6fd86a8dafdffe66fb77b820a927a884dd3
+    bytes: 421090
+    rows: 7328
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_44.adql
+    sha256: e891071d2bebd15c071a3f47d3add97838f3c34dbe36d58962397c1f52c8fe6c
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_44.vot
+    sha256: 2a56832a68d51bd704de5993be13453b58f9077852e9cd6325034e85ceef2967
+    bytes: 372576
+    rows: 6475
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_45.adql
+    sha256: 93ac89b52343d0af21129af48c676c91e9f125b207a0b8e0208790ab9ea60fb9
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_45.vot
+    sha256: a419e1c91fdcfe4735cde27889237f43571b5c88f47e7200464240aaff2a0cfa
+    bytes: 378093
+    rows: 6572
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_46.adql
+    sha256: 16fbb0dc8530a4a9afbcb67e773e8c1877225cf70c7e7131657f4b2da2a0eb08
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_46.vot
+    sha256: 50617b5802b77119382a1e2cc10b896b3d8f91b7b016c3f1cb3940f361ed9faf
+    bytes: 361372
+    rows: 6278
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_47.adql
+    sha256: ce87708e6f1a8345aa11a174783c6345a3cfca200b999b55be62d1fa593a0a30
+    bytes: 351
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_47.vot
+    sha256: 30165faa96bc7955ef2118cfa8cb37e672eed8e48811b39b5848537ec32c1bda
+    bytes: 409090
+    rows: 7117
+    role: data
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_48.adql
+    sha256: 378b91fb0416c9dca76e2bdc149ae1f3dca6bbd3e102b7e2a8915fb5995d51ad
+    bytes: 313
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12.2/chunk_48.vot
+    sha256: 36077905f0a524c5b418b82ee22f50bd695429993b3df2db3b6bd188c6e73f55
+    bytes: 378905
+    rows: 6587
+    role: data
+  license_or_credit: see data/CITATIONS.md
+  status: complete
+  notes:
+  - 48 disjoint source_id chunks, 372226 rows in total
