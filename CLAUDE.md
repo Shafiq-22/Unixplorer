@@ -37,13 +37,14 @@ official archive  →  data/raw/ (as downloaded, immutable)  →  data/processed
 
 | Area | Status |
 |---|---|
-| **M0 data snapshot: Gaia nearby stars** | not started |
-| **M0 data snapshot: Bailer-Jones distances** | not started |
-| **M0 data snapshot: SIMBAD identifiers/types** | not started |
-| **M0 data snapshot: JPL Horizons bodies** | not started |
-| **M0 data snapshot: landmarks** | not started |
-| **M0 data snapshot: NASA Exoplanet Archive** | not started |
-| **M0 manifest + checksum verification** | not started |
+| **M0 data snapshot: Gaia nearby stars** | blocked: archive host denied by environment egress policy (HTTP 403); fetch code ready |
+| **M0 data snapshot: Bailer-Jones distances** | blocked: archive host denied by environment egress policy (HTTP 403); fetch code ready |
+| **M0 data snapshot: SIMBAD identifiers/types** | blocked: archive host denied by environment egress policy (HTTP 403); fetch code ready; also needs Gaia snapshot first |
+| **M0 data snapshot: JPL Horizons bodies** | blocked: archive host denied by environment egress policy (HTTP 403); fetch code ready |
+| **M0 data snapshot: landmarks** | blocked: archive host denied by environment egress policy (HTTP 403); fetch code ready (SIMBAD part); distances need §8.3 paper choices |
+| **M0 data snapshot: NASA Exoplanet Archive** | blocked: archive host denied by environment egress policy (HTTP 403); fetch code ready |
+| **M0 manifest + checksum verification** | working (tested); `atlas data fetch/verify/build/status`, Git LFS, CI workflow |
+| **M0 data snapshot: galaxy_structure** | blocked: needs a human choice of disc/arm model paper |
 | Repo scaffold + CI | not started |
 | Schema + migrations | not started |
 | `astronomy-core` physics models | not started |
@@ -86,12 +87,12 @@ docker compose up -d db
 uv run alembic upgrade head
 uv run alembic revision --autogenerate -m "<msg>"   # always review the generated file
 
-# Data foundation (planned CLI; run in this order)
+# Data foundation (real since M0; order and details in docs/operations/data.md)
 uv run atlas data fetch <dataset>      # download from the official archive into data/raw/, update manifest
-uv run atlas data verify               # recompute sha256 + row counts against data/manifest.yaml
+uv run atlas data verify               # recompute sha256 + bytes + row counts against data/manifest.yaml
 uv run atlas data build                # data/raw/ -> data/processed/*.parquet (deterministic)
-uv run atlas db load                   # data/processed/ -> Postgres (idempotent upsert)
 uv run atlas data status               # what is downloaded, when, from which release
+uv run atlas db load                   # PLANNED (M1): data/processed/ -> Postgres (idempotent upsert)
 ```
 
 ---

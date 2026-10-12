@@ -1,0 +1,67 @@
+# Universe Atlas data manifest.
+# Written by `atlas data fetch`; checked by `atlas data verify`.
+# One entry per fetch. Never edit by hand; never edit files under data/raw/.
+- dataset: gaia_dr3_nearby
+  source: ESA Gaia Archive
+  service_url: https://gea.esac.esa.int/tap-server/tap
+  release: Gaia DR3
+  query_file: data/queries/gaia_dr3_nearby.adql
+  retrieved_at: '2026-10-12T07:39:28Z'
+  files: []
+  license_or_credit: see data/CITATIONS.md
+  status: 'partial: ProxyError: HTTPSConnectionPool(host=''gea.esac.esa.int'', port=443): Max retries
+    exceeded with url: /tap-server/tap/sync (Caused by ProxyError(''Unable to connect to proxy'', OSError(''Tunnel
+    connection failed: 403 Forbidden'')))'
+- dataset: gaia_dr3_distances
+  source: ESA Gaia Archive (external table, Bailer-Jones et al. 2021)
+  service_url: https://gea.esac.esa.int/tap-server/tap
+  release: Bailer-Jones et al. (2021) distances, joined to Gaia DR3 on source_id
+  query_file: data/queries/gaia_dr3_distances.adql
+  retrieved_at: '2026-10-12T07:39:29Z'
+  files: []
+  license_or_credit: see data/CITATIONS.md
+  status: 'partial: ProxyError: HTTPSConnectionPool(host=''gea.esac.esa.int'', port=443): Max retries
+    exceeded with url: /tap-server/tap/sync (Caused by ProxyError(''Unable to connect to proxy'', OSError(''Tunnel
+    connection failed: 403 Forbidden'')))'
+- dataset: simbad_ids
+  source: SIMBAD (CDS)
+  service_url: https://simbad.cds.unistra.fr/simbad/sim-tap
+  release: SIMBAD (live database; retrieval date is the version)
+  query_file: data/queries/simbad_ids.adql
+  retrieved_at: '2026-10-12T07:39:29Z'
+  files: []
+  license_or_credit: see data/CITATIONS.md
+  status: 'partial: RuntimeError: simbad_ids needs a complete gaia_dr3_nearby snapshot first'
+- dataset: horizons_bodies
+  source: JPL Horizons
+  service_url: https://ssd.jpl.nasa.gov/api/horizons.api
+  release: JPL Horizons
+  query_file: data/queries/horizons_bodies.json
+  retrieved_at: '2026-10-12T07:39:30Z'
+  files: []
+  license_or_credit: see data/CITATIONS.md
+  status: 'partial: ProxyError: HTTPSConnectionPool(host=''ssd.jpl.nasa.gov'', port=443): Max retries
+    exceeded with url: /api/horizons.api?format=json&COMMAND=%2710%27&OBJ_DATA=%27YES%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27VECTORS%27&CENTER=%27500%400%27&REF_PLANE=%27FRAME%27&REF_SYSTEM=%27ICRF%27&VEC_TABLE=%272%27&OUT_UNITS=%27KM-S%27&CSV_FORMAT=%27YES%27&TLIST=%272457389.0%27
+    (Caused by ProxyError(''Unable to connect to proxy'', OSError(''Tunnel connection failed: 403 Forbidden'')))'
+- dataset: landmarks
+  source: SIMBAD (CDS)
+  service_url: https://simbad.cds.unistra.fr/simbad/sim-tap
+  release: SIMBAD (live database; retrieval date is the version)
+  query_file: data/queries/landmarks.adql
+  retrieved_at: '2026-10-12T07:39:30Z'
+  files: []
+  license_or_credit: see data/CITATIONS.md
+  status: 'partial: ProxyError: HTTPSConnectionPool(host=''simbad.cds.unistra.fr'', port=443): Max retries
+    exceeded with url: /simbad/sim-tap/sync (Caused by ProxyError(''Unable to connect to proxy'', OSError(''Tunnel
+    connection failed: 403 Forbidden'')))'
+- dataset: exoplanets_ps
+  source: NASA Exoplanet Archive
+  service_url: https://exoplanetarchive.ipac.caltech.edu/TAP
+  release: Planetary Systems (ps) table
+  query_file: data/queries/exoplanets_ps.adql
+  retrieved_at: '2026-10-12T07:39:31Z'
+  files: []
+  license_or_credit: see data/CITATIONS.md
+  status: 'partial: ProxyError: HTTPSConnectionPool(host=''exoplanetarchive.ipac.caltech.edu'', port=443):
+    Max retries exceeded with url: /TAP/sync (Caused by ProxyError(''Unable to connect to proxy'', OSError(''Tunnel
+    connection failed: 403 Forbidden'')))'

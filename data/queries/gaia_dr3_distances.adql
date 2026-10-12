@@ -1,0 +1,14 @@
+-- dataset: gaia_dr3_distances
+-- service: ESA Gaia Archive TAP (async)
+-- Bailer-Jones et al. (2021) geometric and photogeometric distances for exactly the
+-- gaia_dr3_nearby selection (same WHERE clause, joined on source_id).
+-- Table/column names unverified at authoring time (egress blocked); checked against
+-- TAP_SCHEMA by `atlas data fetch` before the query runs.
+SELECT
+  d.source_id,
+  d.r_med_geo, d.r_lo_geo, d.r_hi_geo,
+  d.r_med_photogeo, d.r_lo_photogeo, d.r_hi_photogeo,
+  d.flag
+FROM external.gaiaedr3_distance AS d
+JOIN gaiadr3.gaia_source AS g ON g.source_id = d.source_id
+WHERE g.parallax > 10 AND g.parallax_over_error > 10

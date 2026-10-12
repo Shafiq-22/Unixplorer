@@ -1,0 +1,7 @@
+-- dataset: exoplanets_ps
+-- service: NASA Exoplanet Archive TAP (sync)
+-- Every row of the Planetary Systems (ps) table, i.e. every published solution, keeping
+-- default_flag. Bounded by sy_dist < 120 pc as a superset of the <= 100 pc Gaia selection;
+-- restriction to hosts actually in gaia_dr3_nearby is a pipeline cross-match, not done here.
+-- SELECT * keeps all solution columns; the columns we rely on are checked against TAP_SCHEMA.
+SELECT * FROM ps WHERE sy_dist < 120

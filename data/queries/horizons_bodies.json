@@ -1,0 +1,34 @@
+{
+  "dataset": "horizons_bodies",
+  "service_url": "https://ssd.jpl.nasa.gov/api/horizons.api",
+  "comment": "One GET per body. Epoch is J2016.0 (JD 2457389.0 = 2451545.0 + 16 x 365.25), the Gaia DR3 reference epoch. Barycentric (500@0), ICRF axes (REF_PLANE=FRAME), km and km/s. Parameter names unverified at authoring time (egress blocked); the connector rejects any response with an error or an unexpected target body.",
+  "epoch": {
+    "CENTER": "500@0",
+    "REF_PLANE": "FRAME",
+    "REF_SYSTEM": "ICRF",
+    "VEC_TABLE": "2",
+    "OUT_UNITS": "KM-S",
+    "CSV_FORMAT": "YES",
+    "TLIST": "2457389.0"
+  },
+  "bodies": [
+    {"name": "Sun", "command": "10"},
+    {"name": "Mercury", "command": "199"},
+    {"name": "Venus", "command": "299"},
+    {"name": "Earth", "command": "399"},
+    {"name": "Moon", "command": "301"},
+    {"name": "Mars", "command": "499"},
+    {"name": "Jupiter", "command": "599"},
+    {"name": "Io", "command": "501"},
+    {"name": "Europa", "command": "502"},
+    {"name": "Ganymede", "command": "503"},
+    {"name": "Callisto", "command": "504"},
+    {"name": "Saturn", "command": "699"},
+    {"name": "Titan", "command": "606"},
+    {"name": "Uranus", "command": "799"},
+    {"name": "Neptune", "command": "899"},
+    {"name": "Triton", "command": "801"},
+    {"name": "Pluto", "command": "999"},
+    {"name": "Charon", "command": "901"}
+  ]
+}
