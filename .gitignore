@@ -14,3 +14,5 @@ node_modules/
 apps/web/.next/
 apps/web/next-env.d.ts
 *.tsbuildinfo
+apps/web/test-results/
+apps/web/playwright-report/
