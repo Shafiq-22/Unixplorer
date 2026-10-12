@@ -1,6 +1,10 @@
 name: data
+# One run per change: pushes to master, plus pull requests. Running on every branch push as
+# well would start a second job in parallel that misses the LFS cache and downloads every LFS
+# object again (metered bandwidth).
 on:
   push:
+    branches: [master]
   pull_request:
 jobs:
   verify:
