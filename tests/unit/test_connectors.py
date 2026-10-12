@@ -48,3 +48,14 @@ def test_horizons_error_field() -> None:
 def test_simbad_padded_ids_match_unpadded() -> None:
     assert normalize_id("M  45") == normalize_id("M 45") == "M 45"
     assert normalize_id("Cl Melotte   25") == "Cl Melotte 25"
+
+
+OVERFLOW_VOTABLE = b"""<?xml version="1.0"?>
+<VOTABLE version="1.4" xmlns="http://www.ivoa.net/xml/VOTable/v1.3">
+ <RESOURCE type="results"><INFO name="QUERY_STATUS" value="OVERFLOW"/></RESOURCE>
+</VOTABLE>"""
+
+
+def test_truncated_result_is_rejected() -> None:
+    with pytest.raises(TapError, match="OVERFLOW"):
+        _checked_votable(OVERFLOW_VOTABLE)

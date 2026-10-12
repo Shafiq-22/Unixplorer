@@ -3,6 +3,8 @@
 The same raw files always produce byte-identical Parquet: no timestamps, fixed row order
 (manifest file order, then raw row order), fixed compression. Original values and units are
 kept; numeric columns with a convertible physical unit gain a `<name>__si` companion.
+Column names are lower-cased (Gaia returns e.g. SOURCE_ID); the raw name is kept in field
+metadata as `original_name`.
 Every row carries `source_record_id` = "<raw file path>#row=<0-based row>".
 """
 
@@ -94,10 +96,10 @@ def votable_to_arrow(path: Path) -> pa.Table:
         col = t[name]
         unit = col.unit.to_string() if col.unit is not None else ""
         arr = _to_arrow(np.ma.asarray(col))
-        md = {"unit": unit, "ucd": ucds.get(name, "")}
-        fields.append(pa.field(name, arr.type, metadata=md))
+        md = {"unit": unit, "ucd": ucds.get(name, ""), "original_name": name}
+        fields.append(pa.field(name.lower(), arr.type, metadata=md))
         arrays.append(arr)
-        si = _si_companion(name, arr, unit, ucds.get(name, ""))
+        si = _si_companion(name.lower(), arr, unit, ucds.get(name, ""))
         if si is not None:
             fields.append(si[0])
             arrays.append(si[1])

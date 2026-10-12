@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import io
 import json
+import time
 from collections.abc import Callable, Iterator
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -90,8 +91,55 @@ def _single_tap_query(ctx: FetchContext, base_url: str, *, use_async: bool) -> N
     ctx.save("result.vot", body)
 
 
+# Gaia source_ids grow with sky position (HEALPix index in the high bits), and source_id is
+# indexed, so contiguous source_id ranges make short, sky-ordered queries. The first chunk has
+# no lower bound and the last no upper bound, so the union covers every possible source_id
+# whatever the encoding; GAIA_SOURCE_ID_SPAN only sets where the interior cuts fall.
+GAIA_CHUNKS = 48
+GAIA_SOURCE_ID_SPAN = 12 * 2**59
+
+
+def source_id_ranges(column: str, chunks: int = GAIA_CHUNKS) -> list[str]:
+    """ADQL conditions partitioning all source_ids into `chunks` disjoint, exhaustive ranges."""
+    cuts = [k * GAIA_SOURCE_ID_SPAN // chunks for k in range(1, chunks)]
+    conds = []
+    for k in range(chunks):
+        parts = []
+        if k > 0:
+            parts.append(f"{column} >= {cuts[k - 1]}")
+        if k < chunks - 1:
+            parts.append(f"{column} < {cuts[k]}")
+        conds.append(" AND ".join(parts))
+    return conds
+
+
+def _sync_with_retry(tap: TapClient, adql: str, attempts: int = 3) -> bytes:
+    """Read-only sync queries are safe to repeat on transient network or server errors."""
+    for attempt in range(1, attempts + 1):
+        try:
+            return tap.sync(adql)
+        except (requests.RequestException, TapError):
+            if attempt == attempts:
+                raise
+            time.sleep(10 * attempt)
+    raise AssertionError("unreachable")
+
+
 def fetch_gaia(ctx: FetchContext) -> None:
-    _single_tap_query(ctx, GAIA_TAP, use_async=True)
+    """Run the {source_id_range}-templated query once per source_id chunk (sync, fast)."""
+    tap = TapClient(GAIA_TAP, session=ctx.session)
+    _schema_checks(ctx, tap)
+    template = strip_comments(ctx.query_text())
+    if "{source_id_range}" not in template:
+        raise ValueError(f"{ctx.dataset.query_file} lacks the {{source_id_range}} placeholder")
+    column = "g.source_id" if " AS g" in template else "source_id"
+    total = 0
+    for n, cond in enumerate(source_id_ranges(column), start=1):
+        adql = template.replace("{source_id_range}", cond)
+        ctx.save(f"chunk_{n:02d}.adql", adql.encode(), "request")
+        ctx.save(f"chunk_{n:02d}.vot", _sync_with_retry(tap, adql))
+        total += ctx.files[-1].rows
+    ctx.notes.append(f"{GAIA_CHUNKS} disjoint source_id chunks, {total} rows in total")
 
 
 def fetch_exoplanets(ctx: FetchContext) -> None:
@@ -127,6 +175,14 @@ def normalize_id(identifier: str) -> str:
     return " ".join(identifier.split())
 
 
+def column_ci(colnames: list[str], name: str) -> str:
+    """Column lookup ignoring case: Gaia returns e.g. SOURCE_ID next to lower-case columns."""
+    matches = [c for c in colnames if c.lower() == name.lower()]
+    if len(matches) != 1:
+        raise KeyError(f"expected exactly one column named {name!r} (any case), got {matches}")
+    return matches[0]
+
+
 def fetch_simbad_ids(ctx: FetchContext) -> None:
     from astropy.io.votable import parse_single_table
 
@@ -137,7 +193,7 @@ def fetch_simbad_ids(ctx: FetchContext) -> None:
     source_ids: list[str] = []
     for rec in data:
         table = parse_single_table(str(ctx.layout.root / rec.path)).to_table()
-        source_ids.extend(str(int(v)) for v in table["source_id"])
+        source_ids.extend(str(int(v)) for v in table[column_ci(table.colnames, "source_id")])
     ctx.notes.append(f"input: {len(source_ids)} source_ids from {', '.join(f.path for f in data)}")
     ids = [f"Gaia DR3 {sid}" for sid in source_ids]
     matched = _batched_simbad(ctx, ids)

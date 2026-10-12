@@ -157,6 +157,8 @@ def _checked_votable(body: bytes) -> bytes:
     for info in [*vot.infos, *(i for r in vot.resources for i in r.infos)]:
         if info.name == "QUERY_STATUS" and str(info.value).upper() == "ERROR":
             raise TapError(f"TAP QUERY_STATUS=ERROR: {info.content or ''}")
+        if info.name == "QUERY_STATUS" and str(info.value).upper() == "OVERFLOW":
+            raise TapError("TAP result truncated (QUERY_STATUS=OVERFLOW); use smaller chunks")
     return body
 
 

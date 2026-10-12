@@ -374,3 +374,573 @@
     xmlns:esatapplus="http://esa.int/xml/EsaTapPlus" xsi:schemaLocation="http://www.ivoa.net/xml/UWS/v1.0
     http://www.ivoa.net/xml/UWS/v1.0 http://esa.int/xml/EsaTapPlus https://gea.esac.esa.int/tap-server/xml/esaTapPlusAttributes.xsd"
     type="fatal'
+- dataset: gaia_dr3_distances
+  source: ESA Gaia Archive (external table, Bailer-Jones et al. 2021)
+  service_url: https://gea.esac.esa.int/tap-server/tap
+  release: Bailer-Jones et al. (2021) distances, joined to Gaia DR3 on source_id
+  query_file: data/queries/gaia_dr3_distances.adql
+  retrieved_at: '2026-10-12T08:31:29Z'
+  files:
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12/schema_check_external_gaiaedr3_distance.vot
+    sha256: 990ad4fca57d9e3d7309342854d35ba8755fe36ae98cc65ee027c6d394e8b345
+    bytes: 2937
+    rows: 8
+    role: schema_check
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12/schema_check_gaiadr3_gaia_source.vot
+    sha256: 769bf936197b0140411f5c0c99f87bd617f83c8cf46a52e49178a835b8c9fb25
+    bytes: 13011
+    rows: 152
+    role: schema_check
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12/query.adql
+    sha256: 2832bb5beea70411e38096d22d11cf078269762067f474bad1b6f3ad23b3911a
+    bytes: 272
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_distances/2026-10-12/job_url.txt
+    sha256: 380fc37ec0bd0cc0889795081280c81672223527fb2c8c6eb600ca2a589ff458
+    bytes: 84
+    rows: 1
+    role: request
+  license_or_credit: see data/CITATIONS.md
+  status: 'partial: TapError: TAP job ABORTED: <?xml version="1.0" encoding="UTF-8"?>
+
+    <uws:errorSummary xmlns:uws="http://www.ivoa.net/xml/UWS/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:esatapplus="http://esa.int/xml/EsaTapPlus" xsi:schemaLocation="http://www.ivoa.net/xml/UWS/v1.0
+    http://www.ivoa.net/xml/UWS/v1.0 http://esa.int/xml/EsaTapPlus https://gea.esac.esa.int/tap-server/xml/esaTapPlusAttributes.xsd"
+    type="fat'
+- dataset: gaia_dr3_nearby
+  source: ESA Gaia Archive
+  service_url: https://gea.esac.esa.int/tap-server/tap
+  release: Gaia DR3
+  query_file: data/queries/gaia_dr3_nearby.adql
+  retrieved_at: '2026-10-12T09:31:14Z'
+  files:
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.4/schema_check_gaiadr3_gaia_source.vot
+    sha256: 0380665c6934b832508c3d09e942a90a1b24c01d7027d977a54b5cab7817654c
+    bytes: 13011
+    rows: 152
+    role: schema_check
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.4/query.adql
+    sha256: 0bca8cae8be9b8b080f1bba8aaa9ac741af69885a5026cf29cb55f710c95bb9c
+    bytes: 376
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.4/job_url.txt
+    sha256: bde8e28b83561849d0494daa47c3b56b430c234b583e4513f73022012001e8f5
+    bytes: 84
+    rows: 1
+    role: request
+  license_or_credit: see data/CITATIONS.md
+  status: 'partial: TapError: TAP job ABORTED: <?xml version="1.0" encoding="UTF-8"?>
+
+    <uws:errorSummary xmlns:uws="http://www.ivoa.net/xml/UWS/v1.0" xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:esatapplus="http://esa.int/xml/EsaTapPlus" xsi:schemaLocation="http://www.ivoa.net/xml/UWS/v1.0
+    http://www.ivoa.net/xml/UWS/v1.0 http://esa.int/xml/EsaTapPlus https://gea.esac.esa.int/tap-server/xml/esaTapPlusAttributes.xsd"
+    type="fat'
+- dataset: gaia_dr3_nearby
+  source: ESA Gaia Archive
+  service_url: https://gea.esac.esa.int/tap-server/tap
+  release: Gaia DR3
+  query_file: data/queries/gaia_dr3_nearby.adql
+  retrieved_at: '2026-10-12T09:37:27Z'
+  files:
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/schema_check_gaiadr3_gaia_source.vot
+    sha256: b7d63ff6d7a5da02aa7c9e93e23544ab7d71ff0bad21bdd5a1882ac06ba1a8e1
+    bytes: 13011
+    rows: 152
+    role: schema_check
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_01.adql
+    sha256: e8f91a19aec3c933a902fc183b7da9ad1c96e6bb0f34e7d5c1d98bc144ef808c
+    bytes: 413
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_01.vot
+    sha256: 394b0e599c96f267effa6197f0ea1d4ecd12f97850ad764238abb52c216de91c
+    bytes: 1246414
+    rows: 6388
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_02.adql
+    sha256: 417df65ad431d93028a941c2f55d7134ffb287fb0a47a1f9eccdedfdef512136
+    bytes: 449
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_02.vot
+    sha256: 3fcfbecb41e90ba0de8d457ef6cbd6760ff3e3cae5c7e572bc0b9738f4db0c60
+    bytes: 1303896
+    rows: 6649
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_03.adql
+    sha256: e0c90536242f457c6358f8e4530e240c58c4a0901a61c8b70740dd1536fd66f5
+    bytes: 449
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_03.vot
+    sha256: 792096b29257cc6452f4bf41dc50e1c275182d28b4d18ba80739c9b6fb14dcc0
+    bytes: 1279131
+    rows: 6522
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_04.adql
+    sha256: ff1ef015d43209a2a0da1f1bc2c5dd70d693df490014221cda715597d7cc7b2a
+    bytes: 449
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_04.vot
+    sha256: c3f342ae565c883ff2915254d9322d8c8f26e578c32c437691de974ab856e1b8
+    bytes: 1278741
+    rows: 6520
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_05.adql
+    sha256: c439667e0ae7270b3da4665db74db9e6cbf1dcb8033a1a4cd6f415a278c0b53f
+    bytes: 449
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_05.vot
+    sha256: c7f573ee4c557929925b5765cba88465c4fabe2c6d6d137eae6ba330745ed438
+    bytes: 1160961
+    rows: 5916
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_06.adql
+    sha256: f70fa8fae567d255059d9863db0b317e1bc94a17606e86cc00280f625dd9f9ee
+    bytes: 449
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_06.vot
+    sha256: 28c70d0a6fee4e8406782fad43984f41350db265abe5fc4598781ec58e1718ff
+    bytes: 1161741
+    rows: 5920
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_07.adql
+    sha256: 7f8d7bebae7e845ab235b1c710327ec11f029620bedffc26ff3e3cba914f3a96
+    bytes: 450
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_07.vot
+    sha256: 646a75843cd7cb7759e39bebd6abd47b1f912db54d5ab1af303110978a9a5277
+    bytes: 1219645
+    rows: 6214
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_08.adql
+    sha256: 03a006e1ebff742dfedad3b6bb1324edfa55a9c538282c2a4db7275686c1c8af
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_08.vot
+    sha256: eb83c915f00f2bfef5d6ee3c52aa93a338908771c174ea76e06f637df1e44bc9
+    bytes: 1196271
+    rows: 6055
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_09.adql
+    sha256: ad72972b273c31084e256b3ddf74745af38b628a0bf43a0fc67b0ba50efd8448
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_09.vot
+    sha256: bb1b060fc18c013f9138303c460359d70322ffe1d5523f9dfe62ec096c68dd84
+    bytes: 1200589
+    rows: 6077
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_10.adql
+    sha256: bfd2ab2caa9a0af351ad9319bc2fb3278ba038cf63407d1eae1cae01124e1be6
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_10.vot
+    sha256: 535efa69b6f229ec0e682827bc55097c1cf91293b4a08c3c9cc3f06eb2141876
+    bytes: 1242807
+    rows: 6292
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_11.adql
+    sha256: bacc6e0ec9702e792ad5f5783702d8a89176c7c1d78a8f6cbeed113fb98f40f4
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_11.vot
+    sha256: 1b9d5b14590f670534b6bc12766c34cb26385e3a9bacdb3350f7cdecaeb96415
+    bytes: 1197644
+    rows: 6062
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_12.adql
+    sha256: 4ecb67b6959f6ac2b5f58de73617f6a0ad3057a28cf8af4fb0f51e8962440025
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_12.vot
+    sha256: 4e0f14b6d2947065d4139d3369f5ff8fd172e0a0d7ac04f015c078a30a79802c
+    bytes: 1231220
+    rows: 6233
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_13.adql
+    sha256: 09f5bca4f8d515a9ee5a816ab12e78d887d17aa978dfe0e8b1a79135e8f97da7
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_13.vot
+    sha256: 944a1bc6d71d27375c9848bcb48b463a58c72e9fd2ce9a8d3dfa7def00df4c73
+    bytes: 1779048
+    rows: 9023
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_14.adql
+    sha256: 021d14613c7e2f52b2f4591f65705f2f6ae3a9d38cf06ecef6146b45e4da4521
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_14.vot
+    sha256: 1768ef1dc28faca8bbd39060f15e782859d7afedd66004ee83b81da604a2af94
+    bytes: 1335289
+    rows: 6763
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_15.adql
+    sha256: a609ab7a8eb1e92de3feaa5b58b6b9db756560eb80ad6863a3e32faf43222804
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_15.vot
+    sha256: fa60e3ddb9e13318bfb08b2e7030d9ffb201c2b492f9f4cb359c847c9bec16ef
+    bytes: 1695796
+    rows: 8599
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_16.adql
+    sha256: 530a7425ab0d59e3169350921e4d0b0ca5dbc45e269df5ae484987c189bfa1a5
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_16.vot
+    sha256: 6aaac216ba11135e255d15e472137dce3e0825c8cdaa473e2cedeb992cd07fc4
+    bytes: 1292089
+    rows: 6543
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_17.adql
+    sha256: 2994052d8b33fb2467d3e42f5481fdb6f79360e794c4d4e08ba9211db8a903c3
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_17.vot
+    sha256: 963f1b547ce1fa165f29ca78c3af2c8c360260051ea4ce0c96cc7187fc069b0d
+    bytes: 1172509
+    rows: 5934
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_18.adql
+    sha256: 5643a584609a6525ba15fb0a46221c9e07f9be3c7eccc259dc92b8c5533d0cd6
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_18.vot
+    sha256: cdf832b5c045403224235dbfa10aebf5d4d4af3511935a4b02ded00d18eff7a7
+    bytes: 1156803
+    rows: 5854
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_19.adql
+    sha256: 05349174570a3690300019b1d0b79bd7d3fb66f745618118aa76d1a9837c1d7e
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_19.vot
+    sha256: b56e975b3b6d119b4692bdc75daece22ea22ba0b462fd5ee3b48f3d448ff41ac
+    bytes: 1239272
+    rows: 6274
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_20.adql
+    sha256: e0339d68dd99e709a9a2b8b7dbc2a8efbf55f8df4d2b4a9f7d92f9daa5ac050e
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_20.vot
+    sha256: bc5d3c6dd05115a7d8637d72818c0bea00cf43de8fc3fd101b0970f3490c555f
+    bytes: 1202161
+    rows: 6085
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_21.adql
+    sha256: 6a958b0ce121ba39b453280bef0c912173bb66de7fe9d15cde646c9ba5a857c9
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_21.vot
+    sha256: 2a322de836dc22ada970d2408bb61ccb0fe1a55b2cc326680376b26805327abb
+    bytes: 1317618
+    rows: 6673
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_22.adql
+    sha256: 61f1bd0734daa032dd741dfa690082300564b708eea5acaf49525d2a25cf8e43
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_22.vot
+    sha256: 63e4a2b9ad7c7b68a0511bcc00a56bbdc4a2e9287b6571376f88e2021db303e9
+    bytes: 1255372
+    rows: 6356
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_23.adql
+    sha256: dada79c1783d92d7f63931de78a6d87d24117290baaf600e97fe037bac765228
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_23.vot
+    sha256: 3ebe886c8947de428c277ad1d3c23b6c3359342a957db8455f407a22cdb16fac
+    bytes: 1289143
+    rows: 6528
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_24.adql
+    sha256: 2ba3fc842fe7f360f109f56f133da1fb256476eb9560f7fda298a8dc09f1c123
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_24.vot
+    sha256: 8ecca8a8dcf2a3c729505d3c65119cc1992592692c1988fa85829c70dbdbdf0d
+    bytes: 1298568
+    rows: 6576
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_25.adql
+    sha256: 4d89c6fd83d91f3b98e4e6d7bfc81b310659fc38946eaa797c9c91d23f67c133
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_25.vot
+    sha256: 5b9a4ca28d94605e02079a4f54a0d0ee0f4a765d4e5ea1a46fefba111c4f39ac
+    bytes: 1247714
+    rows: 6317
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_26.adql
+    sha256: 9e75ae017b890388663f43d7ed8b2d28c677cd9bc754738cb5586031c9a2aa07
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_26.vot
+    sha256: 46d37bca7629d4048da786151ad48b9195615f0f1cc17ae34ace0a6f6d9d01a4
+    bytes: 1188219
+    rows: 6014
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_27.adql
+    sha256: 1cfd502c179e4e54c115a2198e1b449b90bf8ef718c98b93ff91397a62e1c138
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_27.vot
+    sha256: 7908b991c68ae3c8d734c181b4ae21fc8abd82f1d23eac44bce4376869eab0dd
+    bytes: 1158961
+    rows: 5865
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_28.adql
+    sha256: e0abb8e430ca0e94c6b568e855a151253914816c5706f7f04ceeecb4459af0ec
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_28.vot
+    sha256: 63080b4b7582e5ec03bf4cf149effe3d14808bcc6cfd14ed50dfe6d857f4b0af
+    bytes: 1148358
+    rows: 5811
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_29.adql
+    sha256: 15ab137b888112f256f6ded1b58494be7e79e47dd9594cc481349d799eac958a
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_29.vot
+    sha256: 1044ad4598e26888bfc573a2d078229ad00442e75484c05db79e16ca6e1e57a8
+    bytes: 8884320
+    rows: 45209
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_30.adql
+    sha256: 5d0a311105c0c0097c3de2a1cc660187543ee901805bb96d7b254895155f343d
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_30.vot
+    sha256: fbe7f1232d95702ed2e5ef00df35be47a3037d235c7a24077f777bf284482870
+    bytes: 2139949
+    rows: 10861
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_31.adql
+    sha256: 790aba9490b10d3bd11ff81f57e0abbe0a95caac5c61d2eeebbf679c6ac884c1
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_31.vot
+    sha256: afc15e8b5766f6a5459b90aad730f63ed315c9d54bb0402e14c5581f61106857
+    bytes: 1284431
+    rows: 6504
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_32.adql
+    sha256: 54939292fa6e9ccf551152a5bbad36b0f2c72a364f41762adaf5fd011ce03be1
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_32.vot
+    sha256: f040e6dfdbdbeeb72e6d4998040644302728d18371bbe317c552aae4aa9c895e
+    bytes: 1440533
+    rows: 7299
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_33.adql
+    sha256: 23bea18c8a3eb3df2bc30eaf04d56a7f3a6fa59e34e13521fc4a36a293d1fb6d
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_33.vot
+    sha256: dc9dbe5a9029c5186ec15c50cc5f1a69545b480c962c38cd9e758cf97e1d2545
+    bytes: 1228080
+    rows: 6217
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_34.adql
+    sha256: 6268bba180f829b8ab3585eb357a41932afb14bc6f742f88d03a7332f4dd2e70
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_34.vot
+    sha256: 44077f4b2ec01d9ab78288890761c87dfbc4740f09d5b40a43d3d6fdc5c0621c
+    bytes: 1239272
+    rows: 6274
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_35.adql
+    sha256: 8bbb546e23d19815c336202aa7c4b5c25ec651ccb1327c5664dd31ca37094810
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_35.vot
+    sha256: 5f9f931b3ab16d89bc5d809ed9548a4bdb67eab69f3d76ac6edb1cdf3fcaed7f
+    bytes: 1201572
+    rows: 6082
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_36.adql
+    sha256: 3f304a8e19d0b10f829762bc9ef52d7bfa7d471f1d27dbbf799a51e66d5f516b
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_36.vot
+    sha256: e9bde87074ecb5a9d1335624b69c06db183533aad91b9d24665e3febce676ebc
+    bytes: 1148752
+    rows: 5813
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_37.adql
+    sha256: a9e5c1ba2b76dcedcf221bf730a5f945ce213742e2c5a4e4a9ac2f6096cbb941
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_37.vot
+    sha256: f004c566302aaf5bac9152178fb483819d436523b875979cfa176b194723a512
+    bytes: 1299747
+    rows: 6582
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_38.adql
+    sha256: b25e198e6699355daeb4145efad53f21c0c0dbccba5783ba2dd5cc0122d97ff0
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_38.vot
+    sha256: f25760c9285166cba64a46f82127d230e2d42e03cca2bdb517a5143aa28c052b
+    bytes: 1318991
+    rows: 6680
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_39.adql
+    sha256: 527cc54157a8827dc66a87ffd92b4649893a596e06128e17d18e94b20b66d23f
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_39.vot
+    sha256: 48a42353aa29b97d97b2184f44de411dab60da76a4ebdccdf2099f2cbcb40859
+    bytes: 1335484
+    rows: 6764
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_40.adql
+    sha256: 1a19d885e270600459d9b5780c53ec15d843b298cc4b036d72dbba6fe64f195a
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_40.vot
+    sha256: 3ca31bbb6b143119da858863870abd6d9919edcd87aa27175f4c21456db84d00
+    bytes: 1404210
+    rows: 7114
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_41.adql
+    sha256: b7396940c10cc782ac45f99a0bdd8b0d20c34bb4df35fa52681e6197c564de8d
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_41.vot
+    sha256: b99f7cac221041e91ef2e654625f4f79353b3e04108e63e766711746aa451384
+    bytes: 1814392
+    rows: 9203
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_42.adql
+    sha256: 337f920bcf8564e222c8fbbbb467c7d85493ee2cdc823b2bd9d391578fbdb5df
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_42.vot
+    sha256: aa74b8774726d4c9c2355aa1dc256feec8e7008eb67e66b4b9ab9806941b9fcc
+    bytes: 4170837
+    rows: 21204
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_43.adql
+    sha256: 2f56b5dd4da9dfd78564f00167e318f20781d47040e657d468f06cd7a33bc42f
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_43.vot
+    sha256: 19d3be95f665e1824a080ba9b0d7346bd5a4712cb2a3f37a60f704d9d875963e
+    bytes: 1446228
+    rows: 7328
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_44.adql
+    sha256: 064c4c44120a416a9a7773d82f56d75008ab76e8316ce019489e4abe7e5f6cee
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_44.vot
+    sha256: 660398bf462aac051ed0567fd51f8317471e2a60f617eccc5dfe593bbb2c81ff
+    bytes: 1278739
+    rows: 6475
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_45.adql
+    sha256: 2b276342d8b8c9e87fe4e0a44f1947aff10fc87bf435b699fcfc44712997013d
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_45.vot
+    sha256: c645e08d033ce5b4b7b31640ea0953f933254926b902c8c64210c400d4367ac5
+    bytes: 1297784
+    rows: 6572
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_46.adql
+    sha256: cce3c4cfa6697849d0633a2752e54858138df7556c9e61127412a5a3195e2685
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_46.vot
+    sha256: 358d564cb02906ec427c98d5c2cc996b94f01f6ef9ce49f70fcf16c0388314b6
+    bytes: 1240056
+    rows: 6278
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_47.adql
+    sha256: 70294a12f9632e7287b146440e152ae6dad100fc4554eb53432aadc40a764b76
+    bytes: 451
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_47.vot
+    sha256: a47a8a59e3fbe8b86f44b3444c8ab61bc9f93c6e2fb96d37c3a17c928fdce48f
+    bytes: 1404799
+    rows: 7117
+    role: data
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_48.adql
+    sha256: f8ea8dd64770c726b1fa0e69fba631582a08c171d7e2d52120d4e00f2d17d42d
+    bytes: 415
+    rows: 1
+    role: request
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.5/chunk_48.vot
+    sha256: 704b65749638077b8bfc640bd3075086d0c0f0cb2cdad543f4fc0f58c84465bd
+    bytes: 1300691
+    rows: 6587
+    role: data
+  license_or_credit: see data/CITATIONS.md
+  status: complete
+  notes:
+  - 48 disjoint source_id chunks, 372226 rows in total
+- dataset: simbad_ids
+  source: SIMBAD (CDS)
+  service_url: https://simbad.cds.unistra.fr/simbad/sim-tap
+  release: SIMBAD (live database; retrieval date is the version)
+  query_file: data/queries/simbad_ids.adql
+  retrieved_at: '2026-10-12T09:49:12Z'
+  files: []
+  license_or_credit: see data/CITATIONS.md
+  status: 'partial: KeyError: ''source_id'''

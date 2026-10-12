@@ -7,6 +7,7 @@ import pytest
 from astropy.io.votable import parse_single_table
 
 from ingestion import manifest
+from ingestion.datasets import column_ci
 from ingestion.paths import Layout
 from ingestion.verify import verify
 
@@ -35,5 +36,7 @@ def test_spot_check_parallax_matches_raw(repo_layout: Layout, needle: str) -> No
     row = next(r for r in pq.read_table(gaia_pq).to_pylist() if r["source_id"] == source_id)
     path, _, idx = row["source_record_id"].partition("#row=")
     raw = parse_single_table(str(repo_layout.root / path)).array
-    assert int(raw["source_id"][int(idx)]) == source_id
-    assert row["parallax"] == float(raw["parallax"][int(idx)])  # exact, no tolerance
+    names = list(raw.dtype.names)
+    assert int(raw[column_ci(names, "source_id")][int(idx)]) == source_id
+    # exact, no tolerance
+    assert row["parallax"] == float(raw[column_ci(names, "parallax")][int(idx)])

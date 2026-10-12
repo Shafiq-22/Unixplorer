@@ -1,5 +1,7 @@
 -- dataset: gaia_dr3_distances
--- service: ESA Gaia Archive TAP (async)
+-- service: ESA Gaia Archive TAP (sync, one query per source_id chunk)
+-- {source_id_range} is replaced by one of 48 disjoint, exhaustive source_id ranges
+-- (ingestion/datasets.py: source_id_ranges); each chunk's exact text is saved in data/raw/.
 -- Bailer-Jones et al. (2021) geometric and photogeometric distances for exactly the
 -- gaia_dr3_nearby selection (same WHERE clause, joined on source_id).
 -- Table/column names unverified at authoring time (egress blocked); checked against
@@ -12,3 +14,4 @@ SELECT
 FROM external.gaiaedr3_distance AS d
 JOIN gaiadr3.gaia_source AS g ON g.source_id = d.source_id
 WHERE g.parallax > 10 AND g.parallax_over_error > 10
+  AND {source_id_range}

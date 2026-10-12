@@ -1,5 +1,7 @@
 -- dataset: gaia_dr3_nearby
--- service: ESA Gaia Archive TAP (async)
+-- service: ESA Gaia Archive TAP (sync, one query per source_id chunk)
+-- {source_id_range} is replaced by one of 48 disjoint, exhaustive source_id ranges
+-- (ingestion/datasets.py: source_id_ranges); each chunk's exact text is saved in data/raw/.
 -- Bounded subset: parallax > 10 mas (<= 100 pc) and parallax_over_error > 10. Never the full catalogue.
 -- Column names were NOT verifiable against the archive docs in the authoring session (egress
 -- blocked). `atlas data fetch` checks every column below against the archive's TAP_SCHEMA and
@@ -14,3 +16,4 @@ SELECT
   radial_velocity, radial_velocity_error
 FROM gaiadr3.gaia_source
 WHERE parallax > 10 AND parallax_over_error > 10
+  AND {source_id_range}

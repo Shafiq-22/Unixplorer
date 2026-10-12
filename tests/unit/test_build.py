@@ -50,6 +50,9 @@ def test_build_nulls_units_and_provenance(tmp_layout: Layout) -> None:
     assert "phot_g_mean_mag__si" not in table.column_names
     assert "ref_epoch__si" not in table.column_names
     assert rows[2]["source_record_id"] == "data/raw/test/ds/2026-01-01/result.vot#row=2"
+    # Names are lower-cased; the raw name is kept.
+    assert rows[0]["source_id"] == 1
+    assert table.schema.field("source_id").metadata[b"original_name"] == b"SOURCE_ID"
 
 
 def test_horizons_vectors(tmp_layout: Layout) -> None:

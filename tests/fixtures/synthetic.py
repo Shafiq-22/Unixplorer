@@ -16,7 +16,7 @@ from astropy.table import MaskedColumn, Table
 
 def write_votable(path: Path) -> Path:
     t = Table()
-    t["source_id"] = np.array([1, 2, 3], dtype=np.int64)
+    t["SOURCE_ID"] = np.array([1, 2, 3], dtype=np.int64)  # Gaia's actual casing
     t["ra"] = MaskedColumn([10.0, 20.0, 30.0], unit="deg")
     t["parallax"] = MaskedColumn([50.0, np.nan, 12.5], unit="mas", mask=[False, False, False])
     t["phot_g_mean_mag"] = MaskedColumn([5.0, 6.0, 7.0], unit="mag", mask=[False, True, False])
