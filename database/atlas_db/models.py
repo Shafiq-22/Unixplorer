@@ -17,6 +17,7 @@ from sqlalchemy import (
     DateTime,
     Double,
     ForeignKey,
+    Index,
     Integer,
     MetaData,
     String,
@@ -26,6 +27,7 @@ from sqlalchemy import (
 )
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy.types import UserDefinedType
 
 VALUE_STATES = (
     "measured",
@@ -49,6 +51,15 @@ NAMING = {
     "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
     "pk": "pk_%(table_name)s",
 }
+
+
+class Cube(UserDefinedType[str]):
+    """PostgreSQL `cube` (contrib extension): a GiST-indexable point or box in 3D."""
+
+    cache_ok = True
+
+    def get_col_spec(self, **kw: Any) -> str:
+        return "cube"
 
 
 class Base(DeclarativeBase):
@@ -138,6 +149,7 @@ class CelestialObject(Base):
     parent_object_id: Mapped[int | None] = mapped_column(ForeignKey("celestial_object.id"))
     parent_link_reason: Mapped[str | None] = mapped_column(Text)
     created_by_job_id: Mapped[int | None] = mapped_column(ForeignKey("ingestion_job.id"))
+    __table_args__ = (Index("ix_celestial_object_parent_object_id", "parent_object_id"),)
 
 
 class _Sourced:
@@ -169,7 +181,15 @@ class ObjectAlias(_Sourced, Base):
     alias_normalized: Mapped[str] = mapped_column(Text, index=True)
     catalogue: Mapped[str] = mapped_column(String(40))
     provenance_event_id: Mapped[int | None] = mapped_column(ForeignKey("provenance_event.id"))
-    __table_args__ = (UniqueConstraint("object_id", "alias"),)
+    __table_args__ = (
+        UniqueConstraint("object_id", "alias"),
+        Index(
+            "ix_object_alias_alias_trgm",
+            "alias_normalized",
+            postgresql_using="gin",
+            postgresql_ops={"alias_normalized": "gin_trgm_ops"},
+        ),
+    )
 
 
 class Classification(_Sourced, Base):
@@ -247,8 +267,21 @@ class PositionSolution(_Sourced, Base):
     vz_km_s: Mapped[float | None] = mapped_column(Double)
     is_adopted: Mapped[bool] = mapped_column(Boolean, default=True)
     publication_id: Mapped[int | None] = mapped_column(ForeignKey("publication.id"))
+    # Derived (state "derived"): ICRS Cartesian position, origin at the Solar System
+    # barycentre, in parsecs, computed by astronomy_core from this row's own position and
+    # distance (or state vector). NULL for sky-only rows. `bary_xyz` is the same point as a
+    # cube for GiST-indexed octree tile queries.
+    bary_x_pc: Mapped[float | None] = mapped_column(Double)
+    bary_y_pc: Mapped[float | None] = mapped_column(Double)
+    bary_z_pc: Mapped[float | None] = mapped_column(Double)
+    bary_xyz: Mapped[str | None] = mapped_column(Cube)
+    derived_method: Mapped[str | None] = mapped_column(Text)
     __table_args__ = (
         UniqueConstraint("object_id", "kind", "source_file_id", "source_row"),
+        Index("ix_position_solution_bary_xyz", "bary_xyz", postgresql_using="gist"),
+        CheckConstraint(
+            "(bary_x_pc IS NULL) = (derived_method IS NULL)", name="derived_has_method"
+        ),
         CheckConstraint("kind IN ('sky', 'state_vector')", name="kind"),
         CheckConstraint(f"position_state IN ({_STATE_SQL})", name="position_state"),
         CheckConstraint(f"distance_state IN ({_STATE_SQL})", name="distance_state"),

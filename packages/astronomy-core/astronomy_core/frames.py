@@ -67,3 +67,28 @@ def separation_3d(a: SkyCoord, b: SkyCoord, *, frame: str = "heliocentric") -> u
         raise ValueError(f"unknown frame {frame!r}")
     d = to_cart(a) - to_cart(b)
     return d.norm()
+
+
+#: Identifies the derivation stored with derived Cartesian positions.
+CARTESIAN_METHOD = "astronomy_core.frames.icrs_barycentric_xyz v1"
+
+
+def icrs_barycentric_xyz(
+    ra: u.Quantity, dec: u.Quantity, distance: u.Quantity
+) -> tuple[u.Quantity, u.Quantity, u.Quantity]:
+    """Vectorised ICRS Cartesian coordinates (origin: Solar System barycentre, ICRS axes).
+
+    Arrays in, arrays out, so a whole catalogue converts in one call. Every element needs a
+    distance; positions without one stay sky-only and must not be passed here (§5).
+    """
+    if distance is None:
+        raise ValueError("no distance solution: sky view only, not a 3D position")
+    rep = SkyCoord(ra=ra, dec=dec, distance=distance, frame="icrs").cartesian
+    return rep.x.to(u.pc), rep.y.to(u.pc), rep.z.to(u.pc)
+
+
+def state_vector_xyz(
+    x: u.Quantity, y: u.Quantity, z: u.Quantity
+) -> tuple[u.Quantity, u.Quantity, u.Quantity]:
+    """Horizons ICRF barycentric state-vector position, as parsecs on the same ICRS axes."""
+    return x.to(u.pc), y.to(u.pc), z.to(u.pc)

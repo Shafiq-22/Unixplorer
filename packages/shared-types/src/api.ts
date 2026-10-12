@@ -21,10 +21,176 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/objects/search": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Search */
+        get: operations["search_objects_search_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/objects/{object_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Dossier */
+        get: operations["dossier_objects__object_id__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/routes": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Create Route */
+        post: operations["create_route_routes_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/routes/{route_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get Route */
+        get: operations["get_route_routes__route_id__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/routes/{route_id}/trajectory": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get Trajectory */
+        get: operations["get_trajectory_routes__route_id__trajectory_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/stars/tiles/{level}/{ix}/{iy}/{iz}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Tile */
+        get: operations["tile_stars_tiles__level___ix___iy___iz__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/traversals": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Create Traversal */
+        post: operations["create_traversal_traversals_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/traversals/{traversal_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get Traversal */
+        get: operations["get_traversal_traversals__traversal_id__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        /** Update Traversal */
+        patch: operations["update_traversal_traversals__traversal_id__patch"];
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        /**
+         * Cartesian
+         * @description Derived ICRS Cartesian position (origin: Solar System barycentre), parsecs.
+         */
+        Cartesian: {
+            /** Method */
+            method: string;
+            /**
+             * State
+             * @default derived
+             * @constant
+             */
+            state: "derived";
+            /** X Pc */
+            x_pc: number;
+            /** Y Pc */
+            y_pc: number;
+            /** Z Pc */
+            z_pc: number;
+        };
+        /** Classification */
+        Classification: {
+            /** Scheme */
+            scheme: string;
+            /** Source Record Id */
+            source_record_id: string;
+            /** Value */
+            value: string;
+        };
         /** DatabaseInfo */
         DatabaseInfo: {
             /**
@@ -37,6 +203,39 @@ export interface components {
             /** Reachable */
             reachable: boolean;
         };
+        /** Distance */
+        Distance: {
+            /** Interval */
+            interval: string | null;
+            /** Lower Pc */
+            lower_pc: number | null;
+            /** Method */
+            method: string;
+            source: components["schemas"]["SourceRef"];
+            /** State */
+            state: string;
+            /** Upper Pc */
+            upper_pc: number | null;
+            /** Value Pc */
+            value_pc: number;
+        };
+        /** Dossier */
+        Dossier: {
+            /** Aliases */
+            aliases: string[];
+            /** Children */
+            children: components["schemas"]["ObjectSummary"][];
+            /** Classifications */
+            classifications: components["schemas"]["Classification"][];
+            /** Identifiers */
+            identifiers: components["schemas"]["Identifier"][];
+            /** Measurements */
+            measurements: components["schemas"]["Measurement"][];
+            object: components["schemas"]["ObjectSummary"];
+            parent: components["schemas"]["ParentLink"] | null;
+            /** Positions */
+            positions: components["schemas"]["Position"][];
+        };
         /** FrameInfo */
         FrameInfo: {
             /** Astropy Version */
@@ -46,6 +245,11 @@ export interface components {
              * @description astropy Galactocentric parameter set
              */
             galactocentric_defaults: string;
+        };
+        /** HTTPValidationError */
+        HTTPValidationError: {
+            /** Detail */
+            detail?: components["schemas"]["ValidationError"][];
         };
         /** Health */
         Health: {
@@ -61,6 +265,221 @@ export interface components {
              */
             status: "ok" | "degraded";
         };
+        /** Identifier */
+        Identifier: {
+            /** Catalogue */
+            catalogue: string;
+            /** Identifier */
+            identifier: string;
+            /** Source Record Id */
+            source_record_id: string;
+        };
+        /** Measurement */
+        Measurement: {
+            /** Is Default */
+            is_default: boolean | null;
+            /** Method */
+            method: string;
+            /** Quantity */
+            quantity: string;
+            /** Solution Key */
+            solution_key: string | null;
+            source: components["schemas"]["SourceRef"];
+            /** State */
+            state: string;
+            uncertainty: components["schemas"]["Uncertainty"] | null;
+            /** Unit */
+            unit: string;
+            /** Value */
+            value: number | null;
+        };
+        /**
+         * ModelEntry
+         * @description One model's result (CLAUDE.md §9), or its refusal when the inputs are out of domain.
+         */
+        ModelEntry: {
+            /**
+             * Assumptions
+             * @default []
+             */
+            assumptions: string[];
+            /** At Distance Lower */
+            at_distance_lower?: {
+                [key: string]: components["schemas"]["QuantityValue"];
+            } | null;
+            /** At Distance Upper */
+            at_distance_upper?: {
+                [key: string]: components["schemas"]["QuantityValue"];
+            } | null;
+            /** Inputs */
+            inputs?: {
+                [key: string]: components["schemas"]["QuantityValue"] | number | string;
+            } | null;
+            /** Model Id */
+            model_id: string;
+            /** Model Version */
+            model_version?: string | null;
+            /** Outputs */
+            outputs?: {
+                [key: string]: components["schemas"]["QuantityValue"] | number | string;
+            } | null;
+            /**
+             * Refused
+             * @description why the model refused these inputs
+             */
+            refused?: string | null;
+            /** Status */
+            status?: ("physical" | "speculative") | null;
+            /**
+             * Warnings
+             * @default []
+             */
+            warnings: string[];
+        };
+        /** ObjectSummary */
+        ObjectSummary: {
+            /**
+             * Display Name
+             * @description SIMBAD main identifier when known, else primary_name
+             */
+            display_name: string;
+            /** Has 3D Position */
+            has_3d_position: boolean;
+            /** Id */
+            id: number;
+            /** Matched Alias */
+            matched_alias?: string | null;
+            /** Object Type */
+            object_type: string;
+            /**
+             * Primary Name
+             * @description catalogue name (e.g. Gaia DR3 designation)
+             */
+            primary_name: string;
+        };
+        /** ParentLink */
+        ParentLink: {
+            object: components["schemas"]["ObjectSummary"];
+            /** Reason */
+            reason: string;
+        };
+        /** Position */
+        Position: {
+            cartesian: components["schemas"]["Cartesian"] | null;
+            /** Dec Deg */
+            dec_deg: number | null;
+            /** Dec Error Mas */
+            dec_error_mas: number | null;
+            /** @description null: sky view only, not a 3D position */
+            distance: components["schemas"]["Distance"] | null;
+            /** Distance State */
+            distance_state: string;
+            /** Epoch */
+            epoch: string;
+            /** Frame */
+            frame: string;
+            /** Id */
+            id: number;
+            /**
+             * Kind
+             * @enum {string}
+             */
+            kind: "sky" | "state_vector";
+            /** Position Method */
+            position_method: string;
+            /** Position State */
+            position_state: string;
+            /** Ra Deg */
+            ra_deg: number | null;
+            /** Ra Error Mas */
+            ra_error_mas: number | null;
+            source: components["schemas"]["SourceRef"];
+            state_vector: components["schemas"]["StateVector"] | null;
+        };
+        /** Publication */
+        Publication: {
+            /** Bibcode */
+            bibcode: string;
+            /** Citation */
+            citation: string | null;
+        };
+        /** QuantityValue */
+        QuantityValue: {
+            /** Unit */
+            unit: string;
+            /** Value */
+            value: number;
+        };
+        /** RouteDistanceOut */
+        RouteDistanceOut: {
+            /** Lower Pc */
+            lower_pc: number;
+            /** Method */
+            method: string;
+            /** Upper Pc */
+            upper_pc: number;
+            /** Value Pc */
+            value_pc: number;
+        };
+        /** RouteEndpoint */
+        RouteEndpoint: {
+            /** Distance Method */
+            distance_method: string | null;
+            /** Epoch */
+            epoch: string;
+            object: components["schemas"]["ObjectSummary"];
+            /** Position Id */
+            position_id: number;
+            /** Position Method */
+            position_method: string;
+        };
+        /** RouteRequest */
+        RouteRequest: {
+            /** Destination Id */
+            destination_id: number;
+            /**
+             * Ftl Speed Fraction C
+             * @description speculative model only
+             * @default 10
+             */
+            ftl_speed_fraction_c: number;
+            /** Origin Id */
+            origin_id: number;
+            /**
+             * Proper Acceleration G
+             * @default 1
+             */
+            proper_acceleration_g: number;
+            /**
+             * Speed Fraction C
+             * @description for classical and sr_inertial; not clamped
+             */
+            speed_fraction_c: number;
+        };
+        /** RouteResult */
+        RouteResult: {
+            /** Code Version */
+            code_version: string;
+            destination: components["schemas"]["RouteEndpoint"];
+            distance: components["schemas"]["RouteDistanceOut"];
+            /** Frame */
+            frame: {
+                [key: string]: unknown;
+            };
+            /** Id */
+            id: number;
+            /** Models */
+            models: components["schemas"]["ModelEntry"][];
+            origin: components["schemas"]["RouteEndpoint"];
+            parameters: components["schemas"]["RouteRequest"];
+        };
+        /** SearchResults */
+        SearchResults: {
+            /** Query */
+            query: string;
+            /** Results */
+            results: components["schemas"]["ObjectSummary"][];
+        };
         /** SnapshotInfo */
         SnapshotInfo: {
             /**
@@ -74,6 +493,168 @@ export interface components {
             finished_at: string;
             /** Ingestion Job Id */
             ingestion_job_id: number;
+        };
+        /**
+         * SourceRef
+         * @description Where a value came from: raw file + row, the archive, release and retrieval time.
+         */
+        SourceRef: {
+            /** Archive */
+            archive: string;
+            /** Dataset */
+            dataset: string;
+            publication?: components["schemas"]["Publication"] | null;
+            /** Release */
+            release: string;
+            /** Retrieved At */
+            retrieved_at: string;
+            /**
+             * Source Record Id
+             * @description <raw file path>#row=<0-based row>
+             */
+            source_record_id: string;
+        };
+        /** StarTile */
+        StarTile: {
+            /**
+             * Bounds Pc
+             * @description [xmin, ymin, zmin, xmax, ymax, zmax]; null for the level-0 root tile
+             */
+            bounds_pc: number[] | null;
+            /**
+             * Complete
+             * @description true when every star in the cell is included
+             */
+            complete: boolean;
+            /** Frame */
+            frame: string;
+            /** Ix */
+            ix: number;
+            /** Iy */
+            iy: number;
+            /** Iz */
+            iz: number;
+            /** Level */
+            level: number;
+            /** Stars */
+            stars: components["schemas"]["TileStar"][];
+            /** Total In Cell */
+            total_in_cell: number;
+        };
+        /** StateVector */
+        StateVector: {
+            /** Vx Km S */
+            vx_km_s: number;
+            /** Vy Km S */
+            vy_km_s: number;
+            /** Vz Km S */
+            vz_km_s: number;
+            /** X Km */
+            x_km: number;
+            /** Y Km */
+            y_km: number;
+            /** Z Km */
+            z_km: number;
+        };
+        /** TileStar */
+        TileStar: {
+            /** Id */
+            id: number;
+            /** Phot G Mean Mag */
+            phot_g_mean_mag: number | null;
+            /** X Pc */
+            x_pc: number;
+            /** Y Pc */
+            y_pc: number;
+            /** Z Pc */
+            z_pc: number;
+        };
+        /** Trajectory */
+        Trajectory: {
+            /** Model Id */
+            model_id: string;
+            /** Model Version */
+            model_version: string;
+            /** Proper Time Defined */
+            proper_time_defined: boolean;
+            /** Route Id */
+            route_id: number;
+            /** Samples */
+            samples: components["schemas"]["TrajectorySample"][];
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "physical" | "speculative";
+        };
+        /** TrajectorySample */
+        TrajectorySample: {
+            /** Coordinate Time Yr */
+            coordinate_time_yr: number;
+            /** Fraction */
+            fraction: number;
+            /** Proper Time Yr */
+            proper_time_yr: number | null;
+            /** Speed C */
+            speed_c: number;
+        };
+        /** Traversal */
+        Traversal: {
+            /** Coordinate Time Yr */
+            coordinate_time_yr: number;
+            /** Id */
+            id: number;
+            /** Model Id */
+            model_id: string;
+            /** Route Id */
+            route_id: number;
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "planned" | "running" | "paused" | "cancelled" | "arrived";
+        };
+        /** TraversalCreate */
+        TraversalCreate: {
+            /** Model Id */
+            model_id: string;
+            /** Route Id */
+            route_id: number;
+        };
+        /** TraversalUpdate */
+        TraversalUpdate: {
+            /** Coordinate Time Yr */
+            coordinate_time_yr?: number | null;
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "planned" | "running" | "paused" | "cancelled" | "arrived";
+        };
+        /** Uncertainty */
+        Uncertainty: {
+            /** Lower */
+            lower: number | null;
+            /**
+             * Type
+             * @description symmetric_1sigma | asymmetric_offsets | interval_bounds_p16_p84 | upper_limit | lower_limit
+             */
+            type: string;
+            /** Upper */
+            upper: number | null;
+        };
+        /** ValidationError */
+        ValidationError: {
+            /** Context */
+            ctx?: Record<string, never>;
+            /** Input */
+            input?: unknown;
+            /** Location */
+            loc: (string | number)[];
+            /** Message */
+            msg: string;
+            /** Error Type */
+            type: string;
         };
     };
     responses: never;
@@ -100,6 +681,302 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["Health"];
+                };
+            };
+        };
+    };
+    search_objects_search_get: {
+        parameters: {
+            query: {
+                q: string;
+                limit?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["SearchResults"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    dossier_objects__object_id__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                object_id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Dossier"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    create_route_routes_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["RouteRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RouteResult"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    get_route_routes__route_id__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                route_id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RouteResult"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    get_trajectory_routes__route_id__trajectory_get: {
+        parameters: {
+            query: {
+                model_id: string;
+                samples?: number;
+            };
+            header?: never;
+            path: {
+                route_id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Trajectory"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    tile_stars_tiles__level___ix___iy___iz__get: {
+        parameters: {
+            query?: {
+                limit?: number;
+            };
+            header?: never;
+            path: {
+                level: number;
+                ix: number;
+                iy: number;
+                iz: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["StarTile"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    create_traversal_traversals_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["TraversalCreate"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Traversal"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    get_traversal_traversals__traversal_id__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                traversal_id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Traversal"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    update_traversal_traversals__traversal_id__patch: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                traversal_id: number;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["TraversalUpdate"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Traversal"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
                 };
             };
         };

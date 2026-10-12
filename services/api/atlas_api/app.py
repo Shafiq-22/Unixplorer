@@ -2,33 +2,26 @@
 
 from __future__ import annotations
 
-from collections.abc import Iterator
-from functools import lru_cache
 from typing import Annotated
 
 from fastapi import Depends, FastAPI
 from sqlalchemy import Engine, text
 
 from astronomy_core.frames import frame_metadata
+from atlas_api.db import get_engine
+from atlas_api.routers import objects, routes, stars
 from atlas_api.schemas import DatabaseInfo, FrameInfo, Health, SnapshotInfo
-from atlas_db.session import make_engine
 
 API_VERSION = "0.1.0"
 
 app = FastAPI(
     title="Universe Atlas API",
     version=API_VERSION,
-    description="Milky Way edition. M1 exposes health only.",
+    description="Milky Way edition: search, dossiers, star tiles, routes and traversals.",
 )
-
-
-@lru_cache(maxsize=1)
-def _engine() -> Engine:
-    return make_engine()
-
-
-def get_engine() -> Iterator[Engine]:
-    yield _engine()
+app.include_router(objects.router)
+app.include_router(stars.router)
+app.include_router(routes.router)
 
 
 @app.get("/health", response_model=Health)

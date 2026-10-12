@@ -1,6 +1,64 @@
 {
   "components": {
     "schemas": {
+      "Cartesian": {
+        "description": "Derived ICRS Cartesian position (origin: Solar System barycentre), parsecs.",
+        "properties": {
+          "method": {
+            "title": "Method",
+            "type": "string"
+          },
+          "state": {
+            "const": "derived",
+            "default": "derived",
+            "title": "State",
+            "type": "string"
+          },
+          "x_pc": {
+            "title": "X Pc",
+            "type": "number"
+          },
+          "y_pc": {
+            "title": "Y Pc",
+            "type": "number"
+          },
+          "z_pc": {
+            "title": "Z Pc",
+            "type": "number"
+          }
+        },
+        "required": [
+          "x_pc",
+          "y_pc",
+          "z_pc",
+          "method"
+        ],
+        "title": "Cartesian",
+        "type": "object"
+      },
+      "Classification": {
+        "properties": {
+          "scheme": {
+            "title": "Scheme",
+            "type": "string"
+          },
+          "source_record_id": {
+            "title": "Source Record Id",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scheme",
+          "value",
+          "source_record_id"
+        ],
+        "title": "Classification",
+        "type": "object"
+      },
       "DatabaseInfo": {
         "properties": {
           "error": {
@@ -38,6 +96,140 @@
         "title": "DatabaseInfo",
         "type": "object"
       },
+      "Distance": {
+        "properties": {
+          "interval": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Interval"
+          },
+          "lower_pc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lower Pc"
+          },
+          "method": {
+            "title": "Method",
+            "type": "string"
+          },
+          "source": {
+            "$ref": "#/components/schemas/SourceRef"
+          },
+          "state": {
+            "title": "State",
+            "type": "string"
+          },
+          "upper_pc": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upper Pc"
+          },
+          "value_pc": {
+            "title": "Value Pc",
+            "type": "number"
+          }
+        },
+        "required": [
+          "value_pc",
+          "lower_pc",
+          "upper_pc",
+          "interval",
+          "method",
+          "state",
+          "source"
+        ],
+        "title": "Distance",
+        "type": "object"
+      },
+      "Dossier": {
+        "properties": {
+          "aliases": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Aliases",
+            "type": "array"
+          },
+          "children": {
+            "items": {
+              "$ref": "#/components/schemas/ObjectSummary"
+            },
+            "title": "Children",
+            "type": "array"
+          },
+          "classifications": {
+            "items": {
+              "$ref": "#/components/schemas/Classification"
+            },
+            "title": "Classifications",
+            "type": "array"
+          },
+          "identifiers": {
+            "items": {
+              "$ref": "#/components/schemas/Identifier"
+            },
+            "title": "Identifiers",
+            "type": "array"
+          },
+          "measurements": {
+            "items": {
+              "$ref": "#/components/schemas/Measurement"
+            },
+            "title": "Measurements",
+            "type": "array"
+          },
+          "object": {
+            "$ref": "#/components/schemas/ObjectSummary"
+          },
+          "parent": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ParentLink"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "positions": {
+            "items": {
+              "$ref": "#/components/schemas/Position"
+            },
+            "title": "Positions",
+            "type": "array"
+          }
+        },
+        "required": [
+          "object",
+          "identifiers",
+          "aliases",
+          "classifications",
+          "measurements",
+          "positions",
+          "parent",
+          "children"
+        ],
+        "title": "Dossier",
+        "type": "object"
+      },
       "FrameInfo": {
         "properties": {
           "astropy_version": {
@@ -55,6 +247,19 @@
           "astropy_version"
         ],
         "title": "FrameInfo",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
         "type": "object"
       },
       "Health": {
@@ -99,6 +304,665 @@
         "title": "Health",
         "type": "object"
       },
+      "Identifier": {
+        "properties": {
+          "catalogue": {
+            "title": "Catalogue",
+            "type": "string"
+          },
+          "identifier": {
+            "title": "Identifier",
+            "type": "string"
+          },
+          "source_record_id": {
+            "title": "Source Record Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "catalogue",
+          "identifier",
+          "source_record_id"
+        ],
+        "title": "Identifier",
+        "type": "object"
+      },
+      "Measurement": {
+        "properties": {
+          "is_default": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Default"
+          },
+          "method": {
+            "title": "Method",
+            "type": "string"
+          },
+          "quantity": {
+            "title": "Quantity",
+            "type": "string"
+          },
+          "solution_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Solution Key"
+          },
+          "source": {
+            "$ref": "#/components/schemas/SourceRef"
+          },
+          "state": {
+            "title": "State",
+            "type": "string"
+          },
+          "uncertainty": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Uncertainty"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "unit": {
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "quantity",
+          "value",
+          "unit",
+          "uncertainty",
+          "state",
+          "method",
+          "solution_key",
+          "is_default",
+          "source"
+        ],
+        "title": "Measurement",
+        "type": "object"
+      },
+      "ModelEntry": {
+        "description": "One model's result (CLAUDE.md \u00a79), or its refusal when the inputs are out of domain.",
+        "properties": {
+          "assumptions": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Assumptions",
+            "type": "array"
+          },
+          "at_distance_lower": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/QuantityValue"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "At Distance Lower"
+          },
+          "at_distance_upper": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/QuantityValue"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "At Distance Upper"
+          },
+          "inputs": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/QuantityValue"
+                    },
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Inputs"
+          },
+          "model_id": {
+            "title": "Model Id",
+            "type": "string"
+          },
+          "model_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Version"
+          },
+          "outputs": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/QuantityValue"
+                    },
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outputs"
+          },
+          "refused": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "why the model refused these inputs",
+            "title": "Refused"
+          },
+          "status": {
+            "anyOf": [
+              {
+                "enum": [
+                  "physical",
+                  "speculative"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status"
+          },
+          "warnings": {
+            "default": [],
+            "items": {
+              "type": "string"
+            },
+            "title": "Warnings",
+            "type": "array"
+          }
+        },
+        "required": [
+          "model_id"
+        ],
+        "title": "ModelEntry",
+        "type": "object"
+      },
+      "ObjectSummary": {
+        "properties": {
+          "display_name": {
+            "description": "SIMBAD main identifier when known, else primary_name",
+            "title": "Display Name",
+            "type": "string"
+          },
+          "has_3d_position": {
+            "title": "Has 3D Position",
+            "type": "boolean"
+          },
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "matched_alias": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matched Alias"
+          },
+          "object_type": {
+            "title": "Object Type",
+            "type": "string"
+          },
+          "primary_name": {
+            "description": "catalogue name (e.g. Gaia DR3 designation)",
+            "title": "Primary Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "primary_name",
+          "display_name",
+          "object_type",
+          "has_3d_position"
+        ],
+        "title": "ObjectSummary",
+        "type": "object"
+      },
+      "ParentLink": {
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/ObjectSummary"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string"
+          }
+        },
+        "required": [
+          "object",
+          "reason"
+        ],
+        "title": "ParentLink",
+        "type": "object"
+      },
+      "Position": {
+        "properties": {
+          "cartesian": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Cartesian"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "dec_deg": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Dec Deg"
+          },
+          "dec_error_mas": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Dec Error Mas"
+          },
+          "distance": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Distance"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "null: sky view only, not a 3D position"
+          },
+          "distance_state": {
+            "title": "Distance State",
+            "type": "string"
+          },
+          "epoch": {
+            "title": "Epoch",
+            "type": "string"
+          },
+          "frame": {
+            "title": "Frame",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "kind": {
+            "enum": [
+              "sky",
+              "state_vector"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "position_method": {
+            "title": "Position Method",
+            "type": "string"
+          },
+          "position_state": {
+            "title": "Position State",
+            "type": "string"
+          },
+          "ra_deg": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ra Deg"
+          },
+          "ra_error_mas": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ra Error Mas"
+          },
+          "source": {
+            "$ref": "#/components/schemas/SourceRef"
+          },
+          "state_vector": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StateVector"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "frame",
+          "epoch",
+          "ra_deg",
+          "dec_deg",
+          "ra_error_mas",
+          "dec_error_mas",
+          "position_state",
+          "position_method",
+          "distance_state",
+          "distance",
+          "state_vector",
+          "cartesian",
+          "source"
+        ],
+        "title": "Position",
+        "type": "object"
+      },
+      "Publication": {
+        "properties": {
+          "bibcode": {
+            "title": "Bibcode",
+            "type": "string"
+          },
+          "citation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Citation"
+          }
+        },
+        "required": [
+          "bibcode",
+          "citation"
+        ],
+        "title": "Publication",
+        "type": "object"
+      },
+      "QuantityValue": {
+        "properties": {
+          "unit": {
+            "title": "Unit",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "number"
+          }
+        },
+        "required": [
+          "value",
+          "unit"
+        ],
+        "title": "QuantityValue",
+        "type": "object"
+      },
+      "RouteDistanceOut": {
+        "properties": {
+          "lower_pc": {
+            "title": "Lower Pc",
+            "type": "number"
+          },
+          "method": {
+            "title": "Method",
+            "type": "string"
+          },
+          "upper_pc": {
+            "title": "Upper Pc",
+            "type": "number"
+          },
+          "value_pc": {
+            "title": "Value Pc",
+            "type": "number"
+          }
+        },
+        "required": [
+          "value_pc",
+          "lower_pc",
+          "upper_pc",
+          "method"
+        ],
+        "title": "RouteDistanceOut",
+        "type": "object"
+      },
+      "RouteEndpoint": {
+        "properties": {
+          "distance_method": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Distance Method"
+          },
+          "epoch": {
+            "title": "Epoch",
+            "type": "string"
+          },
+          "object": {
+            "$ref": "#/components/schemas/ObjectSummary"
+          },
+          "position_id": {
+            "title": "Position Id",
+            "type": "integer"
+          },
+          "position_method": {
+            "title": "Position Method",
+            "type": "string"
+          }
+        },
+        "required": [
+          "object",
+          "position_id",
+          "epoch",
+          "position_method",
+          "distance_method"
+        ],
+        "title": "RouteEndpoint",
+        "type": "object"
+      },
+      "RouteRequest": {
+        "properties": {
+          "destination_id": {
+            "title": "Destination Id",
+            "type": "integer"
+          },
+          "ftl_speed_fraction_c": {
+            "default": 10.0,
+            "description": "speculative model only",
+            "exclusiveMinimum": 0.0,
+            "title": "Ftl Speed Fraction C",
+            "type": "number"
+          },
+          "origin_id": {
+            "title": "Origin Id",
+            "type": "integer"
+          },
+          "proper_acceleration_g": {
+            "default": 1.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Proper Acceleration G",
+            "type": "number"
+          },
+          "speed_fraction_c": {
+            "description": "for classical and sr_inertial; not clamped",
+            "exclusiveMinimum": 0.0,
+            "title": "Speed Fraction C",
+            "type": "number"
+          }
+        },
+        "required": [
+          "origin_id",
+          "destination_id",
+          "speed_fraction_c"
+        ],
+        "title": "RouteRequest",
+        "type": "object"
+      },
+      "RouteResult": {
+        "properties": {
+          "code_version": {
+            "title": "Code Version",
+            "type": "string"
+          },
+          "destination": {
+            "$ref": "#/components/schemas/RouteEndpoint"
+          },
+          "distance": {
+            "$ref": "#/components/schemas/RouteDistanceOut"
+          },
+          "frame": {
+            "additionalProperties": true,
+            "title": "Frame",
+            "type": "object"
+          },
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "models": {
+            "items": {
+              "$ref": "#/components/schemas/ModelEntry"
+            },
+            "title": "Models",
+            "type": "array"
+          },
+          "origin": {
+            "$ref": "#/components/schemas/RouteEndpoint"
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/RouteRequest"
+          }
+        },
+        "required": [
+          "id",
+          "origin",
+          "destination",
+          "distance",
+          "parameters",
+          "frame",
+          "models",
+          "code_version"
+        ],
+        "title": "RouteResult",
+        "type": "object"
+      },
+      "SearchResults": {
+        "properties": {
+          "query": {
+            "title": "Query",
+            "type": "string"
+          },
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/ObjectSummary"
+            },
+            "title": "Results",
+            "type": "array"
+          }
+        },
+        "required": [
+          "query",
+          "results"
+        ],
+        "title": "SearchResults",
+        "type": "object"
+      },
       "SnapshotInfo": {
         "properties": {
           "datasets": {
@@ -125,11 +989,450 @@
         ],
         "title": "SnapshotInfo",
         "type": "object"
+      },
+      "SourceRef": {
+        "description": "Where a value came from: raw file + row, the archive, release and retrieval time.",
+        "properties": {
+          "archive": {
+            "title": "Archive",
+            "type": "string"
+          },
+          "dataset": {
+            "title": "Dataset",
+            "type": "string"
+          },
+          "publication": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Publication"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "release": {
+            "title": "Release",
+            "type": "string"
+          },
+          "retrieved_at": {
+            "title": "Retrieved At",
+            "type": "string"
+          },
+          "source_record_id": {
+            "description": "<raw file path>#row=<0-based row>",
+            "title": "Source Record Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_record_id",
+          "dataset",
+          "archive",
+          "release",
+          "retrieved_at"
+        ],
+        "title": "SourceRef",
+        "type": "object"
+      },
+      "StarTile": {
+        "properties": {
+          "bounds_pc": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "number"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "[xmin, ymin, zmin, xmax, ymax, zmax]; null for the level-0 root tile",
+            "title": "Bounds Pc"
+          },
+          "complete": {
+            "description": "true when every star in the cell is included",
+            "title": "Complete",
+            "type": "boolean"
+          },
+          "frame": {
+            "title": "Frame",
+            "type": "string"
+          },
+          "ix": {
+            "title": "Ix",
+            "type": "integer"
+          },
+          "iy": {
+            "title": "Iy",
+            "type": "integer"
+          },
+          "iz": {
+            "title": "Iz",
+            "type": "integer"
+          },
+          "level": {
+            "title": "Level",
+            "type": "integer"
+          },
+          "stars": {
+            "items": {
+              "$ref": "#/components/schemas/TileStar"
+            },
+            "title": "Stars",
+            "type": "array"
+          },
+          "total_in_cell": {
+            "title": "Total In Cell",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "level",
+          "ix",
+          "iy",
+          "iz",
+          "bounds_pc",
+          "frame",
+          "complete",
+          "total_in_cell",
+          "stars"
+        ],
+        "title": "StarTile",
+        "type": "object"
+      },
+      "StateVector": {
+        "properties": {
+          "vx_km_s": {
+            "title": "Vx Km S",
+            "type": "number"
+          },
+          "vy_km_s": {
+            "title": "Vy Km S",
+            "type": "number"
+          },
+          "vz_km_s": {
+            "title": "Vz Km S",
+            "type": "number"
+          },
+          "x_km": {
+            "title": "X Km",
+            "type": "number"
+          },
+          "y_km": {
+            "title": "Y Km",
+            "type": "number"
+          },
+          "z_km": {
+            "title": "Z Km",
+            "type": "number"
+          }
+        },
+        "required": [
+          "x_km",
+          "y_km",
+          "z_km",
+          "vx_km_s",
+          "vy_km_s",
+          "vz_km_s"
+        ],
+        "title": "StateVector",
+        "type": "object"
+      },
+      "TileStar": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "phot_g_mean_mag": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phot G Mean Mag"
+          },
+          "x_pc": {
+            "title": "X Pc",
+            "type": "number"
+          },
+          "y_pc": {
+            "title": "Y Pc",
+            "type": "number"
+          },
+          "z_pc": {
+            "title": "Z Pc",
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "x_pc",
+          "y_pc",
+          "z_pc",
+          "phot_g_mean_mag"
+        ],
+        "title": "TileStar",
+        "type": "object"
+      },
+      "Trajectory": {
+        "properties": {
+          "model_id": {
+            "title": "Model Id",
+            "type": "string"
+          },
+          "model_version": {
+            "title": "Model Version",
+            "type": "string"
+          },
+          "proper_time_defined": {
+            "title": "Proper Time Defined",
+            "type": "boolean"
+          },
+          "route_id": {
+            "title": "Route Id",
+            "type": "integer"
+          },
+          "samples": {
+            "items": {
+              "$ref": "#/components/schemas/TrajectorySample"
+            },
+            "title": "Samples",
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "physical",
+              "speculative"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "route_id",
+          "model_id",
+          "model_version",
+          "status",
+          "proper_time_defined",
+          "samples"
+        ],
+        "title": "Trajectory",
+        "type": "object"
+      },
+      "TrajectorySample": {
+        "properties": {
+          "coordinate_time_yr": {
+            "title": "Coordinate Time Yr",
+            "type": "number"
+          },
+          "fraction": {
+            "title": "Fraction",
+            "type": "number"
+          },
+          "proper_time_yr": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Proper Time Yr"
+          },
+          "speed_c": {
+            "title": "Speed C",
+            "type": "number"
+          }
+        },
+        "required": [
+          "coordinate_time_yr",
+          "proper_time_yr",
+          "fraction",
+          "speed_c"
+        ],
+        "title": "TrajectorySample",
+        "type": "object"
+      },
+      "Traversal": {
+        "properties": {
+          "coordinate_time_yr": {
+            "title": "Coordinate Time Yr",
+            "type": "number"
+          },
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "model_id": {
+            "title": "Model Id",
+            "type": "string"
+          },
+          "route_id": {
+            "title": "Route Id",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "planned",
+              "running",
+              "paused",
+              "cancelled",
+              "arrived"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "route_id",
+          "model_id",
+          "status",
+          "coordinate_time_yr"
+        ],
+        "title": "Traversal",
+        "type": "object"
+      },
+      "TraversalCreate": {
+        "properties": {
+          "model_id": {
+            "title": "Model Id",
+            "type": "string"
+          },
+          "route_id": {
+            "title": "Route Id",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "route_id",
+          "model_id"
+        ],
+        "title": "TraversalCreate",
+        "type": "object"
+      },
+      "TraversalUpdate": {
+        "properties": {
+          "coordinate_time_yr": {
+            "anyOf": [
+              {
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Coordinate Time Yr"
+          },
+          "status": {
+            "enum": [
+              "planned",
+              "running",
+              "paused",
+              "cancelled",
+              "arrived"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "TraversalUpdate",
+        "type": "object"
+      },
+      "Uncertainty": {
+        "properties": {
+          "lower": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lower"
+          },
+          "type": {
+            "description": "symmetric_1sigma | asymmetric_offsets | interval_bounds_p16_p84 | upper_limit | lower_limit",
+            "title": "Type",
+            "type": "string"
+          },
+          "upper": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Upper"
+          }
+        },
+        "required": [
+          "lower",
+          "upper",
+          "type"
+        ],
+        "title": "Uncertainty",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
       }
     }
   },
   "info": {
-    "description": "Milky Way edition. M1 exposes health only.",
+    "description": "Milky Way edition: search, dossiers, star tiles, routes and traversals.",
     "title": "Universe Atlas API",
     "version": "0.1.0"
   },
@@ -151,6 +1454,464 @@
           }
         },
         "summary": "Health"
+      }
+    },
+    "/objects/search": {
+      "get": {
+        "operationId": "search_objects_search_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "schema": {
+              "maxLength": 100,
+              "minLength": 1,
+              "title": "Q",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 20,
+              "maximum": 100,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResults"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Search",
+        "tags": [
+          "objects"
+        ]
+      }
+    },
+    "/objects/{object_id}": {
+      "get": {
+        "operationId": "dossier_objects__object_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "object_id",
+            "required": true,
+            "schema": {
+              "title": "Object Id",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dossier"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Dossier",
+        "tags": [
+          "objects"
+        ]
+      }
+    },
+    "/routes": {
+      "post": {
+        "operationId": "create_route_routes_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RouteRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RouteResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Route",
+        "tags": [
+          "routes"
+        ]
+      }
+    },
+    "/routes/{route_id}": {
+      "get": {
+        "operationId": "get_route_routes__route_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "route_id",
+            "required": true,
+            "schema": {
+              "title": "Route Id",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RouteResult"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Route",
+        "tags": [
+          "routes"
+        ]
+      }
+    },
+    "/routes/{route_id}/trajectory": {
+      "get": {
+        "operationId": "get_trajectory_routes__route_id__trajectory_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "route_id",
+            "required": true,
+            "schema": {
+              "title": "Route Id",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "model_id",
+            "required": true,
+            "schema": {
+              "title": "Model Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "samples",
+            "required": false,
+            "schema": {
+              "default": 200,
+              "maximum": 2000,
+              "minimum": 2,
+              "title": "Samples",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Trajectory"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Trajectory",
+        "tags": [
+          "routes"
+        ]
+      }
+    },
+    "/stars/tiles/{level}/{ix}/{iy}/{iz}": {
+      "get": {
+        "operationId": "tile_stars_tiles__level___ix___iy___iz__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "level",
+            "required": true,
+            "schema": {
+              "title": "Level",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "path",
+            "name": "ix",
+            "required": true,
+            "schema": {
+              "title": "Ix",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "path",
+            "name": "iy",
+            "required": true,
+            "schema": {
+              "title": "Iy",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "path",
+            "name": "iz",
+            "required": true,
+            "schema": {
+              "title": "Iz",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 3000,
+              "maximum": 10000,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StarTile"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Tile",
+        "tags": [
+          "stars"
+        ]
+      }
+    },
+    "/traversals": {
+      "post": {
+        "operationId": "create_traversal_traversals_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TraversalCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traversal"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Traversal",
+        "tags": [
+          "routes"
+        ]
+      }
+    },
+    "/traversals/{traversal_id}": {
+      "get": {
+        "operationId": "get_traversal_traversals__traversal_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "traversal_id",
+            "required": true,
+            "schema": {
+              "title": "Traversal Id",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traversal"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Traversal",
+        "tags": [
+          "routes"
+        ]
+      },
+      "patch": {
+        "operationId": "update_traversal_traversals__traversal_id__patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "traversal_id",
+            "required": true,
+            "schema": {
+              "title": "Traversal Id",
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TraversalUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Traversal"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Update Traversal",
+        "tags": [
+          "routes"
+        ]
       }
     }
   }

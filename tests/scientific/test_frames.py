@@ -85,3 +85,26 @@ def test_bailer_jones_keeps_asymmetric_interval_and_unknown() -> None:
     assert bailer_jones_distance(None, None, None, "photogeometric") is None
     with pytest.raises(ModelDomainError):
         bailer_jones_distance(10 * u.pc, 11 * u.pc, 12 * u.pc, "geometric")
+
+
+def test_vectorised_cartesian_matches_single_coordinate_transform() -> None:
+    ra = np.array([10.0, 200.0, 359.9]) * u.deg
+    dec = np.array([-20.0, 45.0, 89.0]) * u.deg
+    dist = np.array([3.0, 750.0, 12.5]) * u.pc
+    from astronomy_core.frames import icrs_barycentric_xyz
+
+    x, y, z = icrs_barycentric_xyz(ra, dec, dist)
+    for i in range(3):
+        single = icrs_position(ra[i], dec[i], dist[i]).cartesian
+        assert x[i].to_value(u.pc) == pytest.approx(single.x.to_value(u.pc), rel=1e-12, abs=1e-12)
+        assert y[i].to_value(u.pc) == pytest.approx(single.y.to_value(u.pc), rel=1e-12, abs=1e-12)
+        assert z[i].to_value(u.pc) == pytest.approx(single.z.to_value(u.pc), rel=1e-12, abs=1e-12)
+        r = np.sqrt(x[i] ** 2 + y[i] ** 2 + z[i] ** 2)
+        assert r.to_value(u.pc) == pytest.approx(dist[i].to_value(u.pc), rel=1e-12)
+
+
+def test_state_vector_km_to_pc_uses_astropy_units() -> None:
+    from astronomy_core.frames import state_vector_xyz
+
+    x, _, _ = state_vector_xyz(1 * u.pc.to(u.km) * u.km, 0 * u.km, 0 * u.km)
+    assert x.to_value(u.pc) == pytest.approx(1.0, rel=1e-12)
