@@ -1,0 +1,13 @@
+-- dataset: landmarks (SIMBAD part: identifiers, types and coordinates only)
+-- service: SIMBAD TAP (sync). {ids} is the quoted list of simbad_id values from
+-- ingestion/landmarks.yaml. Distances do NOT come from here: they follow the literature
+-- process in CLAUDE.md §8.3. Table/column names checked against TAP_SCHEMA at fetch.
+SELECT
+  q.id AS query_id,
+  b.oid, b.main_id, b.otype,
+  b.ra, b.dec, b.coo_err_maj, b.coo_err_min, b.coo_bibcode,
+  a.id AS alias
+FROM ident AS q
+JOIN basic AS b ON b.oid = q.oidref
+JOIN ident AS a ON a.oidref = b.oid
+WHERE q.id IN ({ids})

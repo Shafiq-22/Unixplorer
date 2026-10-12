@@ -1,0 +1,13 @@
+-- dataset: simbad_ids
+-- service: SIMBAD TAP (sync), run once per batch of Gaia DR3 source_ids.
+-- {ids} is replaced by a quoted list of 'Gaia DR3 <source_id>' identifiers. The exact text of
+-- every batch query is saved next to its result in data/raw/ and recorded in the manifest.
+-- One row per (Gaia source, SIMBAD alias). Table/column names checked against TAP_SCHEMA at fetch.
+SELECT
+  q.id AS query_id,
+  b.oid, b.main_id, b.otype, b.coo_bibcode,
+  a.id AS alias
+FROM ident AS q
+JOIN basic AS b ON b.oid = q.oidref
+JOIN ident AS a ON a.oidref = b.oid
+WHERE q.id IN ({ids})

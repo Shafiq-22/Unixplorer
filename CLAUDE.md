@@ -37,13 +37,14 @@ official archive  →  data/raw/ (as downloaded, immutable)  →  data/processed
 
 | Area | Status |
 |---|---|
-| **M0 data snapshot: Gaia nearby stars** | not started |
-| **M0 data snapshot: Bailer-Jones distances** | not started |
-| **M0 data snapshot: SIMBAD identifiers/types** | not started |
-| **M0 data snapshot: JPL Horizons bodies** | not started |
-| **M0 data snapshot: landmarks** | not started |
-| **M0 data snapshot: NASA Exoplanet Archive** | not started |
-| **M0 manifest + checksum verification** | not started |
+| **M0 data snapshot: Gaia nearby stars** | working (tested): 372 226 stars, Gaia DR3, 2026-10-12 |
+| **M0 data snapshot: Bailer-Jones distances** | working (tested): 372 226 rows, one per Gaia star, 2026-10-12 |
+| **M0 data snapshot: SIMBAD identifiers/types** | working (tested): 249 432 Gaia stars matched, 1 538 191 alias rows, 2026-10-12 |
+| **M0 data snapshot: JPL Horizons bodies** | working (tested): 18 bodies at J2016.0, DE441, 2026-10-12 |
+| **M0 data snapshot: landmarks** | partial: SIMBAD ids, types and coordinates for 10 landmarks done; distances need §8.3 paper choices |
+| **M0 data snapshot: NASA Exoplanet Archive** | working (tested): 5 504 `ps` solutions (1 797 planets), sy_dist < 120 pc, 2026-10-12; restriction to Gaia hosts pending |
+| **M0 manifest + checksum verification** | working (tested); `atlas data fetch/verify/build/status`, Git LFS, CI workflow |
+| **M0 data snapshot: galaxy_structure** | blocked: needs a human choice of disc/arm model paper |
 | Repo scaffold + CI | not started |
 | Schema + migrations | not started |
 | `astronomy-core` physics models | not started |
@@ -86,12 +87,12 @@ docker compose up -d db
 uv run alembic upgrade head
 uv run alembic revision --autogenerate -m "<msg>"   # always review the generated file
 
-# Data foundation (planned CLI; run in this order)
+# Data foundation (real since M0; order and details in docs/operations/data.md)
 uv run atlas data fetch <dataset>      # download from the official archive into data/raw/, update manifest
-uv run atlas data verify               # recompute sha256 + row counts against data/manifest.yaml
+uv run atlas data verify               # recompute sha256 + bytes + row counts against data/manifest.yaml
 uv run atlas data build                # data/raw/ -> data/processed/*.parquet (deterministic)
-uv run atlas db load                   # data/processed/ -> Postgres (idempotent upsert)
 uv run atlas data status               # what is downloaded, when, from which release
+uv run atlas db load                   # PLANNED (M1): data/processed/ -> Postgres (idempotent upsert)
 ```
 
 ---

@@ -1,0 +1,9 @@
+SELECT
+  q.id AS query_id,
+  b.oid, b.main_id, b.otype,
+  b.ra, b.dec, b.coo_err_maj, b.coo_err_min, b.coo_bibcode,
+  a.id AS alias
+FROM ident AS q
+JOIN basic AS b ON b.oid = q.oidref
+JOIN ident AS a ON a.oidref = b.oid
+WHERE q.id IN ('NAME Sgr A*', 'M  45', 'Cl Melotte   25', 'M  44', 'M  42', 'M   1', 'M  57', 'NGC  5139', 'M  13', '* eta Car')

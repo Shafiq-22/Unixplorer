@@ -1,0 +1,9 @@
+SELECT
+  d.source_id,
+  d.r_med_geo, d.r_lo_geo, d.r_hi_geo,
+  d.r_med_photogeo, d.r_lo_photogeo, d.r_hi_photogeo,
+  d.flag
+FROM external.gaiaedr3_distance AS d
+JOIN gaiadr3.gaia_source AS g ON g.source_id = d.source_id
+WHERE g.parallax > 10 AND g.parallax_over_error > 10
+  AND g.source_id >= 144115188075855872 AND g.source_id < 288230376151711744

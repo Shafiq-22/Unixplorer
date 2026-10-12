@@ -1,0 +1,6 @@
+# Large archive snapshots go through Git LFS (CLAUDE.md §8.5). Small raw files (Horizons JSON,
+# landmark queries, schema checks) stay in plain git so diffs remain reviewable.
+data/raw/gaia/**/*.vot              filter=lfs diff=lfs merge=lfs -text
+data/raw/simbad/simbad_ids/**/*.vot filter=lfs diff=lfs merge=lfs -text
+data/raw/exoplanet_archive/**/*.vot filter=lfs diff=lfs merge=lfs -text
+data/processed/*.parquet            filter=lfs diff=lfs merge=lfs -text
