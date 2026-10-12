@@ -321,3 +321,26 @@
   status: complete
   notes:
   - coordinates/types only; landmark distances need the §8.3 literature process
+- dataset: gaia_dr3_nearby
+  source: ESA Gaia Archive
+  service_url: https://gea.esac.esa.int/tap-server/tap
+  release: Gaia DR3
+  query_file: data/queries/gaia_dr3_nearby.adql
+  retrieved_at: '2026-10-12T07:50:00Z'
+  files:
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.2/schema_check_gaiadr3_gaia_source.vot
+    sha256: b11cc3f361c50588458219d06b7f9a5e4302e2c7ff41174cc4f159b9a3c6af04
+    bytes: 13011
+    rows: 152
+    role: schema_check
+  - path: data/raw/gaia/gaia_dr3_nearby/2026-10-12.2/query.adql
+    sha256: 0bca8cae8be9b8b080f1bba8aaa9ac741af69885a5026cf29cb55f710c95bb9c
+    bytes: 376
+    rows: 1
+    role: request
+  license_or_credit: see data/CITATIONS.md
+  status: 'partial: fetch process killed at the session''s 30-minute background limit while the async
+    job was still running; job URL not captured (pre-dates job_url.txt)'
+  notes:
+  - entry written after the fact by the operator via ingestion.manifest.append, since the killed process
+    could not record itself; retrieved_at is the directory mtime to the minute
