@@ -1,5 +1,6 @@
 import { z } from "zod";
 import type {
+  SolarSystem,
   Dossier,
   ModelEntry,
   RouteResult,
@@ -163,6 +164,9 @@ export const routeResultSchema = z.object({
     value_pc: z.number(),
     lower_pc: z.number(),
     upper_pc: z.number(),
+    value_au: z.number(),
+    lower_au: z.number(),
+    upper_au: z.number(),
     method: z.string(),
   }),
   parameters: z.object({
@@ -200,3 +204,22 @@ export const traversalSchema = z.object({
   status: z.enum(["planned", "running", "paused", "cancelled", "arrived"]),
   coordinate_time_yr: z.number(),
 }) satisfies z.ZodType<Traversal>;
+
+export const solarSystemSchema = z.object({
+  epoch: z.string(),
+  frame: z.string(),
+  bodies: z.array(
+    z.object({
+      object: objectSummary,
+      position,
+      distance_from_sun: z
+        .object({
+          value_au: z.number(),
+          value_km: z.number(),
+          state: z.literal("derived"),
+          method: z.string(),
+        })
+        .nullable(),
+    }),
+  ),
+}) satisfies z.ZodType<SolarSystem>;

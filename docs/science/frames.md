@@ -37,3 +37,24 @@ registry, not from memory:
   distance solution belongs in the sky view only (CLAUDE.md §5).
 - Solar System bodies come from Horizons: ICRF axes, barycentric, at J2016.0 TDB (see
   `data/queries/horizons_bodies.json`).
+
+## Solar System (M3)
+
+- Each Horizons response states its own reference frame (`ICRF`), start time
+  (`A.D. 2016-Jan-01 12:00:00.0000 TDB`, i.e. JD 2457389.0 TDB) and the ephemeris source of
+  the target and the centre: DE441 for most bodies, `mar099` for Mars, `jup365_merged` for
+  the Galilean moons, `sat441l` for Titan, `plu060_merged` for Pluto and Charon. The build
+  copies these verbatim, the database keeps them in `position_method` and `epoch`, and the UI
+  shows them. Nothing is relabelled by hand.
+- Bodies and stars share ICRS axes with a barycentric origin. Gaia positions are at J2016.0
+  and the Horizons epoch is JD 2457389.0 TDB, as each source states.
+- Distances from the Sun are derived (`astronomy_core.frames.separation`) at the shared
+  snapshot epoch.
+- **Floating origin, validated in `apps/web/src/lib/space.test.ts`:** focused near Earth
+  (~5e-6 pc), Proxima (1.3 pc) and at Sgr A*'s distance (8122 pc), separations from 1 pc down
+  to 1e-8 pc (Earth–Moon scale) keep an error below 1/1000 of the separation after rebasing.
+  That is sub-pixel when the separation fills a 1000-px view.
+  - The limit at 8122 pc is float64 itself: about 1.8e-12 pc resolution, so 1e-8 pc
+    separations carry about 2e-4 relative error. That is still sub-pixel.
+  - Without rebasing, absolute float32 at that distance loses even 0.2 AU separations. The
+    test demonstrates this.

@@ -72,3 +72,6 @@ code { font-size: 0.8em; overflow-wrap: anywhere; }
 tr.speculative { background: rgba(242, 193, 78, 0.06); }
 .warn { color: var(--warn); }
 .bad { color: var(--bad); }
+.body-label { color: #e8edf7; font-size: 0.75rem; white-space: nowrap; text-shadow: 0 0 3px #000; transform: translate(6px, -50%); display: inline-block; }
+button.link { background: none; border: none; padding: 0; color: #9fc2ff; text-decoration: underline; }
+.label-layer { position: absolute; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }

@@ -44,16 +44,21 @@ aborted, which led to the chunked approach.
 
 ### Processed Parquet (not committed; `uv run atlas data build` reproduces these bytes)
 
-Built with the locked dependencies in `uv.lock`. Rebuilding gave byte-identical files.
+Build version 2. M3 added the per-body Horizons header columns (ephemeris sources, reference
+frame, start time); the version is stored in every file's metadata, so all hashes changed.
+Rebuilding gives byte-identical files.
 
 ```
-f581843625dd833693f84e7991a9e9ca1803c7ae7d4c161d568f640950d899a6  exoplanets_ps.parquet
-cff2971237822c6df8eac5bcb56b2a249bcc39c8d74a53c1eb588c69eed09b79  gaia_dr3_distances.parquet
-4d862ad165455f8fe835f91d1a3312d2c1f3fe115c1cfccaeb478567719f4442  gaia_dr3_nearby.parquet
-f779785ca8b1b3a5144bc3731ac328b7d094e66c52101f8daf0009244ed07ae7  horizons_bodies.parquet
-ff3716a0a63e23e0f9e952c742553db98b8246d82af19eae77cea541ccd0d6e0  landmarks.parquet
-c6ea0cea9d62f18fa2d465cc1c9ec7e38134c73427e4633f0b924f07d3c9adf8  simbad_ids.parquet
+d603869b36502a9aaa01d9b987dbffcfbf500353250edea1a4319423d44af006  exoplanets_ps.parquet
+11bd52db745c3b15a5ed6791f677caaddc8bca16ec6e0533fb2d6be09241f94c  gaia_dr3_distances.parquet
+64919c3e672dfa78ca3ee5e5d60c428f29c38211c7d81bb95ae260ee844a38f9  gaia_dr3_nearby.parquet
+57654b2cd9bf10e943abf93662628b6d26ee92a4f065706c95f68a672a2a0ea2  horizons_bodies.parquet
+7e47758aa6ee76c31f9054abb143b4b86820d43bf8bc7c925debe5d6ffda6e8d  landmarks.parquet
+67f9e42923645035505c2ef14e8d644fb545111e3e142d19bd094867a2b84efe  simbad_ids.parquet
 ```
+
+A database loaded before a build-version change keeps its old rows, because `atlas db load`
+only inserts. To pick up changed provenance text, reload into an empty schema.
 
 ## Git LFS budget
 

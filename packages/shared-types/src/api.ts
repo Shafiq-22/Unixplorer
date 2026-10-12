@@ -106,6 +106,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/solar-system": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Solar System */
+        get: operations["solar_system_solar_system_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/stars/tiles/{level}/{ix}/{iy}/{iz}": {
         parameters: {
             query?: never;
@@ -218,6 +235,21 @@ export interface components {
             upper_pc: number | null;
             /** Value Pc */
             value_pc: number;
+        };
+        /** DistanceFromSun */
+        DistanceFromSun: {
+            /** Method */
+            method: string;
+            /**
+             * State
+             * @default derived
+             * @constant
+             */
+            state: "derived";
+            /** Value Au */
+            value_au: number;
+            /** Value Km */
+            value_km: number;
         };
         /** Dossier */
         Dossier: {
@@ -412,12 +444,18 @@ export interface components {
         };
         /** RouteDistanceOut */
         RouteDistanceOut: {
+            /** Lower Au */
+            lower_au: number;
             /** Lower Pc */
             lower_pc: number;
             /** Method */
             method: string;
+            /** Upper Au */
+            upper_au: number;
             /** Upper Pc */
             upper_pc: number;
+            /** Value Au */
+            value_au: number;
             /** Value Pc */
             value_pc: number;
         };
@@ -493,6 +531,24 @@ export interface components {
             finished_at: string;
             /** Ingestion Job Id */
             ingestion_job_id: number;
+        };
+        /** SolarSystem */
+        SolarSystem: {
+            /** Bodies */
+            bodies: components["schemas"]["SolarSystemBody"][];
+            /**
+             * Epoch
+             * @description as stated by JPL Horizons for the snapshot
+             */
+            epoch: string;
+            /** Frame */
+            frame: string;
+        };
+        /** SolarSystemBody */
+        SolarSystemBody: {
+            distance_from_sun: components["schemas"]["DistanceFromSun"] | null;
+            object: components["schemas"]["ObjectSummary"];
+            position: components["schemas"]["Position"];
         };
         /**
          * SourceRef
@@ -842,6 +898,26 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    solar_system_solar_system_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["SolarSystem"];
                 };
             };
         };

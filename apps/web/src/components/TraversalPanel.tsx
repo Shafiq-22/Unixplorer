@@ -1,7 +1,7 @@
 "use client";
 
 import type { Trajectory } from "@atlas/shared-types";
-import { fmt } from "@/lib/format";
+import { fmt, formatDuration } from "@/lib/format";
 import type { ClockStatus, TraversalView } from "@/lib/traversalClock";
 
 interface Props {
@@ -30,9 +30,12 @@ export function TraversalPanel({ trajectory, view, status, yearsPerSecond, onRat
       <progress max={1} value={view.fraction} aria-label="route covered" />
       <dl>
         <dt>Coordinate time</dt>
-        <dd data-testid="coordinate-time">{fmt(view.coordinateTimeYr)} yr of {fmt(total)} yr</dd>
+        <dd>
+          <span data-testid="coordinate-time" data-years={view.coordinateTimeYr}>{formatDuration(view.coordinateTimeYr)}</span> of{" "}
+          {formatDuration(total)}
+        </dd>
         <dt>Proper (ship) time</dt>
-        <dd>{view.properTimeYr === null ? "not defined by this model" : `${fmt(view.properTimeYr)} yr`}</dd>
+        <dd>{view.properTimeYr === null ? "not defined by this model" : formatDuration(view.properTimeYr)}</dd>
         <dt>Route covered</dt>
         <dd>{(view.fraction * 100).toFixed(2)} %</dd>
         <dt>Speed</dt>
@@ -40,7 +43,7 @@ export function TraversalPanel({ trajectory, view, status, yearsPerSecond, onRat
       </dl>
       <p><small>Values interpolated between {trajectory.samples.length} states computed by the backend model.</small></p>
       <label>
-        Time compression: {fmt(yearsPerSecond, 3)} yr per second
+        Time compression: {formatDuration(yearsPerSecond)} per second
         <input
           type="range"
           min={Math.log10(total / 600 || 1e-6)}

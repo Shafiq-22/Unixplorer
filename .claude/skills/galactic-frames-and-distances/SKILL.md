@@ -26,3 +26,7 @@ description: Frames, epochs and distance solutions for placing objects in 3D and
   The UI shows what the snapshot has; never fill gaps from memory.
 - **Tests:** heliocentric and galactocentric separations must agree to 1e-9 relative. Compare
   transforms against astropy directly.
+- **Horizons provenance:** frame, epoch and ephemeris sources come from each Horizons response
+  header (`horizons.header_fields`). Show them; never relabel them by hand.
+- **Small distances:** routes between Solar System bodies are fixed endpoints with no range.
+  The API also returns AU (astropy conversion) for planetary scales.

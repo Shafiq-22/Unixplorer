@@ -234,6 +234,10 @@ class RouteDistanceOut(BaseModel):
     value_pc: float
     lower_pc: float
     upper_pc: float
+    # The same distances in astronomical units (astropy conversion), for planetary routes.
+    value_au: float
+    lower_au: float
+    upper_au: float
     method: str
 
 
@@ -283,3 +287,25 @@ class Traversal(BaseModel):
     model_id: str
     status: TraversalStatus
     coordinate_time_yr: float
+
+
+# ------------------------------------------------------------------------ solar system
+
+
+class DistanceFromSun(BaseModel):
+    value_au: float
+    value_km: float
+    state: Literal["derived"] = "derived"
+    method: str
+
+
+class SolarSystemBody(BaseModel):
+    object: ObjectSummary
+    position: Position
+    distance_from_sun: DistanceFromSun | None
+
+
+class SolarSystem(BaseModel):
+    epoch: str = Field(description="as stated by JPL Horizons for the snapshot")
+    frame: str
+    bodies: list[SolarSystemBody]

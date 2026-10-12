@@ -733,22 +733,40 @@ def _load_horizons(ctx: LoadContext) -> None:
     _begin(ctx)
     ds = "horizons_bodies"
     objects, idents, positions = [], [], []
-    for r in _rows(ctx, ds, ["target", "JDTDB", "X", "Y", "Z", "VX", "VY", "VZ"]):
+    cols = [
+        "target",
+        "JDTDB",
+        "X",
+        "Y",
+        "Z",
+        "VX",
+        "VY",
+        "VZ",
+        "target_ephemeris",
+        "center_ephemeris",
+        "reference_frame",
+        "start_time",
+    ]
+    for r in _rows(ctx, ds, cols):
         ref = ctx.ref(r["source_record_id"], ds)
         nk = f"horizons:{r['target']}"
         objects.append((nk, "solar_system_body", r["target"]))
         idents.append((nk, "jpl_horizons_target", r["target"], *ref, r["source_record_id"], None))
+        # Frame, epoch and ephemeris sources as Horizons states them in each response header.
+        epoch = f"JD {r['JDTDB']} TDB" + (f" ({r['start_time']})" if r["start_time"] else "")
         positions.append(
             (
                 nk,
                 "state_vector",
-                "ICRF axes, Solar System barycentre (Horizons CENTER=500@0, REF_PLANE=FRAME)",
-                f"JD {r['JDTDB']} TDB",
+                f"{r['reference_frame'] or 'frame not stated'} axes, Solar System barycentre "
+                "(Horizons CENTER=500@0, REF_PLANE=FRAME)",
+                epoch,
                 None,
                 None,
                 None,
                 None,
-                "jpl_horizons_ephemeris",
+                f"jpl_horizons_ephemeris (target: {r['target_ephemeris'] or 'not stated'}; "
+                f"centre: {r['center_ephemeris'] or 'not stated'})",
                 "model_predicted",
                 None,
                 None,

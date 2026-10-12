@@ -62,3 +62,6 @@ def test_horizons_vectors(tmp_layout: Layout) -> None:
     assert row["X"] == 1000.0 and row["X__si"] == 1_000_000.0
     assert row["VZ__si"] == 3000.0
     assert row["JDTDB"] == 2457389.0 and "JDTDB__si" not in row
+    assert row["target_ephemeris"] == "SYNTHETIC" and row["center_ephemeris"] == "SYNTHETIC-DE"
+    assert row["reference_frame"] == "ICRF"
+    assert row["start_time"] == "A.D. 2016-Jan-01 12:00:00.0000 TDB"

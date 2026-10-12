@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { ObjectSummary, RouteResult } from "@atlas/shared-types";
 import { api, ApiError } from "@/lib/api";
-import { fmt, formatOutput } from "@/lib/format";
+import { formatDistance, formatOutput, formatTimeOutput } from "@/lib/format";
 
 interface Props {
   origin: ObjectSummary | null;
@@ -95,8 +95,10 @@ export function RoutePlanner({ origin, destination, route, onRoute, onTravel, tr
             {route.origin.object.display_name} → {route.destination.object.display_name}
           </h3>
           <p>
-            Distance <strong data-testid="route-distance">{fmt(route.distance.value_pc)} pc</strong> (range{" "}
-            {fmt(route.distance.lower_pc)} – {fmt(route.distance.upper_pc)} pc). <small>{route.distance.method}.</small>
+            Distance{" "}
+            <strong data-testid="route-distance">{formatDistance(route.distance.value_pc, route.distance.value_au)}</strong>{" "}
+            (range {formatDistance(route.distance.lower_pc, route.distance.lower_au)} –{" "}
+            {formatDistance(route.distance.upper_pc, route.distance.upper_au)}). <small>{route.distance.method}.</small>
           </p>
           <p>
             <small>
@@ -134,9 +136,9 @@ export function RoutePlanner({ origin, destination, route, onRoute, onTravel, tr
                         <td colSpan={4} className="warn">Not applicable to these inputs: {m.refused}</td>
                       ) : (
                         <>
-                          <td>{formatOutput(t)}</td>
-                          <td>{formatOutput(out["proper_time"])}</td>
-                          <td>{tLo && tHi ? `${formatOutput(tLo)} – ${formatOutput(tHi)}` : "—"}</td>
+                          <td>{formatTimeOutput(t)}</td>
+                          <td>{formatTimeOutput(out["proper_time"])}</td>
+                          <td>{tLo && tHi ? `${formatTimeOutput(tLo)} – ${formatTimeOutput(tHi)}` : "—"}</td>
                           <td>
                             {out["lorentz_factor"] !== undefined && <>γ = {formatOutput(out["lorentz_factor"])}<br /></>}
                             {out["peak_lorentz_factor"] !== undefined && <>peak γ = {formatOutput(out["peak_lorentz_factor"])}<br /></>}

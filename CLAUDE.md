@@ -52,11 +52,11 @@ official archive  →  data/raw/ (as downloaded, immutable)  →  data/processed
 | `astronomy-core` physics models | working (tested): every section-9 model except `schwarzschild_static` (later); section-10 suite green |
 | Gaia connector (nearby stars) | working (tested): 372 226 stars loaded, searchable, in 3D |
 | SIMBAD name resolution | working (tested): trigram search over SIMBAD aliases; common names ranked first |
-| JPL Horizons (Solar System) | not started |
+| JPL Horizons (Solar System) | working (tested): 18 bodies at the snapshot epoch shown in the UI, per-body ephemeris sources; routes from Earth |
 | Landmark set (clusters, nebulae, Sgr A\*) | not started |
 | NASA Exoplanet Archive (host stars) | not started |
 | Search + dossier | working (tested): every value with unit, uncertainty, state, method and source |
-| 3D explorer | partial: solar neighbourhood (M2: Sun-centred, octree tiles, floating origin, log depth); galaxy-scale view is M4 |
+| 3D explorer | partial: Solar System and solar neighbourhood, seamless zoom from 2e-9 pc to 2000 pc, floating origin validated (M2/M3); galaxy-scale view is M4 |
 | Route planner | working (tested): all models side by side, exact distance range, persisted with frame metadata |
 | Traversal (classical / SR / null / FTL) | working (tested): backend trajectories, frame-rate-independent clock, pause/resume/cancel; E2E |
 
