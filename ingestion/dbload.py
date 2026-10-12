@@ -100,6 +100,7 @@ def run_load(layout: Layout, url: str, *, command: str = "atlas db load") -> dic
                 _load_landmarks(ctx)
                 _load_horizons(ctx)
                 _load_exoplanets(ctx)
+                _derive_positions(ctx)
                 stats = {k: dict(v) for k, v in ctx.stats.items()}
         except Exception as exc:
             jconn.execute(
@@ -880,3 +881,59 @@ def _load_exoplanets(ctx: LoadContext) -> None:
             (f"NASA Exoplanet Archive gaia_dr3_id = '{gaia_id}'", nk, f"gaia_dr3:{sid}"),
         )
     ctx.stats[ds].update(planets=len(seen), hosts_linked_to_gaia=linked)
+
+
+# ------------------------------------------------------------------- derived positions
+
+
+def _derive_positions(ctx: LoadContext) -> None:
+    """Fill bary_x/y/z_pc + bary_xyz for rows that have a 3D position and none derived yet.
+
+    Physics stays in astronomy_core (CLAUDE.md §4): this only moves numbers in and out.
+    Sky-only rows (no distance) are never given a 3D position (§5).
+    """
+    import astropy.units as u
+    import numpy as np
+
+    from astronomy_core.frames import CARTESIAN_METHOD, icrs_barycentric_xyz, state_vector_xyz
+
+    sky = ctx.conn.execute(
+        """SELECT id, ra_deg, dec_deg, distance_pc FROM position_solution
+           WHERE kind = 'sky' AND distance_pc IS NOT NULL AND bary_x_pc IS NULL"""
+    ).fetchall()
+    vec = ctx.conn.execute(
+        """SELECT id, x_km, y_km, z_km FROM position_solution
+           WHERE kind = 'state_vector' AND x_km IS NOT NULL AND bary_x_pc IS NULL"""
+    ).fetchall()
+    out: list[tuple[int, float, float, float]] = []
+    if sky:
+        a = np.array([r[1:] for r in sky], dtype=np.float64)
+        x, y, z = icrs_barycentric_xyz(a[:, 0] * u.deg, a[:, 1] * u.deg, a[:, 2] * u.pc)
+        out += [
+            (int(r[0]), float(xi), float(yi), float(zi))
+            for r, xi, yi, zi in zip(
+                sky, x.to_value(u.pc), y.to_value(u.pc), z.to_value(u.pc), strict=True
+            )
+        ]
+    if vec:
+        a = np.array([r[1:] for r in vec], dtype=np.float64)
+        x, y, z = state_vector_xyz(a[:, 0] * u.km, a[:, 1] * u.km, a[:, 2] * u.km)
+        out += [
+            (int(r[0]), float(xi), float(yi), float(zi))
+            for r, xi, yi, zi in zip(
+                vec, x.to_value(u.pc), y.to_value(u.pc), z.to_value(u.pc), strict=True
+            )
+        ]
+    _exec(ctx, "DROP TABLE IF EXISTS stage_xyz")
+    _exec(
+        ctx, "CREATE TEMP TABLE stage_xyz (id bigint, x float8, y float8, z float8) ON COMMIT DROP"
+    )
+    _copy(ctx, "stage_xyz", ("id", "x", "y", "z"), out)
+    ctx.stats["derived"]["positions"] = _exec(
+        ctx,
+        """UPDATE position_solution p
+           SET bary_x_pc = s.x, bary_y_pc = s.y, bary_z_pc = s.z,
+               bary_xyz = cube(ARRAY[s.x, s.y, s.z]), derived_method = %s
+           FROM stage_xyz s WHERE p.id = s.id""",
+        (CARTESIAN_METHOD,),
+    )

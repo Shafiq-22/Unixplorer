@@ -34,7 +34,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["ingestion", "packages/astronomy-core/astronomy_core", "database/atlas_db", "services/api/atlas_api"]
+packages = ["ingestion", "packages/astronomy-core/astronomy_core", "database/atlas_db", "services/api/atlas_api", "packages/route-planner/route_planner"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -54,7 +54,7 @@ select = ["E", "F", "I", "B", "UP", "SIM"]
 [tool.mypy]
 python_version = "3.12"
 strict = true
-files = ["ingestion", "packages/astronomy-core/astronomy_core", "database/atlas_db", "services/api/atlas_api"]
+files = ["ingestion", "packages/astronomy-core/astronomy_core", "database/atlas_db", "services/api/atlas_api", "packages/route-planner/route_planner"]
 
 [[tool.mypy.overrides]]
 module = ["astropy.*", "pyarrow.*"]
@@ -65,4 +65,4 @@ ignore_missing_imports = true
 "database/migrations/**" = ["E402", "E501"]  # Alembic env layout; generated DDL strings
 
 [tool.ruff.lint.isort]
-known-first-party = ["ingestion", "astronomy_core", "atlas_api", "atlas_db"]
+known-first-party = ["ingestion", "astronomy_core", "atlas_api", "atlas_db", "route_planner"]

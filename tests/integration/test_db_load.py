@@ -7,18 +7,15 @@ recreated. Skipped when it is unset.
 from __future__ import annotations
 
 import os
-from collections.abc import Iterator
 from typing import Any
 
 import psycopg
 import pyarrow.parquet as pq
 import pytest
-from alembic import command
-from alembic.config import Config
 from astropy.io.votable import parse_single_table
 
 from ingestion.datasets import column_ci
-from ingestion.dbload import psycopg_url, run_load
+from ingestion.dbload import psycopg_url
 from ingestion.paths import Layout
 
 URL = os.environ.get("TEST_DATABASE_URL")
@@ -29,19 +26,8 @@ pytestmark = [
 
 
 @pytest.fixture(scope="module")
-def loaded(repo_layout: Layout) -> Iterator[dict[str, Any]]:
-    assert URL
-    if not all((repo_layout.processed / f"{d}.parquet").exists() for d in ("gaia_dr3_nearby",)):
-        pytest.skip("data/processed not built (run `atlas data build`)")
-    with psycopg.connect(psycopg_url(URL), autocommit=True) as conn:
-        conn.execute("DROP SCHEMA public CASCADE")
-        conn.execute("CREATE SCHEMA public")
-    os.environ["DATABASE_URL"] = URL
-    cfg = Config(str(repo_layout.root / "alembic.ini"))
-    command.upgrade(cfg, "head")
-    first = run_load(repo_layout, URL, command="pytest first load")
-    second = run_load(repo_layout, URL, command="pytest second load")
-    yield {"first": first, "second": second}
+def loaded(loaded_db: dict[str, Any]) -> dict[str, Any]:
+    return loaded_db
 
 
 def _q(sql: str, *params: Any) -> list[tuple[Any, ...]]:
