@@ -150,6 +150,78 @@ def _source(r: Any, rid: str, prefix: str = "", pub: Publication | None = None) 
     )
 
 
+def positions_for(conn: Connection, object_id: int) -> list[Position]:
+    """Adopted positions of an object, each with full provenance (shared by dossier and
+    the Solar System view)."""
+    params = {"id": object_id}
+    positions = []
+    for r in conn.execute(
+        text(f"""SELECT ps.*, pb.bibcode, pb.citation, {SOURCE_SQL},
+                        ds.dataset AS d_s_dataset, ds.source AS d_s_archive,
+                        ds.release AS d_s_release, ds.retrieved_at AS d_s_retrieved_at
+                 FROM position_solution ps
+                 JOIN source_file f ON f.id = ps.source_file_id
+                 JOIN scientific_source s ON s.id = f.scientific_source_id
+                 LEFT JOIN source_file df ON df.id = ps.distance_source_file_id
+                 LEFT JOIN scientific_source ds ON ds.id = df.scientific_source_id
+                 LEFT JOIN publication pb ON pb.id = ps.publication_id
+                 WHERE ps.object_id = :id AND ps.is_adopted
+                 ORDER BY ps.id"""),
+        params,
+    ):
+        pub = Publication(bibcode=r.bibcode, citation=r.citation) if r.bibcode else None
+        distance = (
+            Distance(
+                value_pc=r.distance_pc,
+                lower_pc=r.distance_lower_pc,
+                upper_pc=r.distance_upper_pc,
+                interval=r.distance_interval,
+                method=r.distance_method,
+                state=r.distance_state,
+                source=_source(r, r.distance_source_record_id, prefix="d_"),
+            )
+            if r.distance_pc is not None
+            else None
+        )
+        sv = (
+            StateVector(
+                x_km=r.x_km,
+                y_km=r.y_km,
+                z_km=r.z_km,
+                vx_km_s=r.vx_km_s,
+                vy_km_s=r.vy_km_s,
+                vz_km_s=r.vz_km_s,
+            )
+            if r.x_km is not None
+            else None
+        )
+        cart = (
+            Cartesian(x_pc=r.bary_x_pc, y_pc=r.bary_y_pc, z_pc=r.bary_z_pc, method=r.derived_method)
+            if r.bary_x_pc is not None
+            else None
+        )
+        positions.append(
+            Position(
+                id=r.id,
+                kind=r.kind,
+                frame=r.frame,
+                epoch=r.epoch,
+                ra_deg=r.ra_deg,
+                dec_deg=r.dec_deg,
+                ra_error_mas=r.ra_error_mas,
+                dec_error_mas=r.dec_error_mas,
+                position_state=r.position_state,
+                position_method=r.position_method,
+                distance_state=r.distance_state,
+                distance=distance,
+                state_vector=sv,
+                cartesian=cart,
+                source=_source(r, r.source_record_id, pub=pub),
+            )
+        )
+    return positions
+
+
 @router.get("/objects/{object_id}", response_model=Dossier)
 def dossier(object_id: int, conn: Conn) -> Dossier:
     summary = _summary(conn, object_id)
@@ -216,71 +288,7 @@ def dossier(object_id: int, conn: Conn) -> Dossier:
                 source=_source(r, r.source_record_id, pub=pub),
             )
         )
-    positions = []
-    for r in conn.execute(
-        text(f"""SELECT ps.*, pb.bibcode, pb.citation, {SOURCE_SQL},
-                        ds.dataset AS d_s_dataset, ds.source AS d_s_archive,
-                        ds.release AS d_s_release, ds.retrieved_at AS d_s_retrieved_at
-                 FROM position_solution ps
-                 JOIN source_file f ON f.id = ps.source_file_id
-                 JOIN scientific_source s ON s.id = f.scientific_source_id
-                 LEFT JOIN source_file df ON df.id = ps.distance_source_file_id
-                 LEFT JOIN scientific_source ds ON ds.id = df.scientific_source_id
-                 LEFT JOIN publication pb ON pb.id = ps.publication_id
-                 WHERE ps.object_id = :id AND ps.is_adopted
-                 ORDER BY ps.id"""),
-        params,
-    ):
-        pub = Publication(bibcode=r.bibcode, citation=r.citation) if r.bibcode else None
-        distance = (
-            Distance(
-                value_pc=r.distance_pc,
-                lower_pc=r.distance_lower_pc,
-                upper_pc=r.distance_upper_pc,
-                interval=r.distance_interval,
-                method=r.distance_method,
-                state=r.distance_state,
-                source=_source(r, r.distance_source_record_id, prefix="d_"),
-            )
-            if r.distance_pc is not None
-            else None
-        )
-        sv = (
-            StateVector(
-                x_km=r.x_km,
-                y_km=r.y_km,
-                z_km=r.z_km,
-                vx_km_s=r.vx_km_s,
-                vy_km_s=r.vy_km_s,
-                vz_km_s=r.vz_km_s,
-            )
-            if r.x_km is not None
-            else None
-        )
-        cart = (
-            Cartesian(x_pc=r.bary_x_pc, y_pc=r.bary_y_pc, z_pc=r.bary_z_pc, method=r.derived_method)
-            if r.bary_x_pc is not None
-            else None
-        )
-        positions.append(
-            Position(
-                id=r.id,
-                kind=r.kind,
-                frame=r.frame,
-                epoch=r.epoch,
-                ra_deg=r.ra_deg,
-                dec_deg=r.dec_deg,
-                ra_error_mas=r.ra_error_mas,
-                dec_error_mas=r.dec_error_mas,
-                position_state=r.position_state,
-                position_method=r.position_method,
-                distance_state=r.distance_state,
-                distance=distance,
-                state_vector=sv,
-                cartesian=cart,
-                source=_source(r, r.source_record_id, pub=pub),
-            )
-        )
+    positions = positions_for(conn, object_id)
     parent_row = conn.execute(
         text("SELECT parent_object_id, parent_link_reason FROM celestial_object WHERE id = :id"),
         params,

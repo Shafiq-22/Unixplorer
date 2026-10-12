@@ -108,3 +108,13 @@ def test_state_vector_km_to_pc_uses_astropy_units() -> None:
 
     x, _, _ = state_vector_xyz(1 * u.pc.to(u.km) * u.km, 0 * u.km, 0 * u.km)
     assert x.to_value(u.pc) == pytest.approx(1.0, rel=1e-12)
+
+
+def test_separation_in_au_uses_astropy_units() -> None:
+    from astronomy_core.frames import separation
+
+    a = np.array([0.0, 0.0, 0.0]) * u.AU
+    b = np.array([3.0, 4.0, 0.0]) * u.AU
+    assert separation(a, b).to_value(u.AU) == pytest.approx(5.0, rel=1e-12)
+    # pc = 648000/pi AU exactly (CLAUDE.md §7), via astropy
+    assert (1 * u.pc).to_value(u.AU) == pytest.approx(648000 / np.pi, rel=1e-15)

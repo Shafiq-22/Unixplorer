@@ -92,3 +92,13 @@ def state_vector_xyz(
 ) -> tuple[u.Quantity, u.Quantity, u.Quantity]:
     """Horizons ICRF barycentric state-vector position, as parsecs on the same ICRS axes."""
     return x.to(u.pc), y.to(u.pc), z.to(u.pc)
+
+
+def separation(a: u.Quantity, b: u.Quantity) -> u.Quantity:
+    """Euclidean distance between two Cartesian positions (length-3 Quantities)."""
+    import numpy as np
+
+    d = np.asarray((a - b).to_value(u.pc), dtype=np.float64)
+    if d.shape != (3,):
+        raise ValueError("positions must be length-3 Cartesian vectors")
+    return float(np.sqrt(d @ d)) * u.pc

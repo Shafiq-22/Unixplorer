@@ -104,3 +104,28 @@ def vector_rows(doc: dict[str, Any]) -> tuple[list[str], list[list[str]]]:
         cells = [c.strip() for c in ln.split(",")]
         rows.append(cells[: len(header)])
     return header, rows
+
+
+_SOURCE_RE = re.compile(r"\{source:\s*(?P<src>[^}]+?)\s*\}")
+_HEADER_FIELDS = {
+    "reference_frame": re.compile(r"^Reference frame\s*:\s*(?P<v>.+?)\s*$", re.MULTILINE),
+    "start_time": re.compile(r"^Start time\s*:\s*(?P<v>.+?)\s*$", re.MULTILINE),
+    "output_units": re.compile(r"^Output units\s*:\s*(?P<v>.+?)\s*$", re.MULTILINE),
+}
+
+
+def header_fields(doc: dict[str, Any]) -> dict[str, str | None]:
+    """Provenance stated by Horizons itself in the result header (verbatim text)."""
+    result = str(doc["result"])
+    out: dict[str, str | None] = {}
+    for key, rx in _HEADER_FIELDS.items():
+        m = rx.search(result)
+        out[key] = m.group("v") if m else None
+    for key, label in (
+        ("target_ephemeris", "Target body name"),
+        ("center_ephemeris", "Center body name"),
+    ):
+        line = next((ln for ln in result.splitlines() if ln.strip().startswith(label)), "")
+        m = _SOURCE_RE.search(line)
+        out[key] = m.group("src") if m else None
+    return out

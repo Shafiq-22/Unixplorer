@@ -1,9 +1,11 @@
 "use client";
 
+import type React from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
-import { Line, OrbitControls } from "@react-three/drei";
+import { Html, Line, OrbitControls } from "@react-three/drei";
 import { api } from "@/lib/api";
+import { labelGroups } from "@/lib/labels";
 import { cellOf, neighbourhood, rebase, type Vec3 } from "@/lib/space";
 
 export interface Marker {
@@ -11,10 +13,21 @@ export interface Marker {
   readonly label: string;
 }
 
+export interface BodyMarker {
+  readonly id: number;
+  readonly pos: Vec3;
+  readonly label: string;
+}
+
+/** Closest and farthest camera distances (pc): Earth-Moon scale to beyond the snapshot. */
+export const MIN_VIEW_PC = 2e-9;
+export const MAX_VIEW_PC = 2000;
+
 interface Props {
   focus: Vec3;
-  viewDistancePc: number;
-  sun: Vec3 | null;
+  zoom: { distancePc: number; nonce: number };
+  onViewDistance: (pc: number) => void;
+  bodies: readonly BodyMarker[];
   selected: Marker | null;
   route: { a: Vec3; b: Vec3 } | null;
   ship: Vec3 | null;
@@ -115,7 +128,8 @@ interface Controls {
   update: () => unknown;
 }
 
-function CameraRig({ distance, focusKey }: { distance: number; focusKey: string }) {
+/** Applies explicit zoom requests (buttons) and focus changes; wheel zoom is OrbitControls'. */
+function CameraRig({ distance, nonce, focusKey }: { distance: number; nonce: number; focusKey: string }) {
   const camera = useThree((s) => s.camera);
   const controls = useThree((s) => s.controls) as unknown as Controls | null;
   useEffect(() => {
@@ -124,11 +138,50 @@ function CameraRig({ distance, focusKey }: { distance: number; focusKey: string 
     camera.position.copy(dir.setLength(distance));
     controls?.target.set(0, 0, 0);
     controls?.update();
-  }, [camera, controls, distance, focusKey]);
+    // `nonce` is in the deps so an explicit request re-applies even at the same distance.
+  }, [camera, controls, distance, nonce, focusKey]);
   return null;
 }
 
-export function GalaxyView({ focus, viewDistancePc, sun, selected, route, ship, reducedMotion }: Props) {
+function Bodies({
+  bodies,
+  focus,
+  viewPc,
+  labelLayer,
+}: {
+  bodies: readonly BodyMarker[];
+  focus: Vec3;
+  viewPc: number;
+  labelLayer: React.RefObject<HTMLDivElement | null>;
+}) {
+  const groups = useMemo(() => labelGroups(bodies, viewPc), [bodies, viewPc]);
+  return (
+    <>
+      {bodies.map((b) => (
+        <Dot key={b.id} pos={b.pos} focus={focus} color={b.label === "Sun" ? "#ffd36b" : "#e8edf7"} size={b.label === "Sun" ? 8 : 5} />
+      ))}
+      {/* Labels only at planetary scales (< ~0.002 pc), where they are readable. */}
+      {viewPc < 2e-3 &&
+        groups.map((g) => (
+          // A fixed portal target: without it drei mounts the first label before its default
+          // target settles and leaves that label empty.
+          <Html
+            key={g.names.join("|")}
+            portal={labelLayer as React.RefObject<HTMLElement>}
+            position={relative(g.pos, focus)}
+            style={{ pointerEvents: "none" }}
+          >
+            <span className="body-label">{g.names.join(", ")}</span>
+          </Html>
+        ))}
+    </>
+  );
+}
+
+export function GalaxyView({ focus, zoom, onViewDistance, bodies, selected, route, ship, reducedMotion }: Props) {
+  const [viewPc, setViewPc] = useState(zoom.distancePc);
+  const labelLayer = useRef<HTMLDivElement | null>(null);
+  useEffect(() => setViewPc(zoom.distancePc), [zoom.distancePc, zoom.nonce]);
   const stars = useStars(focus);
   const routePts = useMemo(
     () => (route ? ([relative(route.a, focus), relative(route.b, focus)] as const) : null),
@@ -136,14 +189,15 @@ export function GalaxyView({ focus, viewDistancePc, sun, selected, route, ship, 
   );
   return (
     <div className="galaxy" role="img" aria-label={`3D view of ${stars.size} nearby stars centred on the current focus`}>
+      <div ref={labelLayer} className="label-layer" aria-hidden="true" />
       <Canvas
         gl={{ logarithmicDepthBuffer: true, antialias: true }}
-        camera={{ position: [0, 0, viewDistancePc], near: 1e-9, far: 1e5, fov: 50 }}
+        camera={{ position: [0, 0, zoom.distancePc], near: 1e-10, far: 1e5, fov: 50 }}
         data-testid="galaxy-canvas"
       >
         <color attach="background" args={["#05070d"]} />
         <StarField stars={stars} focus={focus} />
-        {sun && <Dot pos={sun} focus={focus} color="#ffd36b" size={7} />}
+        <Bodies bodies={bodies} focus={focus} viewPc={viewPc} labelLayer={labelLayer} />
         {selected && <Dot pos={selected.pos} focus={focus} color="#6bd0ff" size={8} />}
         {routePts && (
           <Line
@@ -153,13 +207,27 @@ export function GalaxyView({ focus, viewDistancePc, sun, selected, route, ship, 
           />
         )}
         {ship && <Dot pos={ship} focus={focus} color="#ff6b6b" size={9} />}
-        <OrbitControls makeDefault enableDamping={!reducedMotion} />
-        <CameraRig distance={viewDistancePc} focusKey={focus.join(",")} />
+        <OrbitControls
+          makeDefault
+          enableDamping={!reducedMotion}
+          minDistance={MIN_VIEW_PC}
+          maxDistance={MAX_VIEW_PC}
+          onChange={(e) => {
+            const cam = (e?.target as { object?: { position: { length: () => number } } } | undefined)?.object;
+            if (cam) {
+              const d = cam.position.length();
+              setViewPc(d);
+              onViewDistance(d);
+            }
+          }}
+        />
+        <CameraRig distance={zoom.distancePc} nonce={zoom.nonce} focusKey={focus.join(",")} />
       </Canvas>
       <p className="overlay">
         <span className="state state-illustrative">Illustrative</span> point size and brightness. Positions:
         Gaia DR3 astrometry with Bailer-Jones (2021) geometric distances, ICRS axes, barycentric. {stars.size} stars
-        loaded as octree tiles. Gaia distances degrade beyond about 1–2 kpc; this view covers about 100 pc.
+        loaded as octree tiles; Solar System bodies from JPL Horizons at the snapshot epoch. Gaia distances degrade
+        beyond about 1–2 kpc; this view covers about 100 pc.
       </p>
     </div>
   );

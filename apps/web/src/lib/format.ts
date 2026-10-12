@@ -56,3 +56,32 @@ export const STATE_LABEL: Record<string, string> = {
   below_detection: "below detection",
   not_applicable: "not applicable",
 };
+
+// Unit choice for display only. Values arrive from the API already converted by astropy
+// (pc and AU). Durations arrive in Julian years; 1 Julian year = 365.25 d exactly (IAU
+// definition, the year CLAUDE.md §10 uses), so the conversions below are definitions,
+// not physics.
+const JULIAN_YEAR_DAYS = 365.25;
+
+/** 1 pc = 648000/π AU exactly (IAU 2015 definition; CLAUDE.md §7). Display conversion only. */
+export const AU_PER_PC = 648000 / Math.PI;
+
+/** A distance given in both pc and AU (from the API), shown in the clearer unit. */
+export function formatDistance(pc: number, au: number): string {
+  return Math.abs(pc) < 0.01 ? `${fmt(au)} AU` : `${fmt(pc)} pc`;
+}
+
+/** A duration in Julian years, shown in years, days, hours or seconds. */
+export function formatDuration(yr: number): string {
+  const days = yr * JULIAN_YEAR_DAYS;
+  if (Math.abs(yr) >= 1) return `${fmt(yr)} yr`;
+  if (Math.abs(days) >= 1) return `${fmt(days)} d`;
+  if (Math.abs(days) * 24 >= 1) return `${fmt(days * 24)} h`;
+  return `${fmt(days * 86_400)} s`;
+}
+
+/** Model outputs: durations in years get the readable unit; everything else unchanged. */
+export function formatTimeOutput(v: QuantityValue | number | string | undefined): string {
+  if (v !== undefined && isQuantity(v) && v.unit === "yr") return formatDuration(v.value);
+  return formatOutput(v);
+}

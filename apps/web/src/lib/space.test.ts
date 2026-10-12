@@ -29,3 +29,34 @@ describe("octree", () => {
     expect(neighbourhood([1, 1, 1], 2)).toHaveLength(27);
   });
 });
+
+describe("floating-origin validation (CLAUDE.md §7: Earth, Proxima, Sgr A*)", () => {
+  // Focus distances from the barycentre at three scales, and separations down to about
+  // Earth-Moon scale (1e-8 pc). "No visible jitter": when a separation fills a 1000-px
+  // viewport, its error must stay below one pixel, i.e. below 1e-3 of the separation.
+  // (Absolute float64 itself resolves ~1.8e-12 pc at 8122 pc, so 1e-8 pc separations there
+  // carry ~2e-4 relative error before any float32 conversion: sub-pixel, but not 1e-6.)
+  const foci: Record<string, number> = { earth: 4.8e-6, proxima: 1.3, sgrA: 8122 };
+  const separations = [1e-8, 1e-6, 1e-3, 1];
+
+  for (const [name, r] of Object.entries(foci)) {
+    it(`keeps separations when focused at ${name} (${r} pc)`, () => {
+      const focus = [r, r / 3, -r / 7] as const;
+      for (const sep of separations) {
+        const p = [focus[0] + sep, focus[1] - sep / 2, focus[2] + sep / 3] as const;
+        const f32 = rebase([p], focus);
+        const exact = [sep, -sep / 2, sep / 3];
+        exact.forEach((e, i) => {
+          expect(Math.abs((f32[i] ?? NaN) - e) / Math.abs(e)).toBeLessThan(1e-3);
+        });
+      }
+    });
+  }
+
+  it("shows why rebasing is needed: absolute float32 at Sgr A* distance loses AU scales", () => {
+    const r = 8122;
+    const sep = 1e-6; // about 0.2 AU
+    const a = new Float32Array([r, r + sep]);
+    expect(Math.abs((a[1] ?? NaN) - (a[0] ?? NaN) - sep) / sep).toBeGreaterThan(0.1);
+  });
+});

@@ -20,3 +20,5 @@ export type Trajectory = S["Trajectory"];
 export type TrajectorySample = S["TrajectorySample"];
 export type Traversal = S["Traversal"];
 export type TraversalUpdate = S["TraversalUpdate"];
+export type SolarSystem = S["SolarSystem"];
+export type SolarSystemBody = S["SolarSystemBody"];

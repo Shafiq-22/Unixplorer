@@ -12,15 +12,14 @@ async function pick(page: Page, query: string, name: string) {
 }
 
 async function coordinateTime(page: Page): Promise<number> {
-  const text = (await page.getByTestId("coordinate-time").textContent()) ?? "";
-  return Number(text.split(" ")[0]);
+  return Number(await page.getByTestId("coordinate-time").getAttribute("data-years"));
 }
 
 test("search, dossier, route Sun -> Proxima, travel, pause/resume/cancel", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("canvas")).toBeVisible();
-  // The Sun is the default origin and the initial focus.
-  await expect(page.getByTestId("route-origin")).toHaveText("Sun");
+  // Earth is the default origin (M3: routes start from Earth).
+  await expect(page.getByTestId("route-origin")).toHaveText("Earth");
 
   await pick(page, "proxima", "Proxima Centauri");
   const dossier = page.getByTestId("dossier");

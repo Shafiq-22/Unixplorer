@@ -9,7 +9,7 @@ from sqlalchemy import Engine, text
 
 from astronomy_core.frames import frame_metadata
 from atlas_api.db import get_engine
-from atlas_api.routers import objects, routes, stars
+from atlas_api.routers import objects, routes, solar_system, stars
 from atlas_api.schemas import DatabaseInfo, FrameInfo, Health, SnapshotInfo
 
 API_VERSION = "0.1.0"
@@ -22,6 +22,7 @@ app = FastAPI(
 app.include_router(objects.router)
 app.include_router(stars.router)
 app.include_router(routes.router)
+app.include_router(solar_system.router)
 
 
 @app.get("/health", response_model=Health)

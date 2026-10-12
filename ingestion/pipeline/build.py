@@ -23,7 +23,7 @@ from ingestion import manifest
 from ingestion.connectors import horizons
 from ingestion.paths import Layout
 
-BUILD_VERSION = "1"
+BUILD_VERSION = "2"  # 2: Horizons ephemeris/frame/epoch header columns
 _NO_SI = {"mag", "dex", ""}
 
 
@@ -153,8 +153,13 @@ def horizons_to_arrow(path: Path) -> pa.Table:
     out_units = _requested_out_units(path)
     pos_unit, vel_unit = _HORIZONS_UNITS.get(out_units, ("", ""))
     target = horizons.resolved_target(doc)
+    prov = horizons.header_fields(doc)
     fields = [pa.field("target", pa.string())]
     arrays: list[pa.Array] = [pa.array([target] * len(rows), pa.string())]
+    # Provenance stated by Horizons in the response header, kept verbatim.
+    for key in ("target_ephemeris", "center_ephemeris", "reference_frame", "start_time"):
+        fields.append(pa.field(key, pa.string(), metadata={"unit": "", "ucd": ""}))
+        arrays.append(pa.array([prov[key]] * len(rows), pa.string()))
     for i, name in enumerate(header):
         cells = [r[i] if i < len(r) else None for r in rows]
         unit = (

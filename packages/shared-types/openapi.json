@@ -159,6 +159,35 @@
         "title": "Distance",
         "type": "object"
       },
+      "DistanceFromSun": {
+        "properties": {
+          "method": {
+            "title": "Method",
+            "type": "string"
+          },
+          "state": {
+            "const": "derived",
+            "default": "derived",
+            "title": "State",
+            "type": "string"
+          },
+          "value_au": {
+            "title": "Value Au",
+            "type": "number"
+          },
+          "value_km": {
+            "title": "Value Km",
+            "type": "number"
+          }
+        },
+        "required": [
+          "value_au",
+          "value_km",
+          "method"
+        ],
+        "title": "DistanceFromSun",
+        "type": "object"
+      },
       "Dossier": {
         "properties": {
           "aliases": {
@@ -791,6 +820,10 @@
       },
       "RouteDistanceOut": {
         "properties": {
+          "lower_au": {
+            "title": "Lower Au",
+            "type": "number"
+          },
           "lower_pc": {
             "title": "Lower Pc",
             "type": "number"
@@ -799,8 +832,16 @@
             "title": "Method",
             "type": "string"
           },
+          "upper_au": {
+            "title": "Upper Au",
+            "type": "number"
+          },
           "upper_pc": {
             "title": "Upper Pc",
+            "type": "number"
+          },
+          "value_au": {
+            "title": "Value Au",
             "type": "number"
           },
           "value_pc": {
@@ -812,6 +853,9 @@
           "value_pc",
           "lower_pc",
           "upper_pc",
+          "value_au",
+          "lower_au",
+          "upper_au",
           "method"
         ],
         "title": "RouteDistanceOut",
@@ -988,6 +1032,60 @@
           "datasets"
         ],
         "title": "SnapshotInfo",
+        "type": "object"
+      },
+      "SolarSystem": {
+        "properties": {
+          "bodies": {
+            "items": {
+              "$ref": "#/components/schemas/SolarSystemBody"
+            },
+            "title": "Bodies",
+            "type": "array"
+          },
+          "epoch": {
+            "description": "as stated by JPL Horizons for the snapshot",
+            "title": "Epoch",
+            "type": "string"
+          },
+          "frame": {
+            "title": "Frame",
+            "type": "string"
+          }
+        },
+        "required": [
+          "epoch",
+          "frame",
+          "bodies"
+        ],
+        "title": "SolarSystem",
+        "type": "object"
+      },
+      "SolarSystemBody": {
+        "properties": {
+          "distance_from_sun": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DistanceFromSun"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "object": {
+            "$ref": "#/components/schemas/ObjectSummary"
+          },
+          "position": {
+            "$ref": "#/components/schemas/Position"
+          }
+        },
+        "required": [
+          "object",
+          "position",
+          "distance_from_sun"
+        ],
+        "title": "SolarSystemBody",
         "type": "object"
       },
       "SourceRef": {
@@ -1697,6 +1795,27 @@
         "summary": "Get Trajectory",
         "tags": [
           "routes"
+        ]
+      }
+    },
+    "/solar-system": {
+      "get": {
+        "operationId": "solar_system_solar_system_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SolarSystem"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Solar System",
+        "tags": [
+          "solar-system"
         ]
       }
     },

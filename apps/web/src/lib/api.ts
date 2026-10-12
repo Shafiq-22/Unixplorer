@@ -1,5 +1,6 @@
 import type { z } from "zod";
 import type {
+  SolarSystem,
   Dossier,
   RouteRequest,
   RouteResult,
@@ -13,6 +14,7 @@ import {
   dossierSchema,
   routeResultSchema,
   searchResultsSchema,
+  solarSystemSchema,
   starTileSchema,
   trajectorySchema,
   traversalSchema,
@@ -54,6 +56,7 @@ export const api = {
   search: (q: string): Promise<SearchResults> =>
     request(`/objects/search?q=${encodeURIComponent(q)}&limit=12`, searchResultsSchema),
   dossier: (id: number): Promise<Dossier> => request(`/objects/${id}`, dossierSchema),
+  solarSystem: (): Promise<SolarSystem> => request("/solar-system", solarSystemSchema),
   tile: (level: number, ix: number, iy: number, iz: number, limit = 3000): Promise<StarTile> =>
     request(`/stars/tiles/${level}/${ix}/${iy}/${iz}?limit=${limit}`, starTileSchema),
   createRoute: (req: RouteRequest): Promise<RouteResult> =>
