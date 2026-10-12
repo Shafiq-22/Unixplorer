@@ -26,11 +26,16 @@ def main(argv: list[str] | None = None) -> int:
     data.add_parser("verify", help="check manifest hashes, sizes and row counts")
     data.add_parser("build", help="build data/processed/*.parquet from data/raw")
     data.add_parser("status", help="what is downloaded, when, from which release")
+    db = top.add_parser("db", help="database commands").add_subparsers(dest="cmd", required=True)
+    load = db.add_parser("load", help="load data/processed into Postgres (idempotent upsert)")
+    load.add_argument("--database-url", help="default: $DATABASE_URL")
     args = parser.parse_args(argv)
 
     from pathlib import Path
 
     layout = Layout(Path(args.root).resolve() if args.root else find_repo_root())
+    if args.group == "db":
+        return _db_load(layout, args.database_url)
     if args.cmd == "fetch":
         return _fetch(layout, args.dataset, args.batch_size, args.resume_job)
     if args.cmd == "verify":
@@ -73,6 +78,21 @@ def _build(layout: Layout) -> int:
         print(f"{r.dataset:20s} {r.rows:>9d} rows from {r.inputs} file(s) -> {r.path}")
     if not results:
         print("nothing to build: no complete snapshot in data/manifest.yaml")
+    return 0
+
+
+def _db_load(layout: Layout, url: str | None) -> int:
+    import json
+
+    from atlas_db.session import database_url
+    from ingestion.dbload import LoadError, run_load
+
+    try:
+        result = run_load(layout, url or database_url())
+    except LoadError as exc:
+        print(f"db load REJECTED: {exc}", file=sys.stderr)
+        return 1
+    print(json.dumps(result, indent=2))
     return 0
 
 

@@ -10,7 +10,7 @@ from ingestion.paths import Layout
 REPO = Path(__file__).resolve().parents[1]
 
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def repo_layout() -> Layout:
     """The real repository snapshot (read-only use)."""
     return Layout(REPO)

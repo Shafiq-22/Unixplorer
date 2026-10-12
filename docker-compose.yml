@@ -1,0 +1,19 @@
+# Local Postgres for development: `docker compose up -d db`.
+# Credentials are read from .env (copy .env.example); nothing secret is committed here.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-atlas}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-atlas}
+    ports:
+      - "5432:5432"
+    volumes:
+      - atlas-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-atlas}"]
+      interval: 5s
+      retries: 10
+volumes:
+  atlas-db:
